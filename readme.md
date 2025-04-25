@@ -72,10 +72,5 @@ Third-party icons and fonts retain their respective licenses.
 For questions about our SDKs or partnership opportunities:
 
 - **Email:** [info@shapehaveninnovations.org](mailto:info@shapehaveninnovations.org)
-- **X / Twitter:** `@ShapehavenDev`
 
 Thanks for stopping by — and happy shipping!
-
-```
-
-```
