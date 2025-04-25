@@ -31,6 +31,7 @@ cd shapehaveninnovations.github.io
 # Option A: open index.html directly in your browser
 # Option B (recommended): use any “Live Server” extension or Python http.server
 python -m http.server 8000
+```
 
 Then navigate to <http://localhost:8000>.
 
@@ -74,4 +75,7 @@ For questions about our SDKs or partnership opportunities:
 - **X / Twitter:** `@ShapehavenDev`
 
 Thanks for stopping by — and happy shipping!
+
+```
+
 ```
