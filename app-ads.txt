@@ -1,6 +1,1 @@
-# app-ads.txt for shapehaveninnovations.org
-# Replace pub-0000000000000000 with your actual AdMob Publisher ID.
-# If you monetize with other networks, add one line per partner in the same
-# CSV format: <exchange-domain>, <account‑or‑publisher‑ID>, <DIRECT|RESELLER>, <TAG‑ID (optional)>
-
 google.com, pub-9596111320016039, DIRECT, f08c47fec0942fa0
