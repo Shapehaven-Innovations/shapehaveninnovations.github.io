@@ -205,31 +205,33 @@
     </div>
 
     <section class="support-grid">
-      <!-- Repeat this block for each support category -->
+      <!-- 1) Technical Support -->
       <div class="support-card">
-        <img src="images/support-technical.jpg" alt="Technical Support" />
+        <img src="images/support-technical.png" alt="Technical Support" />
         <h3>Technical Support</h3>
         <button data-topic="Technical Support">Get Started</button>
       </div>
 
+      <!-- 2) Collaboration -->
       <div class="support-card">
-        <img src="images/support-sales.jpg" alt="Sales Inquiry" />
-        <h3>Sales Inquiry</h3>
-        <button data-topic="Sales Inquiry">Get Started</button>
+        <img src="images/support-collaboration.png" alt="Collaboration" />
+        <h3>Collaboration</h3>
+        <button data-topic="Collaboration">Get Started</button>
       </div>
 
+      <!-- 3) General Knowledge -->
       <div class="support-card">
-        <img src="images/support-billing.jpg" alt="Billing &amp; Accounts" />
-        <h3>Billing &amp; Accounts</h3>
-        <button data-topic="Billing &amp; Accounts">Get Started</button>
+        <img src="images/support-general.png" alt="General Knowledge" />
+        <h3>General Knowledge</h3>
+        <button data-topic="General Knowledge">Get Started</button>
       </div>
 
+      <!-- 4) Report a Bug -->
       <div class="support-card">
-        <img src="images/support-general.jpg" alt="General Questions" />
-        <h3>General Questions</h3>
-        <button data-topic="General Questions">Get Started</button>
+        <img src="images/support-bug.png" alt="Report a Bug" />
+        <h3>Report a Bug</h3>
+        <button data-topic="Report a Bug">Get Started</button>
       </div>
-      <!-- Add or remove cards as needed -->
     </section>
 
     <!-- Modal Overlay -->
@@ -239,6 +241,7 @@
         <h2 id="modalTitle">Support Request</h2>
         <form id="supportForm">
           <input type="hidden" id="topicInput" name="topic" value="" />
+
           <label for="nameInput">Name</label>
           <input
             type="text"
@@ -261,7 +264,7 @@
           <textarea
             id="messageInput"
             name="message"
-            placeholder="How can we assist you?"
+            placeholder="Please describe your issue or question."
             required
           ></textarea>
 
@@ -305,7 +308,7 @@
         });
       });
 
-      // Close modal
+      // Close modal when “×” is clicked
       closeModalBtn.addEventListener("click", () => {
         modalOverlay.classList.remove("active");
       });
@@ -339,10 +342,10 @@
           "&body=" +
           body;
 
-        // Redirect to mailto
+        // Redirect to user's email client
         window.location.href = mailtoLink;
 
-        // Optionally close modal after click
+        // Close modal
         modalOverlay.classList.remove("active");
       });
     </script>
