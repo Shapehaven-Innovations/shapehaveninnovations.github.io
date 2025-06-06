@@ -1,0 +1,350 @@
+<!-- support.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShapeHaven Innovations Support</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #007aff;
+        --bg-color: #f5f5f7;
+        --text-color: #1c1c1e;
+        --light-text: #6e6e73;
+        --card-bg: #ffffff;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--bg-color);
+        color: var(--text-color);
+      }
+      header {
+        background: #ffffff;
+        padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      }
+      header img {
+        height: 48px;
+        width: auto;
+      }
+      nav a {
+        margin-left: 1.5rem;
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: 600;
+      }
+      .page-header {
+        text-align: center;
+        padding: 3rem 1rem;
+      }
+      .page-header h1 {
+        font-size: 2.25rem;
+        margin-bottom: 0.5rem;
+      }
+      .page-header p {
+        color: var(--light-text);
+        font-size: 1rem;
+      }
+      .support-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .support-card {
+        background: var(--card-bg);
+        border-radius: 12px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .support-card img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+      }
+      .support-card h3 {
+        margin: 1rem;
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: var(--text-color);
+      }
+      .support-card button {
+        background: var(--primary-color);
+        color: #fff;
+        border: none;
+        padding: 0.75rem 1.25rem;
+        margin: 1rem;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      .support-card button:hover {
+        background: #005ecb;
+      }
+      /* Modal styles */
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+      }
+      .modal-overlay.active {
+        display: flex;
+      }
+      .modal {
+        background: #ffffff;
+        border-radius: 12px;
+        max-width: 500px;
+        width: 90%;
+        padding: 1.5rem;
+        position: relative;
+      }
+      .modal h2 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+      .modal .close-btn {
+        position: absolute;
+        top: 0.75rem;
+        right: 0.75rem;
+        background: none;
+        border: none;
+        font-size: 1.25rem;
+        cursor: pointer;
+        color: var(--light-text);
+      }
+      .modal form {
+        display: flex;
+        flex-direction: column;
+      }
+      .modal form label {
+        font-weight: 600;
+        margin-top: 0.75rem;
+        margin-bottom: 0.25rem;
+      }
+      .modal form input,
+      .modal form textarea {
+        padding: 0.5rem;
+        border: 1px solid #d1d1d6;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-family: "Inter", sans-serif;
+      }
+      .modal form textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+      .modal form button {
+        background: var(--primary-color);
+        color: #fff;
+        border: none;
+        padding: 0.75rem 1rem;
+        margin-top: 1.25rem;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      .modal form button:hover {
+        background: #005ecb;
+      }
+      footer {
+        text-align: center;
+        padding: 2rem 1rem;
+        background: #ffffff;
+        border-top: 1px solid #e0e0e0;
+        color: var(--light-text);
+        font-size: 0.9rem;
+      }
+      footer a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="images/logo.png" alt="ShapeHaven Innovations LLC" />
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#features">Features</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </header>
+
+    <div class="page-header">
+      <h1>ShapeHaven Innovations Support</h1>
+      <p>How can we help you today?</p>
+    </div>
+
+    <section class="support-grid">
+      <!-- Repeat this block for each support category -->
+      <div class="support-card">
+        <img src="images/support-technical.jpg" alt="Technical Support" />
+        <h3>Technical Support</h3>
+        <button data-topic="Technical Support">Get Started</button>
+      </div>
+
+      <div class="support-card">
+        <img src="images/support-sales.jpg" alt="Sales Inquiry" />
+        <h3>Sales Inquiry</h3>
+        <button data-topic="Sales Inquiry">Get Started</button>
+      </div>
+
+      <div class="support-card">
+        <img src="images/support-billing.jpg" alt="Billing &amp; Accounts" />
+        <h3>Billing &amp; Accounts</h3>
+        <button data-topic="Billing &amp; Accounts">Get Started</button>
+      </div>
+
+      <div class="support-card">
+        <img src="images/support-general.jpg" alt="General Questions" />
+        <h3>General Questions</h3>
+        <button data-topic="General Questions">Get Started</button>
+      </div>
+      <!-- Add or remove cards as needed -->
+    </section>
+
+    <!-- Modal Overlay -->
+    <div id="modalOverlay" class="modal-overlay">
+      <div class="modal">
+        <button class="close-btn" id="closeModal">&times;</button>
+        <h2 id="modalTitle">Support Request</h2>
+        <form id="supportForm">
+          <input type="hidden" id="topicInput" name="topic" value="" />
+          <label for="nameInput">Name</label>
+          <input
+            type="text"
+            id="nameInput"
+            name="name"
+            placeholder="Your full name"
+            required
+          />
+
+          <label for="emailInput">Email</label>
+          <input
+            type="email"
+            id="emailInput"
+            name="email"
+            placeholder="you@example.com"
+            required
+          />
+
+          <label for="messageInput">Message</label>
+          <textarea
+            id="messageInput"
+            name="message"
+            placeholder="How can we assist you?"
+            required
+          ></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        For urgent matters, email us directly at
+        <a href="mailto:info@shapehaveninnovations.org"
+          >info@shapehaveninnovations.org</a
+        >.
+      </p>
+      <p>&copy; 2025 ShapeHaven Innovations LLC</p>
+    </footer>
+
+    <script>
+      // Grab elements
+      const modalOverlay = document.getElementById("modalOverlay");
+      const closeModalBtn = document.getElementById("closeModal");
+      const supportButtons = document.querySelectorAll(".support-card button");
+      const modalTitle = document.getElementById("modalTitle");
+      const topicInput = document.getElementById("topicInput");
+      const supportForm = document.getElementById("supportForm");
+      const nameInput = document.getElementById("nameInput");
+      const emailInput = document.getElementById("emailInput");
+      const messageInput = document.getElementById("messageInput");
+
+      // Open modal when any "Get Started" button is clicked
+      supportButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const topic = btn.getAttribute("data-topic");
+          modalTitle.textContent = "Support Request: " + topic;
+          topicInput.value = topic;
+          nameInput.value = "";
+          emailInput.value = "";
+          messageInput.value = "";
+          modalOverlay.classList.add("active");
+        });
+      });
+
+      // Close modal
+      closeModalBtn.addEventListener("click", () => {
+        modalOverlay.classList.remove("active");
+      });
+      // Close if user clicks outside modal content
+      modalOverlay.addEventListener("click", (e) => {
+        if (e.target === modalOverlay) {
+          modalOverlay.classList.remove("active");
+        }
+      });
+
+      // Handle form submission by constructing a mailto: URL
+      supportForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = encodeURIComponent(nameInput.value.trim());
+        const email = encodeURIComponent(emailInput.value.trim());
+        const topic = encodeURIComponent(topicInput.value);
+        const message = encodeURIComponent(messageInput.value.trim());
+
+        const subject = encodeURIComponent("Support Request: " + topic);
+        let body = "";
+        body += "Name: " + name + "%0D%0A";
+        body += "Email: " + email + "%0D%0A";
+        body += "Topic: " + topic + "%0D%0A%0D%0A";
+        body += "Message:%0D%0A" + message;
+
+        // Create mailto link
+        const mailtoLink =
+          "mailto:info@shapehaveninnovations.org" +
+          "?subject=" +
+          subject +
+          "&body=" +
+          body;
+
+        // Redirect to mailto
+        window.location.href = mailtoLink;
+
+        // Optionally close modal after click
+        modalOverlay.classList.remove("active");
+      });
+    </script>
+  </body>
+</html>
