@@ -1,4 +1,3 @@
-<!-- support.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -57,6 +56,22 @@
         color: var(--light-text);
         font-size: 1rem;
       }
+      .status-message {
+        max-width: 600px;
+        margin: 0 auto 1rem;
+        padding: 1rem;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: 600;
+      }
+      .status-success {
+        background-color: #d4f7dc;
+        color: #006a3a;
+      }
+      .status-error {
+        background-color: #fbdada;
+        color: #7a0a0a;
+      }
       .support-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -75,10 +90,14 @@
         flex-direction: column;
         justify-content: space-between;
       }
+      /* 
+         Instead of forcing a 120px‐tall “frame” that crops your 1024×1024 PNGs,
+         we let them scale proportionally. This way the entire square icon is always visible.
+      */
       .support-card img {
         width: 100%;
-        height: 120px;
-        object-fit: cover;
+        height: auto;
+        display: block;
       }
       .support-card h3 {
         margin: 1rem;
@@ -100,7 +119,7 @@
       .support-card button:hover {
         background: #005ecb;
       }
-      /* Modal styles */
+      /* Modal overlay */
       .modal-overlay {
         position: fixed;
         top: 0;
@@ -204,6 +223,12 @@
       <p>How can we help you today?</p>
     </div>
 
+    <!--
+      If send_email.php redirected back with ?status=success or ?status=error,
+      show a notice here.
+    -->
+    <div id="statusContainer"></div>
+
     <section class="support-grid">
       <!-- 1) Technical Support -->
       <div class="support-card">
@@ -239,7 +264,8 @@
       <div class="modal">
         <button class="close-btn" id="closeModal">&times;</button>
         <h2 id="modalTitle">Support Request</h2>
-        <form id="supportForm">
+        <!-- Notice: Action points to send_email.php, method=POST. -->
+        <form id="supportForm" action="send_email.php" method="POST">
           <input type="hidden" id="topicInput" name="topic" value="" />
 
           <label for="nameInput">Name</label>
@@ -284,7 +310,23 @@
     </footer>
 
     <script>
-      // Grab elements
+      // 1) Show status message if redirected back with ?status=success or ?status=error
+      (function showStatus() {
+        const params = new URLSearchParams(window.location.search);
+        const status = params.get("status");
+        if (!status) return;
+
+        const container = document.getElementById("statusContainer");
+        if (status === "success") {
+          container.innerHTML =
+            '<div class="status-message status-success">Thank you! Your request has been sent.</div>';
+        } else if (status === "error") {
+          container.innerHTML =
+            '<div class="status-message status-error">Oops—something went wrong. Please try again.</div>';
+        }
+      })();
+
+      // 2) Modal behavior
       const modalOverlay = document.getElementById("modalOverlay");
       const closeModalBtn = document.getElementById("closeModal");
       const supportButtons = document.querySelectorAll(".support-card button");
@@ -319,35 +361,10 @@
         }
       });
 
-      // Handle form submission by constructing a mailto: URL
-      supportForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const name = encodeURIComponent(nameInput.value.trim());
-        const email = encodeURIComponent(emailInput.value.trim());
-        const topic = encodeURIComponent(topicInput.value);
-        const message = encodeURIComponent(messageInput.value.trim());
-
-        const subject = encodeURIComponent("Support Request: " + topic);
-        let body = "";
-        body += "Name: " + name + "%0D%0A";
-        body += "Email: " + email + "%0D%0A";
-        body += "Topic: " + topic + "%0D%0A%0D%0A";
-        body += "Message:%0D%0A" + message;
-
-        // Create mailto link
-        const mailtoLink =
-          "mailto:info@shapehaveninnovations.org" +
-          "?subject=" +
-          subject +
-          "&body=" +
-          body;
-
-        // Redirect to user's email client
-        window.location.href = mailtoLink;
-
-        // Close modal
-        modalOverlay.classList.remove("active");
-      });
+      // No need to intercept submission:
+      // The form's action="send_email.php" will POST directly to PHP.
+      // After PHP runs, it will redirect back to support.html?status=success (or ?status=error).
+      // We let that default behavior happen (no e.preventDefault()).
     </script>
   </body>
 </html>
