@@ -27,7 +27,7 @@
         color: var(--text-color);
       }
       header {
-        background: #ffffff;
+        background: #fff;
         padding: 1rem 2rem;
         display: flex;
         align-items: center;
@@ -56,22 +56,6 @@
         color: var(--light-text);
         font-size: 1rem;
       }
-      .status-message {
-        max-width: 600px;
-        margin: 0 auto 1rem;
-        padding: 1rem;
-        border-radius: 8px;
-        text-align: center;
-        font-weight: 600;
-      }
-      .status-success {
-        background-color: #d4f7dc;
-        color: #006a3a;
-      }
-      .status-error {
-        background-color: #fbdada;
-        color: #7a0a0a;
-      }
       .support-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -84,118 +68,40 @@
         background: var(--card-bg);
         border-radius: 12px;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
         text-align: center;
+        overflow: hidden;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
       }
-      /* 
-         Instead of forcing a 120px‐tall “frame” that crops your 1024×1024 PNGs,
-         we let them scale proportionally. This way the entire square icon is always visible.
-      */
       .support-card img {
         width: 100%;
-        height: auto;
+        height: auto; /* preserve full square image */
         display: block;
       }
       .support-card h3 {
         margin: 1rem;
         font-size: 1.125rem;
         font-weight: 600;
-        color: var(--text-color);
       }
-      .support-card button {
+      .support-card a {
+        display: inline-block;
         background: var(--primary-color);
         color: #fff;
-        border: none;
+        text-decoration: none;
         padding: 0.75rem 1.25rem;
         margin: 1rem;
         border-radius: 8px;
         font-size: 0.95rem;
-        cursor: pointer;
         font-weight: 600;
       }
-      .support-card button:hover {
-        background: #005ecb;
-      }
-      /* Modal overlay */
-      .modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        display: none;
-        align-items: center;
-        justify-content: center;
-        z-index: 1000;
-      }
-      .modal-overlay.active {
-        display: flex;
-      }
-      .modal {
-        background: #ffffff;
-        border-radius: 12px;
-        max-width: 500px;
-        width: 90%;
-        padding: 1.5rem;
-        position: relative;
-      }
-      .modal h2 {
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-      }
-      .modal .close-btn {
-        position: absolute;
-        top: 0.75rem;
-        right: 0.75rem;
-        background: none;
-        border: none;
-        font-size: 1.25rem;
-        cursor: pointer;
-        color: var(--light-text);
-      }
-      .modal form {
-        display: flex;
-        flex-direction: column;
-      }
-      .modal form label {
-        font-weight: 600;
-        margin-top: 0.75rem;
-        margin-bottom: 0.25rem;
-      }
-      .modal form input,
-      .modal form textarea {
-        padding: 0.5rem;
-        border: 1px solid #d1d1d6;
-        border-radius: 6px;
-        font-size: 1rem;
-        font-family: "Inter", sans-serif;
-      }
-      .modal form textarea {
-        resize: vertical;
-        min-height: 100px;
-      }
-      .modal form button {
-        background: var(--primary-color);
-        color: #fff;
-        border: none;
-        padding: 0.75rem 1rem;
-        margin-top: 1.25rem;
-        border-radius: 8px;
-        font-size: 1rem;
-        cursor: pointer;
-        font-weight: 600;
-      }
-      .modal form button:hover {
+      .support-card a:hover {
         background: #005ecb;
       }
       footer {
         text-align: center;
         padding: 2rem 1rem;
-        background: #ffffff;
+        background: #fff;
         border-top: 1px solid #e0e0e0;
         color: var(--light-text);
         font-size: 0.9rem;
@@ -223,81 +129,55 @@
       <p>How can we help you today?</p>
     </div>
 
-    <!--
-      If send_email.php redirected back with ?status=success or ?status=error,
-      show a notice here.
-    -->
-    <div id="statusContainer"></div>
-
     <section class="support-grid">
       <!-- 1) Technical Support -->
       <div class="support-card">
         <img src="images/support-technical.png" alt="Technical Support" />
         <h3>Technical Support</h3>
-        <button data-topic="Technical Support">Get Started</button>
+        <a
+          href="mailto:info@shapehaveninnovations.org
+?subject=Support%20Request%3A%20Technical%20Support
+&body=Hello%20ShapeHaven%20Innovations%20Support%2C%0D%0A%0D%0AName%3A%20%5BYour%20Name%5D%0D%0AEmail%3A%20%5Byour%40email.com%5D%0D%0ATopic%3A%20Technical%20Support%0D%0A%0D%0AMessage%3A%20%5BDescribe%20your%20issue%20here%5D%0D%0A%0D%0AThank%20you!"
+          >Get Started</a
+        >
       </div>
 
       <!-- 2) Collaboration -->
       <div class="support-card">
         <img src="images/support-collaboration.png" alt="Collaboration" />
         <h3>Collaboration</h3>
-        <button data-topic="Collaboration">Get Started</button>
+        <a
+          href="mailto:info@shapehaveninnovations.org
+?subject=Support%20Request%3A%20Collaboration
+&body=Hello%20ShapeHaven%20Innovations%20Support%2C%0D%0A%0D%0AName%3A%20%5BYour%20Name%5D%0D%0AEmail%3A%20%5Byour%40email.com%5D%0D%0ATopic%3A%20Collaboration%0D%0A%0D%0AMessage%3A%20%5BDescribe%20your%20proposal%20here%5D%0D%0A%0D%0ABest%20regards%2C%0D%0A%5BYour%20Name%5D"
+          >Get Started</a
+        >
       </div>
 
       <!-- 3) General Knowledge -->
       <div class="support-card">
         <img src="images/support-general.png" alt="General Knowledge" />
         <h3>General Knowledge</h3>
-        <button data-topic="General Knowledge">Get Started</button>
+        <a
+          href="mailto:info@shapehaveninnovations.org
+?subject=Support%20Request%3A%20General%20Knowledge
+&body=Hello%20ShapeHaven%20Innovations%20Support%2C%0D%0A%0D%0AName%3A%20%5BYour%20Name%5D%0D%0AEmail%3A%20%5Byour%40email.com%5D%0D%0ATopic%3A%20General%20Knowledge%0D%0A%0D%0AMessage%3A%20%5BYour%20Question%20here%5D%0D%0A%0D%0AThank%20you!"
+          >Get Started</a
+        >
       </div>
 
       <!-- 4) Report a Bug -->
       <div class="support-card">
         <img src="images/support-bug.png" alt="Report a Bug" />
         <h3>Report a Bug</h3>
-        <button data-topic="Report a Bug">Get Started</button>
+        <a
+          href="mailto:info@shapehaveninnovations.org
+?subject=Support%20Request%3A%20Report%20a%20Bug
+&body=Hello%20ShapeHaven%20Innovations%20Support%2C%0D%0A%0D%0AName%3A%20%5BYour%20Name%5D%0D%0AEmail%3A%20%5Byour%40email.com%5D%0D%0ATopic%3A%20Report%20a%20Bug%0D%0A%0D%0AMessage%3A%20%5BDescribe%20the%20bug%20here%5D%0D%0A%0D%0AThanks%20for%20your%20help!"
+          >Get Started</a
+        >
       </div>
     </section>
-
-    <!-- Modal Overlay -->
-    <div id="modalOverlay" class="modal-overlay">
-      <div class="modal">
-        <button class="close-btn" id="closeModal">&times;</button>
-        <h2 id="modalTitle">Support Request</h2>
-        <!-- Notice: Action points to send_email.php, method=POST. -->
-        <form id="supportForm" action="send_email.php" method="POST">
-          <input type="hidden" id="topicInput" name="topic" value="" />
-
-          <label for="nameInput">Name</label>
-          <input
-            type="text"
-            id="nameInput"
-            name="name"
-            placeholder="Your full name"
-            required
-          />
-
-          <label for="emailInput">Email</label>
-          <input
-            type="email"
-            id="emailInput"
-            name="email"
-            placeholder="you@example.com"
-            required
-          />
-
-          <label for="messageInput">Message</label>
-          <textarea
-            id="messageInput"
-            name="message"
-            placeholder="Please describe your issue or question."
-            required
-          ></textarea>
-
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    </div>
 
     <footer>
       <p>
@@ -308,63 +188,5 @@
       </p>
       <p>&copy; 2025 ShapeHaven Innovations LLC</p>
     </footer>
-
-    <script>
-      // 1) Show status message if redirected back with ?status=success or ?status=error
-      (function showStatus() {
-        const params = new URLSearchParams(window.location.search);
-        const status = params.get("status");
-        if (!status) return;
-
-        const container = document.getElementById("statusContainer");
-        if (status === "success") {
-          container.innerHTML =
-            '<div class="status-message status-success">Thank you! Your request has been sent.</div>';
-        } else if (status === "error") {
-          container.innerHTML =
-            '<div class="status-message status-error">Oops—something went wrong. Please try again.</div>';
-        }
-      })();
-
-      // 2) Modal behavior
-      const modalOverlay = document.getElementById("modalOverlay");
-      const closeModalBtn = document.getElementById("closeModal");
-      const supportButtons = document.querySelectorAll(".support-card button");
-      const modalTitle = document.getElementById("modalTitle");
-      const topicInput = document.getElementById("topicInput");
-      const supportForm = document.getElementById("supportForm");
-      const nameInput = document.getElementById("nameInput");
-      const emailInput = document.getElementById("emailInput");
-      const messageInput = document.getElementById("messageInput");
-
-      // Open modal when any "Get Started" button is clicked
-      supportButtons.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const topic = btn.getAttribute("data-topic");
-          modalTitle.textContent = "Support Request: " + topic;
-          topicInput.value = topic;
-          nameInput.value = "";
-          emailInput.value = "";
-          messageInput.value = "";
-          modalOverlay.classList.add("active");
-        });
-      });
-
-      // Close modal when “×” is clicked
-      closeModalBtn.addEventListener("click", () => {
-        modalOverlay.classList.remove("active");
-      });
-      // Close if user clicks outside modal content
-      modalOverlay.addEventListener("click", (e) => {
-        if (e.target === modalOverlay) {
-          modalOverlay.classList.remove("active");
-        }
-      });
-
-      // No need to intercept submission:
-      // The form's action="send_email.php" will POST directly to PHP.
-      // After PHP runs, it will redirect back to support.html?status=success (or ?status=error).
-      // We let that default behavior happen (no e.preventDefault()).
-    </script>
   </body>
 </html>
