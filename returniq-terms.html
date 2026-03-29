@@ -4,34 +4,252 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms of Service | ReturnIQ by ShapeHaven Innovations</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a1a; line-height: 1.7; background: #fff; }
-    .container { max-width: 800px; margin: 0 auto; padding: 48px 24px; }
-    h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; color: #111827; }
-    .subtitle { font-size: 15px; color: #6B7280; margin-bottom: 40px; }
-    h2 { font-size: 20px; font-weight: 600; color: #111827; margin: 36px 0 12px; padding-top: 12px; border-top: 1px solid #F3F4F6; }
-    h3 { font-size: 16px; font-weight: 600; color: #374151; margin: 20px 0 8px; }
-    p { margin-bottom: 12px; font-size: 15px; color: #374151; }
-    ul, ol { margin: 8px 0 16px 24px; }
-    li { margin-bottom: 6px; font-size: 15px; color: #374151; }
-    a { color: #6366F1; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .badge { display: inline-block; background: #6366F1; color: #fff; font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 4px; margin-bottom: 16px; }
-    .highlight { background: #F0F0FF; border-left: 3px solid #6366F1; padding: 12px 16px; margin: 16px 0; border-radius: 0 6px 6px 0; }
-    .highlight p { margin-bottom: 0; }
-    table { width: 100%; border-collapse: collapse; margin: 16px 0; }
-    th, td { text-align: left; padding: 10px 14px; border: 1px solid #E5E7EB; font-size: 14px; }
-    th { background: #F9FAFB; font-weight: 600; color: #111827; }
-    td { color: #374151; }
-    .footer { margin-top: 48px; padding-top: 24px; border-top: 2px solid #F3F4F6; text-align: center; color: #9CA3AF; font-size: 13px; }
+    :root {
+      --primary-color: #007aff;
+      --bg-color: #f5f5f7;
+      --text-color: #1c1c1e;
+      --light-text: #6e6e73;
+    }
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
+    body { 
+      font-family: "Inter", sans-serif; 
+      color: var(--text-color); 
+      line-height: 1.7; 
+      background: var(--bg-color);
+    }
+    header {
+      background: #ffffff;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header img {
+      height: 64px;
+      width: auto;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    nav a:hover {
+      color: var(--primary-color);
+    }
+    .legal-nav {
+      background: var(--bg-color);
+      padding: 1.5rem 2rem;
+      margin: 2rem auto;
+      max-width: 900px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .legal-nav p {
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--light-text);
+    }
+    .legal-nav a {
+      display: inline-block;
+      margin: 0 0.75rem;
+      padding: 0.5rem 1rem;
+      background: #fff;
+      color: var(--primary-color);
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+    .legal-nav a:hover {
+      background: var(--primary-color);
+      color: #fff;
+    }
+    .container { 
+      max-width: 900px; 
+      margin: 0 auto; 
+      padding: 2.5rem 2rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      margin-bottom: 2rem;
+    }
+    h1 { 
+      font-size: 2rem; 
+      font-weight: 700; 
+      margin-bottom: 0.5rem; 
+      color: var(--text-color); 
+    }
+    .subtitle { 
+      font-size: 0.95rem; 
+      color: var(--light-text); 
+      margin-bottom: 2rem; 
+    }
+    h2 { 
+      font-size: 1.5rem; 
+      font-weight: 600; 
+      color: var(--text-color); 
+      margin: 2rem 0 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e0e0e0;
+    }
+    h2:first-of-type {
+      border-top: none;
+      padding-top: 0;
+      margin-top: 0;
+    }
+    h3 { 
+      font-size: 1.1rem; 
+      font-weight: 600; 
+      color: var(--text-color); 
+      margin: 1.5rem 0 0.75rem; 
+    }
+    p { 
+      margin-bottom: 1rem; 
+      font-size: 0.95rem; 
+      color: var(--light-text);
+    }
+    ul, ol { 
+      margin: 1rem 0 1rem 1.5rem; 
+    }
+    li { 
+      margin-bottom: 0.75rem; 
+      font-size: 0.95rem; 
+      color: var(--light-text);
+    }
+    a { 
+      color: var(--primary-color); 
+      text-decoration: none; 
+    }
+    a:hover { 
+      text-decoration: underline; 
+    }
+    table { 
+      width: 100%; 
+      border-collapse: collapse; 
+      margin: 1rem 0; 
+    }
+    th, td { 
+      text-align: left; 
+      padding: 0.75rem; 
+      border: 1px solid #e0e0e0; 
+      font-size: 0.9rem; 
+    }
+    th { 
+      background: var(--bg-color); 
+      font-weight: 600; 
+      color: var(--text-color); 
+    }
+    td { 
+      color: var(--light-text); 
+    }
+    .badge { 
+      display: inline-block; 
+      background: var(--primary-color); 
+      color: #fff; 
+      font-size: 0.75rem; 
+      font-weight: 600; 
+      padding: 0.25rem 0.75rem; 
+      border-radius: 4px; 
+      margin-bottom: 1rem; 
+    }
+    .highlight { 
+      background: #f0f0ff; 
+      border-left: 3px solid var(--primary-color); 
+      padding: 1rem; 
+      margin: 1rem 0; 
+      border-radius: 0 6px 6px 0; 
+    }
+    .highlight p { 
+      margin-bottom: 0; 
+    }
+    .footer { 
+      margin-top: 2rem; 
+      padding-top: 1.5rem; 
+      border-top: 1px solid #e0e0e0; 
+      text-align: center; 
+      color: var(--light-text); 
+      font-size: 0.85rem; 
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--light-text);
+      font-size: 0.9rem;
+      border-top: 1px solid #e0e0e0;
+      background: #fff;
+    }
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      nav {
+        gap: 1rem;
+      }
+      nav a {
+        font-size: 0.85rem;
+      }
+      .container {
+        padding: 1.5rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      .legal-nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+    }
   </style>
 </head>
 <body>
+  <header>
+    <img src="images/logo.png" alt="ShapeHaven Innovations" />
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="github.html">GitHub</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <div class="legal-nav">
+    <p><strong>Legal Documents</strong></p>
+    <a href="privacy.html">ShapeHaven Privacy</a>
+    <a href="returniq-privacy.html">ReturnIQ Privacy</a>
+    <a href="returniq-terms.html">ReturnIQ Terms</a>
+  </div>
+
   <div class="container">
     <span class="badge">ReturnIQ</span>
     <h1>Terms of Service</h1>
-    <p class="subtitle">Last updated: February 28, 2026</p>
+    <p class="subtitle">Last updated: March 2026</p>
 
     <p>These Terms of Service ("Terms") govern your use of ReturnIQ, a Shopify application operated by ShapeHaven Innovations LLC ("ShapeHaven," "we," "us," or "our"). By installing or using ReturnIQ ("Service"), you ("Merchant," "you," or "your") agree to be bound by these Terms.</p>
 
@@ -44,7 +262,7 @@
       <li>Displays analytics through an interactive dashboard within the Shopify admin.</li>
     </ul>
 
-    <h2>2. Account &amp; Installation</h2>
+    <h2>2. Account & Installation</h2>
     <ul>
       <li>You must have an active Shopify store to use ReturnIQ.</li>
       <li>By installing ReturnIQ, you authorize us to access the Shopify API scopes requested during installation (products, orders, customers).</li>
@@ -52,7 +270,7 @@
       <li>You may uninstall ReturnIQ at any time through your Shopify admin. Uninstalling will cancel any active subscription and trigger data deletion per our Privacy Policy.</li>
     </ul>
 
-    <h2>3. Subscription Plans &amp; Billing</h2>
+    <h2>3. Subscription Plans & Billing</h2>
 
     <h3>3.1 Plans</h3>
     <table>
@@ -97,14 +315,14 @@
       <li><strong>Ownership:</strong> AI-generated content produced for your store (descriptions, recommendations) is yours to use as you see fit.</li>
     </ul>
 
-    <h2>6. Data Ownership &amp; Intellectual Property</h2>
+    <h2>6. Data Ownership & Intellectual Property</h2>
     <ul>
       <li><strong>Your Data:</strong> You retain full ownership of all data from your Shopify store. We do not claim any ownership rights to your product, order, customer, or return data.</li>
       <li><strong>Our Service:</strong> The ReturnIQ application, including its code, design, algorithms, AI models, and documentation, is the intellectual property of ShapeHaven Innovations LLC.</li>
       <li><strong>Feedback:</strong> If you provide suggestions or feedback about the Service, we may use that feedback to improve ReturnIQ without obligation to you.</li>
     </ul>
 
-    <h2>7. Data Processing &amp; Privacy</h2>
+    <h2>7. Data Processing & Privacy</h2>
     <p>Our collection and use of your data is governed by our <a href="returniq-privacy.html">Privacy Policy</a>, which is incorporated into these Terms by reference. Key points:</p>
     <ul>
       <li>We process your data solely to provide and improve the Service.</li>
@@ -155,7 +373,7 @@
       <li><strong>Effect:</strong> Upon termination, your right to use the Service ceases immediately. Data deletion will proceed per our Privacy Policy.</li>
     </ul>
 
-    <h2>13. Governing Law &amp; Disputes</h2>
+    <h2>13. Governing Law & Disputes</h2>
     <ul>
       <li>These Terms are governed by the laws of the State of Delaware, United States, without regard to conflict of law principles.</li>
       <li>Any disputes shall first be attempted to be resolved through good-faith negotiation for 30 days.</li>
@@ -193,5 +411,13 @@
       <p>&copy; 2026 ShapeHaven Innovations LLC. All rights reserved.</p>
     </div>
   </div>
+
+  <footer>
+    <p>
+      Have questions? Reach out:
+      <a href="mailto:info@shapehaveninnovations.org">info@shapehaveninnovations.org</a>
+    </p>
+    <p>&copy; 2025 ShapeHaven Innovations LLC</p>
+  </footer>
 </body>
 </html>
