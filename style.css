@@ -258,6 +258,12 @@ nav a:hover {
   margin: 0 auto;
 }
 
+/* Images */
+img {
+  border-radius: 16px;
+  transition: var(--transition);
+}
+
 /* Footer */
 footer {
   padding: 4rem 0;
