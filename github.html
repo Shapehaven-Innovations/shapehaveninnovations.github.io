@@ -3,390 +3,165 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GitHub | ShapeHaven Innovations</title>
+    <title>GitHub Community | ShapeHaven Innovations</title>
+    <meta name="description" content="Explore ShapeHaven Innovations' open-source projects. Contribute to the future of iOS and IT solutions through code, issues, and discussions." />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="GitHub Community | ShapeHaven Innovations" />
+    <meta property="og:description" content="Explore our open-source projects and contribute to the future of iOS and IT solutions." />
+    <meta property="og:image" content="https://shapehaveninnovations.org/images/logo.png" />
+    <meta property="og:url" content="https://shapehaveninnovations.org/github.html" />
+    <meta property="og:type" content="website" />
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css" />
     <style>
-      :root {
-        --primary-color: #007aff;
-        --bg-color: #f5f5f7;
-        --text-color: #1c1c1e;
-        --light-text: #6e6e73;
-      }
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        font-family: "Inter", sans-serif;
-        background: var(--bg-color);
-        color: var(--text-color);
-        line-height: 1.6;
-      }
-      header {
-        background: #ffffff;
-        padding: 1rem 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-      header img {
-        height: 48px;
-        width: auto;
-      }
-      nav {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      nav a {
-        color: var(--text-color);
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 0.9rem;
-        transition: color 0.2s ease;
-        white-space: nowrap;
-      }
-      nav a:hover {
-        color: var(--primary-color);
-      }
-      .page-header {
-        text-align: center;
-        padding: 2rem 1rem;
-        background: linear-gradient(135deg, rgba(0, 122, 255, 0.05) 0%, rgba(0, 122, 255, 0.02) 100%);
-      }
-      .page-header h1 {
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
-        font-weight: 700;
-        word-break: break-word;
-      }
-      .page-header p {
-        color: var(--light-text);
-        font-size: 0.95rem;
-        line-height: 1.5;
-        padding: 0 1rem;
-      }
-      .community {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 1.5rem;
-        padding: 2rem 1rem;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-      .card {
-        background: #fff;
-        border-radius: 12px;
-        padding: 1.5rem;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        text-align: center;
-        transition: all 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-      }
       .card-icon {
-        height: 48px;
-        width: 48px;
-        margin: 0 auto 1rem;
-        flex-shrink: 0;
+        height: 64px;
+        width: 64px;
+        margin: 0 auto 1.5rem;
         display: flex;
         align-items: center;
         justify-content: center;
       }
-      .card img {
+      .card-icon img {
         height: 100%;
         width: 100%;
         object-fit: contain;
       }
-      .card h3 {
-        margin-bottom: 0.75rem;
-        font-weight: 600;
-        font-size: 1.1rem;
-        color: var(--text-color);
-      }
-      .card p {
-        color: var(--light-text);
-        margin-bottom: 1.25rem;
-        font-size: 0.9rem;
-        line-height: 1.5;
-        flex-grow: 1;
-        width: 100%;
-      }
-      .card-content {
-        flex-grow: 1;
+      .card {
+        text-align: center;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        width: 100%;
+      }
+      .card p {
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
       }
       pre {
-        background: #f0f0f0;
-        padding: 0.75rem;
-        border-radius: 6px;
-        overflow-x: auto;
-        font-size: 0.7rem;
-        margin: 0.75rem 0;
-        border-left: 3px solid var(--primary-color);
+        background: var(--bg-color);
+        padding: 1rem;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        margin: 1rem 0;
+        border: 1px solid var(--border-color);
         word-break: break-all;
         white-space: pre-wrap;
-        width: 100%;
         text-align: left;
-        box-sizing: border-box;
-      }
-      pre code {
         color: var(--text-color);
       }
-      .card a {
-        display: inline-block;
-        color: #fff;
-        background: var(--primary-color);
-        text-decoration: none;
-        font-weight: 600;
-        padding: 0.65rem 1.25rem;
-        border-radius: 6px;
-        font-size: 0.85rem;
-        transition: all 0.2s ease;
-        white-space: nowrap;
-        margin-top: auto;
-      }
-      .card a:hover {
-        background: #005ecb;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
-      }
-      footer {
-        text-align: center;
-        padding: 1.5rem 1rem;
-        color: var(--light-text);
-        font-size: 0.85rem;
-        border-top: 1px solid #e0e0e0;
-        background: #fff;
-        line-height: 1.6;
-      }
-      footer a {
-        color: var(--primary-color);
-        text-decoration: none;
-        font-weight: 600;
-      }
-      footer p {
-        margin: 0.5rem 0;
-      }
-
-      /* Mobile-first responsive adjustments */
-      @media (max-width: 480px) {
-        header {
-          padding: 0.75rem 1rem;
-          gap: 0.75rem;
-        }
-        header img {
-          height: 40px;
-        }
-        nav {
-          gap: 0.75rem;
-          width: 100%;
-          justify-content: space-around;
-        }
-        nav a {
-          font-size: 0.8rem;
-        }
-        .page-header {
-          padding: 1.5rem 0.75rem;
-        }
-        .page-header h1 {
-          font-size: 1.5rem;
-        }
-        .page-header p {
-          font-size: 0.85rem;
-          padding: 0 0.5rem;
-        }
-        .community {
-          grid-template-columns: 1fr;
-          gap: 1rem;
-          padding: 1rem 0.75rem;
-        }
-        .card {
-          padding: 1.25rem;
-        }
-        .card h3 {
-          font-size: 1rem;
-        }
-        .card p {
-          font-size: 0.85rem;
-          margin-bottom: 1rem;
-        }
-        pre {
-          font-size: 0.65rem;
-          padding: 0.5rem;
-          margin: 0.5rem 0;
-        }
-        .card a {
-          padding: 0.6rem 1rem;
-          font-size: 0.8rem;
-        }
-        footer {
-          padding: 1rem 0.75rem;
-          font-size: 0.8rem;
-        }
-      }
-
-      @media (max-width: 768px) {
-        header {
-          padding: 1rem;
-        }
-        nav {
-          gap: 1rem;
-        }
-        nav a {
-          font-size: 0.85rem;
-        }
-        .page-header h1 {
-          font-size: 1.75rem;
-        }
-        .page-header p {
-          font-size: 0.95rem;
-        }
-        .community {
-          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-          gap: 1.5rem;
-          padding: 1.5rem;
-        }
-      }
-
-      @media (min-width: 769px) {
-        .community {
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        }
+      .card .btn {
+        width: 100%;
       }
     </style>
   </head>
   <body>
     <header>
-      <img src="images/logo.png" alt="ShapeHaven Innovations" />
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="github.html">GitHub</a>
-        <a href="support.html">Support</a>
-        <a href="privacy.html">Privacy</a>
-      </nav>
+      <div class="container">
+        <div class="logo-container">
+          <a href="index.html">
+            <img src="images/logo.png" alt="ShapeHaven Innovations" class="logo" />
+          </a>
+        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="github.html">GitHub</a>
+          <a href="support.html">Support</a>
+          <a href="privacy.html">Privacy</a>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </nav>
+      </div>
     </header>
 
-    <div class="page-header">
-      <h1>GitHub Community</h1>
-      <p>Explore our open-source projects and contribute to the future of iOS and IT solutions.</p>
-    </div>
+    <main>
+      <div class="container">
+        <div class="section-header" style="margin-top: 4rem;">
+          <h1>GitHub Community</h1>
+          <p class="section-intro">Explore our open-source projects and contribute to the future of iOS and IT solutions.</p>
+        </div>
 
-    <section class="community">
-      <!-- 1. Contribute -->
-      <div class="card">
-        <div class="card-icon">
-          <img src="images/github-contribute.png" alt="Contribute icon" />
-        </div>
-        <h3>Contribute</h3>
-        <div class="card-content">
-          <p>Fork & clone our repo, then code your next great feature. We welcome contributions from developers of all skill levels.</p>
-          <pre><code>git clone https://github.com/Shapehaven-Innovations/Shapehaven-Innovations.git</code></pre>
-        </div>
-        <a href="https://github.com/Shapehaven-Innovations" target="_blank" rel="noopener">
-          View Repos
-        </a>
-      </div>
+        <section class="grid">
+          <!-- 1. Contribute -->
+          <div class="card">
+            <div class="card-icon">
+              <img src="images/github-contribute.png" alt="Contribute icon" />
+            </div>
+            <h3>Contribute</h3>
+            <p>Fork & clone our repo, then code your next great feature. We welcome contributions from developers of all skill levels.</p>
+            <pre><code>git clone https://github.com/Shapehaven-Innovations/Shapehaven-Innovations.git</code></pre>
+            <a href="https://github.com/Shapehaven-Innovations" class="btn btn-primary" target="_blank" rel="noopener">View Repos</a>
+          </div>
 
-      <!-- 2. Report Issues -->
-      <div class="card">
-        <div class="card-icon">
-          <img src="images/github-issues.png" alt="Issues icon" />
-        </div>
-        <h3>Report Issues</h3>
-        <div class="card-content">
-          <p>Found a bug or have a feature request? Open an issue and help us improve our projects.</p>
-        </div>
-        <a href="support.html">
-          Report an Issue
-        </a>
-      </div>
+          <!-- 2. Report Issues -->
+          <div class="card">
+            <div class="card-icon">
+              <img src="images/github-issues.png" alt="Issues icon" />
+            </div>
+            <h3>Report Issues</h3>
+            <p>Found a bug or have a feature request? Open an issue and help us improve our projects.</p>
+            <a href="support.html" class="btn btn-primary">Report an Issue</a>
+          </div>
 
-      <!-- 3. Pull Requests -->
-      <div class="card">
-        <div class="card-icon">
-          <img src="images/github-pull.png" alt="Pull Request icon" />
-        </div>
-        <h3>Pull Requests</h3>
-        <div class="card-content">
-          <p>Submit your improvements and help us evolve faster. We review all PRs thoughtfully and provide feedback.</p>
-        </div>
-        <a href="https://github.com/Shapehaven-Innovations" target="_blank" rel="noopener">
-          Submit a PR
-        </a>
-      </div>
+          <!-- 3. Pull Requests -->
+          <div class="card">
+            <div class="card-icon">
+              <img src="images/github-pull.png" alt="Pull Request icon" />
+            </div>
+            <h3>Pull Requests</h3>
+            <p>Submit your improvements and help us evolve faster. We review all PRs thoughtfully and provide feedback.</p>
+            <a href="https://github.com/Shapehaven-Innovations" class="btn btn-primary" target="_blank" rel="noopener">Submit a PR</a>
+          </div>
 
-      <!-- 4. Support Contact -->
-      <div class="card">
-        <div class="card-icon">
-          <img src="images/support-technical.png" alt="Support icon" />
-        </div>
-        <h3>Need Help?</h3>
-        <div class="card-content">
-          <p>Have questions about our projects or need technical support? Reach out to our team.</p>
-        </div>
-        <a href="support.html">
-          Contact Support
-        </a>
-      </div>
+          <!-- 4. Support Contact -->
+          <div class="card">
+            <div class="card-icon">
+              <img src="images/support-technical.png" alt="Support icon" />
+            </div>
+            <h3>Need Help?</h3>
+            <p>Have questions about our projects or need technical support? Reach out to our team.</p>
+            <a href="support.html" class="btn btn-primary">Contact Support</a>
+          </div>
 
-      <!-- 5. GitHub Tutorials -->
-      <div class="card">
-        <div class="card-icon">
-          <img src="images/github-tutorials.png" alt="Tutorials icon" />
-        </div>
-        <h3>Tutorials</h3>
-        <div class="card-content">
-          <p>New to GitHub or our projects? Check out our curated resources and beginner guides.</p>
-        </div>
-        <a href="https://github.com/Shapehaven-Innovations" target="_blank" rel="noopener">
-          View Resources
-        </a>
-      </div>
+          <!-- 5. GitHub Tutorials -->
+          <div class="card">
+            <div class="card-icon">
+              <img src="images/github-tutorials.png" alt="Tutorials icon" />
+            </div>
+            <h3>Tutorials</h3>
+            <p>New to GitHub or our projects? Check out our curated resources and beginner guides.</p>
+            <a href="https://github.com/Shapehaven-Innovations" class="btn btn-primary" target="_blank" rel="noopener">View Resources</a>
+          </div>
 
-      <!-- 6. Discussions -->
-      <div class="card">
-        <div class="card-icon">
-          <img src="images/github-trending.png" alt="Discussions icon" />
-        </div>
-        <h3>Discussions</h3>
-        <div class="card-content">
-          <p>Join our community discussions to share ideas, ask questions, and collaborate on technical topics.</p>
-        </div>
-        <a href="https://github.com/orgs/Shapehaven-Innovations/discussions" target="_blank" rel="noopener">
-          Join Discussions
-        </a>
+          <!-- 6. Discussions -->
+          <div class="card">
+            <div class="card-icon">
+              <img src="images/github-trending.png" alt="Discussions icon" />
+            </div>
+            <h3>Discussions</h3>
+            <p>Join our community discussions to share ideas, ask questions, and collaborate on technical topics.</p>
+            <a href="https://github.com/orgs/Shapehaven-Innovations/discussions" class="btn btn-primary" target="_blank" rel="noopener">Join Discussions</a>
+          </div>
+        </section>
       </div>
-    </section>
+    </main>
 
     <footer>
-      <p>
-        Have questions? Reach out:
-        <a href="mailto:info@shapehaveninnovations.org">info@shapehaveninnovations.org</a>
-      </p>
-      <p>&copy; 2025 ShapeHaven Innovations LLC</p>
+      <div class="container">
+        <p>
+          Have questions? Reach out:
+          <a href="mailto:info@shapehaveninnovations.org">info@shapehaveninnovations.org</a>
+        </p>
+        <p>&copy; 2025 ShapeHaven Innovations LLC</p>
+      </div>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>

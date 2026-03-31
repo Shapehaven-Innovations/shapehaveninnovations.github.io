@@ -4,408 +4,233 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Privacy Policy | ShapeHaven Innovations</title>
+    <meta name="description" content="ShapeHaven Innovations Privacy Policy. Learn how we protect your data and maintain your privacy across our website and mobile applications." />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Privacy Policy | ShapeHaven Innovations" />
+    <meta property="og:description" content="Our commitment to your privacy and data protection." />
+    <meta property="og:image" content="https://shapehaveninnovations.org/images/logo.png" />
+    <meta property="og:url" content="https://shapehaveninnovations.org/privacy.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css" />
     <style>
-      :root {
-        --primary-color: #007aff;
-        --bg-color: #f5f5f7;
-        --text-color: #1c1c1e;
-        --light-text: #6e6e73;
-      }
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        font-family: "Inter", sans-serif;
-        background: var(--bg-color);
-        color: var(--text-color);
-        line-height: 1.6;
-      }
-      header {
-        background: #ffffff;
-        padding: 1rem 2rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-      }
-      header img {
-        height: 64px;
-        width: auto;
-      }
-      nav {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-      }
-      nav a {
-        text-decoration: none;
-        color: var(--text-color);
-        font-weight: 600;
-        font-size: 0.95rem;
-        transition: color 0.2s ease;
-      }
-      nav a:hover {
-        color: var(--primary-color);
-      }
-      section.privacy-policy {
-        background: #fff;
-        padding: 2.5rem;
-        margin: 2rem auto;
-        max-width: 900px;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      }
-      section.privacy-policy h2 {
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-        color: var(--text-color);
-        border-top: 1px solid #e0e0e0;
-        padding-top: 1.5rem;
-      }
-      section.privacy-policy h2:first-of-type {
-        border-top: none;
-        padding-top: 0;
-        margin-top: 0;
-      }
-      section.privacy-policy h3 {
-        margin-top: 1.5rem;
-        margin-bottom: 0.75rem;
-        font-size: 1.1rem;
-        color: var(--text-color);
-        font-weight: 600;
-      }
-      section.privacy-policy p,
-      section.privacy-policy li {
-        margin-bottom: 1rem;
-        color: var(--light-text);
-        font-size: 0.95rem;
-      }
-      section.privacy-policy ol,
-      section.privacy-policy ul {
-        margin-left: 1.5rem;
-        margin-bottom: 1rem;
-      }
-      section.privacy-policy ol li,
-      section.privacy-policy ul li {
-        margin-bottom: 0.75rem;
-      }
-      section.privacy-policy strong {
-        color: var(--text-color);
-        font-weight: 600;
-      }
-      section.privacy-policy a {
-        color: var(--primary-color);
-        text-decoration: none;
-      }
-      section.privacy-policy a:hover {
-        text-decoration: underline;
+      .legal-container {
+        max-width: 800px;
+        margin: 4rem auto;
+        padding: 0 1.5rem;
       }
       .legal-nav {
-        background: var(--bg-color);
-        padding: 1.5rem 2rem;
-        margin: 2rem auto;
-        max-width: 900px;
-        border-radius: 8px;
-        text-align: center;
-      }
-      .legal-nav p {
-        margin-bottom: 0.75rem;
-        font-size: 0.9rem;
-        color: var(--light-text);
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        box-shadow: 0 4px 12px var(--shadow-color);
       }
       .legal-nav a {
-        display: inline-block;
-        margin: 0 0.75rem;
-        padding: 0.5rem 1rem;
-        background: #fff;
-        color: var(--primary-color);
-        text-decoration: none;
-        border-radius: 6px;
         font-weight: 600;
         font-size: 0.9rem;
-        transition: all 0.2s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        background: var(--bg-color);
+        color: var(--primary-color);
+        text-decoration: none;
+        transition: var(--transition);
       }
-      .legal-nav a:hover {
+      .legal-nav a:hover, .legal-nav a.active {
         background: var(--primary-color);
         color: #fff;
       }
-      footer {
-        text-align: center;
-        padding: 2rem 1rem;
-        color: var(--light-text);
-        font-size: 0.9rem;
-        border-top: 1px solid #e0e0e0;
-        background: #fff;
+      .legal-content {
+        background: var(--card-bg);
+        padding: 3rem;
+        border-radius: 24px;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 8px 24px var(--shadow-color);
       }
-      footer a {
-        color: var(--primary-color);
-        text-decoration: none;
-        font-weight: 600;
+      .legal-content h2 {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        font-size: 1.75rem;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 0.5rem;
+      }
+      .legal-content h2:first-of-type {
+        margin-top: 0;
+      }
+      .legal-content h3 {
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+        font-size: 1.25rem;
+      }
+      .legal-content p, .legal-content li {
+        color: var(--light-text);
+        margin-bottom: 1.25rem;
+      }
+      .legal-content ul, .legal-content ol {
+        margin-left: 1.5rem;
+        margin-bottom: 1.5rem;
       }
       @media (max-width: 768px) {
-        section.privacy-policy {
+        .legal-content {
           padding: 1.5rem;
         }
-        header {
+        .legal-nav {
           flex-direction: column;
-          gap: 1rem;
-        }
-        nav {
-          gap: 1rem;
-        }
-        nav a {
-          font-size: 0.85rem;
         }
         .legal-nav a {
-          display: block;
-          margin: 0.5rem 0;
+          text-align: center;
         }
       }
     </style>
   </head>
   <body>
     <header>
-      <img src="images/logo.png" alt="ShapeHaven Innovations" />
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="github.html">GitHub</a>
-        <a href="support.html">Support</a>
-        <a href="privacy.html">Privacy</a>
-      </nav>
+      <div class="container">
+        <div class="logo-container">
+          <a href="index.html">
+            <img src="images/logo.png" alt="ShapeHaven Innovations" class="logo" />
+          </a>
+        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="github.html">GitHub</a>
+          <a href="support.html">Support</a>
+          <a href="privacy.html">Privacy</a>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </nav>
+      </div>
     </header>
 
-    <div class="legal-nav">
-      <p><strong>Legal Documents</strong></p>
-      <a href="privacy.html">ShapeHaven Privacy</a>
-      <a href="returniq-privacy.html">ReturnIQ Privacy</a>
-      <a href="returniq-terms.html">ReturnIQ Terms</a>
-    </div>
+    <main class="legal-container">
+      <div class="legal-nav">
+        <a href="privacy.html" class="active">ShapeHaven Privacy</a>
+        <a href="returniq-privacy.html">ReturnIQ Privacy</a>
+        <a href="returniq-terms.html">ReturnIQ Terms</a>
+      </div>
 
-    <section class="privacy-policy">
-      <h2>Privacy Policy</h2>
-      <p><strong>Last updated:</strong> March 2026</p>
-      <p>
-        ShapeHaven Innovations LLC ("ShapeHaven," "we," "us," or "our") operates 
-        this website (shapehaveninnovations.org) and one or more mobile applications 
-        (each an "App"). We respect your privacy and are committed to protecting any 
-        data handled in connection with your use of our website or App(s). This Privacy 
-        Policy explains how we collect, use, disclose, and safeguard your information.
-      </p>
+      <article class="legal-content">
+        <h2>Privacy Policy</h2>
+        <p><strong>Last updated:</strong> March 2026</p>
+        <p>
+          ShapeHaven Innovations LLC ("ShapeHaven," "we," "us," or "our") operates 
+          this website (shapehaveninnovations.org) and one or more mobile applications 
+          (each an "App"). We respect your privacy and are committed to protecting any 
+          data handled in connection with your use of our website or App(s). This Privacy 
+          Policy explains how we collect, use, disclose, and safeguard your information.
+        </p>
 
-      <h3>Scope & Applicability</h3>
-      <p>
-        This Privacy Policy applies to data collected or processed directly by ShapeHaven 
-        Innovations LLC in connection with your use of our website and any of our App(s). 
-        By accessing our website or installing/using our App(s), you agree to the terms 
-        of this Privacy Policy.
-      </p>
-      <p>
-        <strong>Note:</strong> If you use ReturnIQ (our Shopify application), that product 
-        has its own dedicated Privacy Policy and Terms of Service. Please refer to those 
-        documents for information specific to ReturnIQ.
-      </p>
+        <h3>Scope & Applicability</h3>
+        <p>
+          This Privacy Policy applies to data collected or processed directly by ShapeHaven 
+          Innovations LLC in connection with your use of our website and any of our App(s). 
+          By accessing our website or installing/using our App(s), you agree to the terms 
+          of this Privacy Policy.
+        </p>
+        <p>
+          <strong>Note:</strong> If you use ReturnIQ (our Shopify application), that product 
+          has its own dedicated Privacy Policy and Terms of Service. Please refer to those 
+          documents for information specific to ReturnIQ.
+        </p>
 
-      <h2>1. Information We Collect</h2>
+        <h2>1. Information We Collect</h2>
+        <h3>1.1 Website Usage</h3>
+        <p>When you visit our website, we may collect limited information:</p>
+        <ul>
+          <li><strong>No Analytics Tracking:</strong> We do not use Google Analytics, Facebook Pixel, or any third-party analytics services. We do not track your browsing behavior, clicks, or session duration.</li>
+          <li><strong>No Cookies:</strong> We do not use cookies or similar tracking technologies on our website.</li>
+          <li><strong>Contact Information:</strong> If you email us or fill out a contact form, we collect the information you voluntarily provide (name, email, message).</li>
+        </ul>
 
-      <h3>1.1 Website Usage</h3>
-      <p>
-        When you visit our website, we may collect limited information:
-      </p>
-      <ul>
-        <li>
-          <strong>No Analytics Tracking:</strong> We do not use Google Analytics, 
-          Facebook Pixel, or any third-party analytics services. We do not track 
-          your browsing behavior, clicks, or session duration.
-        </li>
-        <li>
-          <strong>No Cookies:</strong> We do not use cookies or similar tracking 
-          technologies on our website.
-        </li>
-        <li>
-          <strong>Contact Information:</strong> If you email us or fill out a contact 
-          form, we collect the information you voluntarily provide (name, email, message).
-        </li>
-      </ul>
+        <h3>1.2 Mobile App Usage</h3>
+        <p>Our mobile applications are designed with privacy as a core principle:</p>
+        <ul>
+          <li><strong>Local Storage Only:</strong> Any presets, configuration settings, or histories you create within our App(s) are stored locally on your device (e.g., using Apple's UserDefaults or local file storage). We do not transmit that content to any external server.</li>
+          <li><strong>No Personal Data Collection:</strong> We do not collect personal information such as your name, email, location, or device identifiers.</li>
+          <li><strong>No Third-Party Analytics:</strong> We do not embed Firebase, Google Analytics, Mixpanel, or any other analytics frameworks in our App(s).</li>
+          <li><strong>Device Diagnostics:</strong> Apple's iOS system may record basic diagnostic data or crash logs if you have enabled diagnostics & usage sharing. ShapeHaven does not access or view those logs—Apple's infrastructure handles them.</li>
+        </ul>
 
-      <h3>1.2 Mobile App Usage</h3>
-      <p>
-        Our mobile applications are designed with privacy as a core principle:
-      </p>
-      <ul>
-        <li>
-          <strong>Local Storage Only:</strong> Any presets, configuration settings, 
-          or histories you create within our App(s) are stored locally on your device 
-          (e.g., using Apple's UserDefaults or local file storage). We do not transmit 
-          that content to any external server.
-        </li>
-        <li>
-          <strong>No Personal Data Collection:</strong> We do not collect personal 
-          information such as your name, email, location, or device identifiers.
-        </li>
-        <li>
-          <strong>No Third-Party Analytics:</strong> We do not embed Firebase, Google 
-          Analytics, Mixpanel, or any other analytics frameworks in our App(s).
-        </li>
-        <li>
-          <strong>Device Diagnostics:</strong> Apple's iOS system may record basic 
-          diagnostic data or crash logs if you have enabled diagnostics & usage sharing. 
-          ShapeHaven does not access or view those logs—Apple's infrastructure handles them.
-        </li>
-      </ul>
+        <h3>1.3 In-App Purchases & Payment Processing</h3>
+        <p>Our App(s) may offer in-app purchases or auto-renewable subscriptions. All billing and payment processing is handled exclusively by Apple through the App Store. We never see, store, or manage your credit card or billing information.</p>
+        <ul>
+          <li>When you make a purchase or renew a subscription, Apple's systems collect information necessary to complete the transaction (e.g., your Apple ID, purchase receipt, billing country).</li>
+          <li>ShapeHaven only receives confirmation from Apple that a valid purchase or subscription exists; we do not receive any of your payment details.</li>
+          <li>For details on how Apple handles your purchase data, refer to Apple's Privacy Policy: <a href="https://www.apple.com/legal/privacy/resources/" target="_blank" rel="noopener">https://www.apple.com/legal/privacy/resources/</a></li>
+        </ul>
 
-      <h3>1.3 In-App Purchases & Payment Processing</h3>
-      <p>
-        Our App(s) may offer in-app purchases or auto-renewable subscriptions. All billing 
-        and payment processing is handled exclusively by Apple through the App Store. We 
-        never see, store, or manage your credit card or billing information.
-      </p>
-      <ul>
-        <li>
-          When you make a purchase or renew a subscription, Apple's systems collect 
-          information necessary to complete the transaction (e.g., your Apple ID, 
-          purchase receipt, billing country).
-        </li>
-        <li>
-          ShapeHaven only receives confirmation from Apple that a valid purchase or 
-          subscription exists; we do not receive any of your payment details.
-        </li>
-        <li>
-          For details on how Apple handles your purchase data, refer to Apple's Privacy Policy:
-          <a href="https://www.apple.com/legal/privacy/resources/" target="_blank" rel="noopener">
-            https://www.apple.com/legal/privacy/resources/
-          </a>
-        </li>
-      </ul>
+        <h2>2. Data Retention & Server Information</h2>
+        <h3>2.1 ShapeHaven's Servers</h3>
+        <ul>
+          <li><strong>Data Location:</strong> We do not operate backend servers for our App(s), and no user-identifiable data is ever transmitted off your device.</li>
+          <li><strong>Data Retention:</strong> Since all user-generated data remains on your device, ShapeHaven has no server-side retention obligations.</li>
+        </ul>
 
-      <h2>2. Data Retention & Server Information</h2>
+        <h3>2.2 Apple's Servers (for Purchases)</h3>
+        <ul>
+          <li>Apple retains purchase receipts and basic purchase metadata on secure servers.</li>
+          <li>You can review or request deletion of that purchase data via your Apple ID account settings.</li>
+          <li>For details on Apple's data retention policies, see Apple's Privacy Policy.</li>
+        </ul>
 
-      <h3>2.1 ShapeHaven's Servers</h3>
-      <ul>
-        <li>
-          <strong>Data Location:</strong> We do not operate backend servers for our 
-          App(s), and no user-identifiable data is ever transmitted off your device.
-        </li>
-        <li>
-          <strong>Data Retention:</strong> Since all user-generated data remains on 
-          your device, ShapeHaven has no server-side retention obligations.
-        </li>
-      </ul>
+        <h2>3. Third-Party Services & Links</h2>
+        <h3>3.1 App Store (Apple) Services</h3>
+        <p>The App Store handles our App(s) distribution, updates, purchase validation, and (if you've opted in) crash-reporting diagnostics. Any analytics or crash logs generated by Apple's operating system are governed by Apple's Privacy Policy. ShapeHaven does not access those logs directly.</p>
 
-      <h3>2.2 Apple's Servers (for Purchases)</h3>
-      <ul>
-        <li>
-          Apple retains purchase receipts and basic purchase metadata on secure servers.
-        </li>
-        <li>
-          You can review or request deletion of that purchase data via your Apple ID 
-          account settings.
-        </li>
-        <li>
-          For details on Apple's data retention policies, see Apple's Privacy Policy.
-        </li>
-      </ul>
+        <h3>3.2 External URLs</h3>
+        <p>If our website or App includes links to external websites (e.g., for support, documentation, or GitHub), those sites may collect information according to their own policies. Always review the privacy statements of any third-party website before providing personal data.</p>
 
-      <h2>3. Third-Party Services & Links</h2>
+        <h3>3.3 No Third-Party Advertising or Analytics</h3>
+        <p>We do not use Google AdMob, Facebook Audience Network, or any other advertising or analytics SDKs in our App(s). We do not collect device identifiers (IDFA), app usage events, or location data for advertising purposes.</p>
 
-      <h3>3.1 App Store (Apple) Services</h3>
-      <p>
-        The App Store handles our App(s) distribution, updates, purchase validation, 
-        and (if you've opted in) crash-reporting diagnostics. Any analytics or crash 
-        logs generated by Apple's operating system are governed by Apple's Privacy Policy. 
-        ShapeHaven does not access those logs directly.
-      </p>
+        <h2>4. Your Rights & Choices</h2>
+        <h3>4.1 Access & Deletion</h3>
+        <ul>
+          <li><strong>Your Data:</strong> Since we do not collect or store personal data on our servers, there is no personal information for us to access or delete.</li>
+          <li><strong>App Data:</strong> You can delete all data stored by our App(s) by uninstalling the application. This removes all locally stored settings and histories.</li>
+        </ul>
 
-      <h3>3.2 External URLs</h3>
-      <p>
-        If our website or App includes links to external websites (e.g., for support, 
-        documentation, or GitHub), those sites may collect information according to their 
-        own policies. Always review the privacy statements of any third-party website 
-        before providing personal data.
-      </p>
+        <h3>4.2 Contact & Requests</h3>
+        <p>If you have questions about your privacy, wish to request information, or have concerns about how we handle data, please contact us at: <a href="mailto:info@shapehaveninnovations.org">info@shapehaveninnovations.org</a></p>
 
-      <h3>3.3 No Third-Party Advertising or Analytics</h3>
-      <p>
-        We do not use Google AdMob, Facebook Audience Network, or any other advertising 
-        or analytics SDKs in our App(s). We do not collect device identifiers (IDFA), 
-        app usage events, or location data for advertising purposes.
-      </p>
+        <h2>5. Children's Privacy</h2>
+        <p>Our website and App(s) are not intended for children under 13 years of age. We do not knowingly collect any personal data from children under 13. If you believe a child under 13 has inadvertently provided any information, please contact us immediately.</p>
 
-      <h2>4. Your Rights & Choices</h2>
+        <h2>6. Security</h2>
+        <p>We take security seriously. Since we do not collect or store personal data on our servers, the primary security concern is the protection of any data you voluntarily share with us (e.g., via email). We use industry-standard practices to protect such communications.</p>
 
-      <h3>4.1 Access & Deletion</h3>
-      <ul>
-        <li>
-          <strong>Your Data:</strong> Since we do not collect or store personal data 
-          on our servers, there is no personal information for us to access or delete.
-        </li>
-        <li>
-          <strong>App Data:</strong> You can delete all data stored by our App(s) by 
-          uninstalling the application. This removes all locally stored settings and histories.
-        </li>
-      </ul>
+        <h2>7. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. When we make changes, we will update the "Last updated" date at the top of this page. For material changes, we will provide notice via our website or email if we have collected your contact information.</p>
 
-      <h3>4.2 Contact & Requests</h3>
-      <p>
-        If you have questions about your privacy, wish to request information, or have 
-        concerns about how we handle data, please contact us at:
-      </p>
-      <p>
-        <strong>Email:</strong> 
-        <a href="mailto:info@shapehaveninnovations.org">info@shapehaveninnovations.org</a>
-      </p>
-
-      <h2>5. Children's Privacy</h2>
-      <p>
-        Our website and App(s) are not intended for children under 13 years of age. 
-        We do not knowingly collect any personal data from children under 13. If you 
-        believe a child under 13 has inadvertently provided any information, please 
-        contact us immediately.
-      </p>
-
-      <h2>6. Security</h2>
-      <p>
-        We take security seriously. Since we do not collect or store personal data on 
-        our servers, the primary security concern is the protection of any data you 
-        voluntarily share with us (e.g., via email). We use industry-standard practices 
-        to protect such communications.
-      </p>
-
-      <h2>7. Changes to This Policy</h2>
-      <p>
-        We may update this Privacy Policy from time to time. When we make changes, we 
-        will update the "Last updated" date at the top of this page. For material changes, 
-        we will provide notice via our website or email if we have collected your contact 
-        information.
-      </p>
-
-      <h2>8. Contact Us</h2>
-      <p>
-        If you have questions about this Privacy Policy or our privacy practices, please 
-        contact us:
-      </p>
-      <p>
-        <strong>ShapeHaven Innovations LLC</strong><br>
-        Email: <a href="mailto:info@shapehaveninnovations.org">info@shapehaveninnovations.org</a><br>
-        Website: <a href="https://shapehaveninnovations.org">shapehaveninnovations.org</a>
-      </p>
-    </section>
+        <h2>8. Contact Us</h2>
+        <p>If you have questions about this Privacy Policy or our privacy practices, please contact us:</p>
+        <p>
+          <strong>ShapeHaven Innovations LLC</strong><br>
+          Email: <a href="mailto:info@shapehaveninnovations.org">info@shapehaveninnovations.org</a><br>
+          Website: <a href="https://shapehaveninnovations.org">shapehaveninnovations.org</a>
+        </p>
+      </article>
+    </main>
 
     <footer>
-      <p>
-        Have questions? Reach out:
-        <a href="mailto:info@shapehaveninnovations.org">info@shapehaveninnovations.org</a>
-      </p>
-      <p>&copy; 2025 ShapeHaven Innovations LLC</p>
+      <div class="container">
+        <p>&copy; 2025 ShapeHaven Innovations LLC</p>
+      </div>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>

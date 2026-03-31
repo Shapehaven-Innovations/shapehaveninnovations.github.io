@@ -3,221 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Support | ShapeHaven Innovations</title>
+    <title>Support & Collaboration | ShapeHaven Innovations</title>
+    <meta name="description" content="Get technical support, start a project, or ask questions. ShapeHaven Innovations is here to help with iOS apps, websites, and IT solutions." />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Support & Collaboration | ShapeHaven Innovations" />
+    <meta property="og:description" content="We're here to help. Choose how you'd like to work with us." />
+    <meta property="og:image" content="https://shapehaveninnovations.org/images/logo.png" />
+    <meta property="og:url" content="https://shapehaveninnovations.org/support.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css" />
     <style>
-      :root {
-        --primary-color: #007aff;
-        --bg-color: #f5f5f7;
-        --text-color: #1c1c1e;
-        --light-text: #6e6e73;
-        --card-bg: #ffffff;
-      }
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        font-family: "Inter", sans-serif;
-        background: var(--bg-color);
-        color: var(--text-color);
-        line-height: 1.6;
-      }
-      header {
-        background: #fff;
-        padding: 1rem 2rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-      }
-      header img {
-        height: 64px;
-        width: auto;
-      }
-      nav {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-      }
-      nav a {
-        text-decoration: none;
-        color: var(--text-color);
-        font-weight: 600;
-        font-size: 0.95rem;
-        transition: color 0.2s ease;
-      }
-      nav a:hover {
-        color: var(--primary-color);
-      }
-      .page-header {
-        text-align: center;
-        padding: 3rem 1rem;
-        background: linear-gradient(135deg, rgba(0, 122, 255, 0.05) 0%, rgba(0, 122, 255, 0.02) 100%);
-      }
-      .page-header h1 {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-        font-weight: 700;
-      }
-      .page-header p {
-        color: var(--light-text);
-        font-size: 1.1rem;
-      }
-      .support-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-      }
-      .support-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-        padding: 3rem 0;
-      }
-      .support-card {
-        background: var(--card-bg);
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        transition: all 0.3s ease;
-        padding: 2rem;
-        text-align: center;
-      }
-      .support-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-      }
       .support-card-icon {
         font-size: 3rem;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
         display: block;
       }
-      .support-card h3 {
-        margin-bottom: 0.75rem;
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: var(--text-color);
-      }
-      .support-card p {
-        color: var(--light-text);
-        margin-bottom: 1.5rem;
-        flex-grow: 1;
-        font-size: 0.95rem;
-        line-height: 1.6;
-      }
-      .support-card a {
-        display: inline-block;
-        background: var(--primary-color);
-        color: #fff;
-        text-decoration: none;
-        padding: 0.75rem 1.5rem;
-        border-radius: 6px;
-        font-size: 0.9rem;
-        font-weight: 600;
-        transition: all 0.2s ease;
-      }
-      .support-card a:hover {
-        background: #005ecb;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
-      }
-      .quick-contact-section {
-        background: var(--card-bg);
-        border: 1px solid #e0e0e0;
-        border-radius: 12px;
-        padding: 2.5rem;
+      .card {
         text-align: center;
-        margin: 3rem 0;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        display: flex;
+        flex-direction: column;
       }
-      .quick-contact-section h2 {
-        font-size: 1.75rem;
-        margin-bottom: 1rem;
-        color: var(--text-color);
+      .card p {
+        margin-bottom: 2rem;
+        flex-grow: 1;
       }
-      .quick-contact-section p {
-        font-size: 1.05rem;
-        margin-bottom: 1.5rem;
-        color: var(--light-text);
-        line-height: 1.8;
-      }
-      .quick-contact-section a {
-        display: inline-block;
-        background: var(--primary-color);
-        color: #fff;
-        padding: 0.875rem 2rem;
-        border-radius: 6px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.2s ease;
-      }
-      .quick-contact-section a:hover {
-        background: #005ecb;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
-      }
-      .expectations-section {
-        background: var(--card-bg);
-        border-radius: 12px;
-        padding: 2.5rem;
-        margin: 3rem 0;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      }
-      .expectations-section h2 {
-        font-size: 1.75rem;
-        margin-bottom: 1.5rem;
-        color: var(--text-color);
-      }
-      .expectations-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 2rem;
+      .card .btn {
+        width: 100%;
       }
       .expectation-item {
         text-align: center;
       }
       .expectation-icon {
-        font-size: 2rem;
-        margin-bottom: 0.75rem;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
         display: block;
       }
-      .expectation-item h3 {
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-        font-weight: 600;
-        color: var(--text-color);
-      }
-      .expectation-item p {
-        color: var(--light-text);
-        font-size: 0.9rem;
-        line-height: 1.5;
-      }
-      .faq-section {
-        background: var(--card-bg);
-        border-radius: 12px;
-        padding: 2.5rem;
-        margin: 3rem 0;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      }
-      .faq-section h2 {
-        font-size: 1.75rem;
-        margin-bottom: 1.5rem;
-        color: var(--text-color);
-      }
       .faq-item {
-        margin-bottom: 1.5rem;
-        padding-bottom: 1.5rem;
-        border-bottom: 1px solid #e0e0e0;
+        text-align: left;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--border-color);
       }
       .faq-item:last-child {
         border-bottom: none;
@@ -225,240 +60,135 @@
         padding-bottom: 0;
       }
       .faq-item h3 {
-        font-size: 1.05rem;
-        margin-bottom: 0.5rem;
-        color: var(--text-color);
-        font-weight: 600;
-      }
-      .faq-item p {
-        color: var(--light-text);
-        font-size: 0.95rem;
-        line-height: 1.6;
-      }
-      footer {
-        text-align: center;
-        padding: 2rem 1rem;
-        background: #fff;
-        border-top: 1px solid #e0e0e0;
-        color: var(--light-text);
-        font-size: 0.9rem;
-      }
-      footer a {
-        color: var(--primary-color);
-        text-decoration: none;
-        font-weight: 600;
-      }
-      @media (max-width: 768px) {
-        .page-header h1 {
-          font-size: 1.75rem;
-        }
-        .page-header p {
-          font-size: 1rem;
-        }
-        .support-grid {
-          grid-template-columns: 1fr;
-          gap: 1.5rem;
-          padding: 1.5rem 0;
-        }
-        .expectations-section {
-          padding: 1.5rem;
-        }
-        .quick-contact-section {
-          padding: 1.5rem;
-        }
-        .faq-section {
-          padding: 1.5rem;
-        }
-        header {
-          flex-direction: column;
-          gap: 1rem;
-        }
-        nav {
-          gap: 1rem;
-        }
-        nav a {
-          font-size: 0.85rem;
-        }
+        margin-bottom: 0.75rem;
       }
     </style>
   </head>
   <body>
     <header>
-      <img src="images/logo.png" alt="ShapeHaven Innovations" />
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="github.html">GitHub</a>
-        <a href="support.html">Support</a>
-        <a href="privacy.html">Privacy</a>
-      </nav>
+      <div class="container">
+        <div class="logo-container">
+          <a href="index.html">
+            <img src="images/logo.png" alt="ShapeHaven Innovations" class="logo" />
+          </a>
+        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="github.html">GitHub</a>
+          <a href="support.html">Support</a>
+          <a href="privacy.html">Privacy</a>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </nav>
+      </div>
     </header>
 
-    <div class="page-header">
-      <h1>Support & Collaboration</h1>
-      <p>We're here to help. Choose how you'd like to work with us.</p>
-    </div>
-
-    <div class="support-container">
-      <section class="support-grid">
-        <!-- 1) Technical Support -->
-        <div class="support-card">
-          <span class="support-card-icon">🔧</span>
-          <h3>Technical Support</h3>
-          <p>
-            Need help with a technical issue? Report bugs, request debugging assistance, 
-            or get help with implementation and integration.
-          </p>
-          <a href="mailto:info@shapehaveninnovations.org?subject=Support%20Request%3A%20Technical%20Support&body=Hello%20ShapeHaven%20Innovations%20Support%2C%0D%0A%0D%0AName%3A%20%5BYour%20Name%5D%0D%0AEmail%3A%20%5Byour%40email.com%5D%0D%0A%0D%0ADescription%3A%20%5BDescribe%20your%20technical%20issue%20here%5D%0D%0A%0D%0AThank%20you!">
-            Get Support
-          </a>
+    <main>
+      <div class="container">
+        <div class="section-header" style="margin-top: 4rem;">
+          <h1>Support & Collaboration</h1>
+          <p class="section-intro">We're here to help. Choose how you'd like to work with us.</p>
         </div>
 
-        <!-- 2) Project Inquiries -->
-        <div class="support-card">
-          <span class="support-card-icon">💼</span>
-          <h3>Project Inquiries</h3>
-          <p>
-            Want to work together? Discuss custom development, consulting opportunities, 
-            or strategic partnerships.
-          </p>
-          <a href="mailto:info@shapehaveninnovations.org?subject=Project%20Inquiry&body=Hello%20ShapeHaven%20Innovations%2C%0D%0A%0D%0AName%3A%20%5BYour%20Name%5D%0D%0AEmail%3A%20%5Byour%40email.com%5D%0D%0A%0D%0AProject%20Description%3A%20%5BTell%20us%20about%20your%20project%5D%0D%0A%0D%0ABest%20regards%2C%0D%0A%5BYour%20Name%5D">
-            Start a Project
-          </a>
-        </div>
-
-        <!-- 3) General Questions -->
-        <div class="support-card">
-          <span class="support-card-icon">❓</span>
-          <h3>General Questions</h3>
-          <p>
-            Have a question about our services, capabilities, or company? 
-            We'd love to hear from you.
-          </p>
-          <a href="mailto:info@shapehaveninnovations.org?subject=General%20Question&body=Hello%20ShapeHaven%20Innovations%2C%0D%0A%0D%0AName%3A%20%5BYour%20Name%5D%0D%0AEmail%3A%20%5Byour%40email.com%5D%0D%0A%0D%0AQuestion%3A%20%5BYour%20question%20here%5D%0D%0A%0D%0AThank%20you!">
-            Ask a Question
-          </a>
-        </div>
-
-        <!-- 4) Bug Reports -->
-        <div class="support-card">
-          <span class="support-card-icon">🐛</span>
-          <h3>Bug Reports</h3>
-          <p>
-            Found a bug? Help us improve by reporting issues with clear details 
-            and steps to reproduce.
-          </p>
-          <a href="mailto:info@shapehaveninnovations.org?subject=Bug%20Report&body=Hello%20ShapeHaven%20Innovations%20Support%2C%0D%0A%0D%0AName%3A%20%5BYour%20Name%5D%0D%0AEmail%3A%20%5Byour%40email.com%5D%0D%0A%0D%0ABug%20Description%3A%20%5BDescribe%20the%20bug%5D%0D%0ASteps%20to%20Reproduce%3A%20%5BHow%20to%20reproduce%5D%0D%0AExpected%20Behavior%3A%20%5BWhat%20should%20happen%5D%0D%0A%0D%0AThanks%20for%20your%20help!">
-            Report a Bug
-          </a>
-        </div>
-      </section>
-
-      <section class="quick-contact-section">
-        <h2>Let's Get Started</h2>
-        <p>
-          Have a specific need? Email us directly at 
-          <strong>info@shapehaveninnovations.org</strong>
-        </p>
-        <a href="mailto:info@shapehaveninnovations.org">Send an Email</a>
-      </section>
-
-      <section class="expectations-section">
-        <h2>What to Expect</h2>
-        <div class="expectations-grid">
-          <div class="expectation-item">
-            <span class="expectation-icon">⏱️</span>
-            <h3>Fast Response</h3>
+        <section class="grid">
+          <!-- 1) Technical Support -->
+          <div class="card">
+            <span class="support-card-icon">🔧</span>
+            <h3>Technical Support</h3>
             <p>
-              We aim to respond to all inquiries within 1–2 business days. 
-              Urgent matters get priority.
+              Need help with a technical issue? Report bugs, request debugging assistance, 
+              or get help with implementation and integration.
             </p>
+            <a href="mailto:info@shapehaveninnovations.org?subject=Support%20Request%3A%20Technical%20Support&body=Hello%20ShapeHaven%20Innovations%20Support%2C%0D%0A%0D%0AName%3A%20%5BYour%20Name%5D%0D%0AEmail%3A%20%5Byour%40email.com%5D%0D%0A%0D%0ADescription%3A%20%5BDescribe%20your%20technical%20issue%20here%5D%0D%0A%0D%0AThank%20you!" class="btn btn-primary">Get Support</a>
           </div>
-          <div class="expectation-item">
-            <span class="expectation-icon">💬</span>
-            <h3>Clear Communication</h3>
+
+          <!-- 2) Project Inquiries -->
+          <div class="card">
+            <span class="support-card-icon">💼</span>
+            <h3>Project Inquiries</h3>
             <p>
-              We keep you informed with regular updates and clear next steps 
-              for resolving your issue.
+              Want to work together? Discuss custom development, consulting opportunities, 
+              or strategic partnerships.
             </p>
+            <a href="mailto:info@shapehaveninnovations.org?subject=Project%20Inquiry&body=Hello%20ShapeHaven%20Innovations%2C%0D%0A%0D%0AName%3A%20%5BYour%20Name%5D%0D%0AEmail%3A%20%5Byour%40email.com%5D%0D%0A%0D%0AProject%20Description%3A%20%5BTell%20us%20about%20your%20project%5D%0D%0A%0D%0ABest%20regards%2C%0D%0A%5BYour%20Name%5D" class="btn btn-primary">Start a Project</a>
           </div>
-          <div class="expectation-item">
-            <span class="expectation-icon">🔒</span>
-            <h3>Privacy First</h3>
+
+          <!-- 3) General Questions -->
+          <div class="card">
+            <span class="support-card-icon">❓</span>
+            <h3>General Questions</h3>
             <p>
-              Your information is handled securely and never shared. 
-              We follow our Privacy Policy strictly.
+              Have a question about our services, capabilities, or company? 
+              We'd love to hear from you.
             </p>
+            <a href="mailto:info@shapehaveninnovations.org?subject=General%20Question&body=Hello%20ShapeHaven%20Innovations%2C%0D%0A%0D%0AName%3A%20%5BYour%20Name%5D%0D%0AEmail%3A%20%5Byour%40email.com%5D%0D%0A%0D%0AQuestion%3A%20%5BYour%20question%20here%5D%0D%0A%0D%0AThank%20you!" class="btn btn-primary">Ask a Question</a>
           </div>
-          <div class="expectation-item">
-            <span class="expectation-icon">✅</span>
-            <h3>Real Solutions</h3>
+
+          <!-- 4) Bug Reports -->
+          <div class="card">
+            <span class="support-card-icon">🐛</span>
+            <h3>Bug Reports</h3>
             <p>
-              We work diligently to solve problems, answer questions, 
-              and explore collaboration opportunities.
+              Found a bug? Help us improve by reporting issues with our apps, websites, or open-source projects.
             </p>
+            <a href="mailto:info@shapehaveninnovations.org?subject=Bug%20Report&body=Hello%20ShapeHaven%20Innovations%2C%0D%0A%0D%0ABug%20Description%3A%20%5BDescribe%20the%20bug%20here%5D%0D%0A%0D%0ASteps%20to%20Reproduce%3A%20%5BList%20steps%20here%5D" class="btn btn-primary">Report a Bug</a>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        
-        <div class="faq-item">
-          <h3>What's your typical response time?</h3>
-          <p>
-            We aim to respond to all inquiries within 1–2 business days. 
-            For urgent technical issues, we prioritize faster responses.
-          </p>
+        <div class="highlight-section">
+          <h2>Direct Contact</h2>
+          <p>Email us directly at <strong>info@shapehaveninnovations.org</strong></p>
+          <a href="mailto:info@shapehaveninnovations.org" class="btn btn-secondary" style="margin-top: 2rem;">Send an Email</a>
         </div>
 
-        <div class="faq-item">
-          <h3>Do you offer free consultations?</h3>
-          <p>
-            We're happy to discuss your project and understand your needs. 
-            Reach out to us, and we'll talk about how we can help.
-          </p>
-        </div>
+        <section class="section-header">
+          <h2>What to Expect</h2>
+          <div class="grid" style="margin-top: 3rem;">
+            <div class="expectation-item">
+              <span class="expectation-icon">⏱️</span>
+              <h3>Fast Response</h3>
+              <p>We aim to respond to all inquiries within 1–2 business days.</p>
+            </div>
+            <div class="expectation-item">
+              <span class="expectation-icon">💬</span>
+              <h3>Clear Communication</h3>
+              <p>We keep you informed with regular updates and clear next steps.</p>
+            </div>
+            <div class="expectation-item">
+              <span class="expectation-icon">🔒</span>
+              <h3>Privacy First</h3>
+              <p>Your information is handled securely and never shared with third parties.</p>
+            </div>
+          </div>
+        </section>
 
-        <div class="faq-item">
-          <h3>Can you work on existing projects?</h3>
-          <p>
-            Absolutely. We specialize in code refactoring, system improvements, 
-            and taking over existing projects. Let's discuss your situation.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3>What's your process for new projects?</h3>
-          <p>
-            We start with understanding your goals and constraints, then propose 
-            a clear scope, timeline, and approach. We keep you involved throughout.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3>Do you offer ongoing support?</h3>
-          <p>
-            Yes. We can provide ongoing maintenance, support, and improvements 
-            to keep your systems running smoothly.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3>How do you handle confidentiality?</h3>
-          <p>
-            We take confidentiality seriously. We can sign NDAs and follow 
-            strict security practices to protect your code and data.
-          </p>
-        </div>
-      </section>
-    </div>
+        <section class="card" style="margin-bottom: 6rem;">
+          <h2 style="margin-bottom: 3rem;">Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <h3>Do you offer free consultations?</h3>
+            <p>Yes, we're happy to discuss your project and understand your needs initially.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can you work on existing projects?</h3>
+            <p>Absolutely. We specialize in code refactoring and taking over existing codebases.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Do you offer ongoing support?</h3>
+            <p>Yes, we provide ongoing maintenance and support to keep your systems running smoothly.</p>
+          </div>
+        </section>
+      </div>
+    </main>
 
     <footer>
-      <p>
-        Ready to work with us? Email
-        <a href="mailto:info@shapehaveninnovations.org">info@shapehaveninnovations.org</a>
-      </p>
-      <p>&copy; 2025 ShapeHaven Innovations LLC</p>
+      <div class="container">
+        <p>
+          Have questions? Reach out:
+          <a href="mailto:info@shapehaveninnovations.org">info@shapehaveninnovations.org</a>
+        </p>
+        <p>&copy; 2025 ShapeHaven Innovations LLC</p>
+      </div>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>

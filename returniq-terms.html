@@ -1,423 +1,343 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms of Service | ReturnIQ by ShapeHaven Innovations</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
-  <style>
-    :root {
-      --primary-color: #007aff;
-      --bg-color: #f5f5f7;
-      --text-color: #1c1c1e;
-      --light-text: #6e6e73;
-    }
-    * { 
-      margin: 0; 
-      padding: 0; 
-      box-sizing: border-box; 
-    }
-    body { 
-      font-family: "Inter", sans-serif; 
-      color: var(--text-color); 
-      line-height: 1.7; 
-      background: var(--bg-color);
-    }
-    header {
-      background: #ffffff;
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    header img {
-      height: 64px;
-      width: auto;
-    }
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-    nav a {
-      text-decoration: none;
-      color: var(--text-color);
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: color 0.2s ease;
-    }
-    nav a:hover {
-      color: var(--primary-color);
-    }
-    .legal-nav {
-      background: var(--bg-color);
-      padding: 1.5rem 2rem;
-      margin: 2rem auto;
-      max-width: 900px;
-      border-radius: 8px;
-      text-align: center;
-    }
-    .legal-nav p {
-      margin-bottom: 0.75rem;
-      font-size: 0.9rem;
-      color: var(--light-text);
-    }
-    .legal-nav a {
-      display: inline-block;
-      margin: 0 0.75rem;
-      padding: 0.5rem 1rem;
-      background: #fff;
-      color: var(--primary-color);
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: all 0.2s ease;
-    }
-    .legal-nav a:hover {
-      background: var(--primary-color);
-      color: #fff;
-    }
-    .container { 
-      max-width: 900px; 
-      margin: 0 auto; 
-      padding: 2.5rem 2rem;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      margin-bottom: 2rem;
-    }
-    h1 { 
-      font-size: 2rem; 
-      font-weight: 700; 
-      margin-bottom: 0.5rem; 
-      color: var(--text-color); 
-    }
-    .subtitle { 
-      font-size: 0.95rem; 
-      color: var(--light-text); 
-      margin-bottom: 2rem; 
-    }
-    h2 { 
-      font-size: 1.5rem; 
-      font-weight: 600; 
-      color: var(--text-color); 
-      margin: 2rem 0 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid #e0e0e0;
-    }
-    h2:first-of-type {
-      border-top: none;
-      padding-top: 0;
-      margin-top: 0;
-    }
-    h3 { 
-      font-size: 1.1rem; 
-      font-weight: 600; 
-      color: var(--text-color); 
-      margin: 1.5rem 0 0.75rem; 
-    }
-    p { 
-      margin-bottom: 1rem; 
-      font-size: 0.95rem; 
-      color: var(--light-text);
-    }
-    ul, ol { 
-      margin: 1rem 0 1rem 1.5rem; 
-    }
-    li { 
-      margin-bottom: 0.75rem; 
-      font-size: 0.95rem; 
-      color: var(--light-text);
-    }
-    a { 
-      color: var(--primary-color); 
-      text-decoration: none; 
-    }
-    a:hover { 
-      text-decoration: underline; 
-    }
-    table { 
-      width: 100%; 
-      border-collapse: collapse; 
-      margin: 1rem 0; 
-    }
-    th, td { 
-      text-align: left; 
-      padding: 0.75rem; 
-      border: 1px solid #e0e0e0; 
-      font-size: 0.9rem; 
-    }
-    th { 
-      background: var(--bg-color); 
-      font-weight: 600; 
-      color: var(--text-color); 
-    }
-    td { 
-      color: var(--light-text); 
-    }
-    .badge { 
-      display: inline-block; 
-      background: var(--primary-color); 
-      color: #fff; 
-      font-size: 0.75rem; 
-      font-weight: 600; 
-      padding: 0.25rem 0.75rem; 
-      border-radius: 4px; 
-      margin-bottom: 1rem; 
-    }
-    .highlight { 
-      background: #f0f0ff; 
-      border-left: 3px solid var(--primary-color); 
-      padding: 1rem; 
-      margin: 1rem 0; 
-      border-radius: 0 6px 6px 0; 
-    }
-    .highlight p { 
-      margin-bottom: 0; 
-    }
-    .footer { 
-      margin-top: 2rem; 
-      padding-top: 1.5rem; 
-      border-top: 1px solid #e0e0e0; 
-      text-align: center; 
-      color: var(--light-text); 
-      font-size: 0.85rem; 
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      color: var(--light-text);
-      font-size: 0.9rem;
-      border-top: 1px solid #e0e0e0;
-      background: #fff;
-    }
-    footer a {
-      color: var(--primary-color);
-      text-decoration: none;
-      font-weight: 600;
-    }
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        gap: 1rem;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReturnIQ Terms of Service | ShapeHaven Innovations</title>
+    <meta name="description" content="Terms of Service for ReturnIQ, a Shopify application by ShapeHaven Innovations. Learn about our service, billing, and usage policies." />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="ReturnIQ Terms of Service | ShapeHaven Innovations" />
+    <meta property="og:description" content="Terms of Service for ReturnIQ, our Shopify application for return intelligence." />
+    <meta property="og:image" content="https://shapehaveninnovations.org/images/logo.png" />
+    <meta property="og:url" content="https://shapehaveninnovations.org/returniq-terms.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .legal-container {
+        max-width: 900px;
+        margin: 4rem auto;
+        padding: 0 1.5rem;
       }
-      nav {
-        gap: 1rem;
-      }
-      nav a {
-        font-size: 0.85rem;
-      }
-      .container {
+      .legal-nav {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
         padding: 1.5rem;
-      }
-      h1 {
-        font-size: 1.5rem;
+        border-radius: 12px;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        box-shadow: 0 4px 12px var(--shadow-color);
       }
       .legal-nav a {
-        display: block;
-        margin: 0.5rem 0;
+        font-weight: 600;
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        background: var(--bg-color);
+        color: var(--primary-color);
+        text-decoration: none;
+        transition: var(--transition);
       }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <img src="images/logo.png" alt="ShapeHaven Innovations" />
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="github.html">GitHub</a>
-      <a href="support.html">Support</a>
-      <a href="privacy.html">Privacy</a>
-    </nav>
-  </header>
+      .legal-nav a:hover, .legal-nav a.active {
+        background: var(--primary-color);
+        color: #fff;
+      }
+      .legal-content {
+        background: var(--card-bg);
+        padding: 3rem;
+        border-radius: 24px;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 8px 24px var(--shadow-color);
+      }
+      .legal-content h2 {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        font-size: 1.75rem;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 0.5rem;
+      }
+      .legal-content h2:first-of-type {
+        margin-top: 0;
+      }
+      .legal-content h3 {
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+        font-size: 1.25rem;
+      }
+      .legal-content p, .legal-content li {
+        color: var(--light-text);
+        margin-bottom: 1.25rem;
+      }
+      .legal-content ul, .legal-content ol {
+        margin-left: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .badge {
+        display: inline-block;
+        background: var(--primary-color);
+        color: #fff;
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 0.25rem 0.75rem;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+      }
+      .highlight {
+        background: var(--bg-color);
+        border-left: 4px solid var(--primary-color);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        border-radius: 0 12px 12px 0;
+      }
+      .highlight p {
+        margin-bottom: 0;
+        font-weight: 600;
+        color: var(--text-color);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+        font-size: 0.9rem;
+      }
+      th, td {
+        padding: 0.75rem;
+        border: 1px solid var(--border-color);
+        text-align: left;
+      }
+      th {
+        background: var(--bg-color);
+        color: var(--text-color);
+      }
+      td {
+        color: var(--light-text);
+      }
+      @media (max-width: 768px) {
+        .legal-content {
+          padding: 1.5rem;
+        }
+        .legal-nav {
+          flex-direction: column;
+        }
+        .legal-nav a {
+          text-align: center;
+        }
+        table {
+          display: block;
+          overflow-x: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo-container">
+          <a href="index.html">
+            <img src="images/logo.png" alt="ShapeHaven Innovations" class="logo" />
+          </a>
+        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="github.html">GitHub</a>
+          <a href="support.html">Support</a>
+          <a href="privacy.html">Privacy</a>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </nav>
+      </div>
+    </header>
 
-  <div class="legal-nav">
-    <p><strong>Legal Documents</strong></p>
-    <a href="privacy.html">ShapeHaven Privacy</a>
-    <a href="returniq-privacy.html">ReturnIQ Privacy</a>
-    <a href="returniq-terms.html">ReturnIQ Terms</a>
-  </div>
+    <main class="legal-container">
+      <div class="legal-nav">
+        <a href="privacy.html">ShapeHaven Privacy</a>
+        <a href="returniq-privacy.html">ReturnIQ Privacy</a>
+        <a href="returniq-terms.html" class="active">ReturnIQ Terms</a>
+      </div>
 
-  <div class="container">
-    <span class="badge">ReturnIQ</span>
-    <h1>Terms of Service</h1>
-    <p class="subtitle">Last updated: March 2026</p>
+      <article class="legal-content">
+        <span class="badge">ReturnIQ</span>
+        <h1>Terms of Service</h1>
+        <p><strong>Last updated:</strong> March 2026</p>
 
-    <p>These Terms of Service ("Terms") govern your use of ReturnIQ, a Shopify application operated by ShapeHaven Innovations LLC ("ShapeHaven," "we," "us," or "our"). By installing or using ReturnIQ ("Service"), you ("Merchant," "you," or "your") agree to be bound by these Terms.</p>
+        <p>These Terms of Service ("Terms") govern your use of ReturnIQ, a Shopify application operated by ShapeHaven Innovations LLC ("ShapeHaven," "we," "us," or "our"). By installing or using ReturnIQ ("Service"), you ("Merchant," "you," or "your") agree to be bound by these Terms.</p>
 
-    <h2>1. Service Description</h2>
-    <p>ReturnIQ is an AI-powered return analytics application for Shopify merchants. The Service:</p>
-    <ul>
-      <li>Syncs product, order, and return data from your Shopify store.</li>
-      <li>Analyzes return patterns using artificial intelligence to identify root causes.</li>
-      <li>Provides risk scores, actionable recommendations, and AI-generated product descriptions.</li>
-      <li>Displays analytics through an interactive dashboard within the Shopify admin.</li>
-    </ul>
+        <h2>1. Service Description</h2>
+        <p>ReturnIQ is an AI-powered return analytics application for Shopify merchants. The Service:</p>
+        <ul>
+          <li>Syncs product, order, and return data from your Shopify store.</li>
+          <li>Analyzes return patterns using artificial intelligence to identify root causes.</li>
+          <li>Provides risk scores, actionable recommendations, and AI-generated product descriptions.</li>
+          <li>Displays analytics through an interactive dashboard within the Shopify admin.</li>
+        </ul>
 
-    <h2>2. Account & Installation</h2>
-    <ul>
-      <li>You must have an active Shopify store to use ReturnIQ.</li>
-      <li>By installing ReturnIQ, you authorize us to access the Shopify API scopes requested during installation (products, orders, customers).</li>
-      <li>You are responsible for maintaining the security of your Shopify account. We are not liable for unauthorized access resulting from compromised Shopify credentials.</li>
-      <li>You may uninstall ReturnIQ at any time through your Shopify admin. Uninstalling will cancel any active subscription and trigger data deletion per our Privacy Policy.</li>
-    </ul>
+        <h2>2. Account & Installation</h2>
+        <ul>
+          <li>You must have an active Shopify store to use ReturnIQ.</li>
+          <li>By installing ReturnIQ, you authorize us to access the Shopify API scopes requested during installation (products, orders, customers).</li>
+          <li>You are responsible for maintaining the security of your Shopify account. We are not liable for unauthorized access resulting from compromised Shopify credentials.</li>
+          <li>You may uninstall ReturnIQ at any time through your Shopify admin. Uninstalling will cancel any active subscription and trigger data deletion per our Privacy Policy.</li>
+        </ul>
 
-    <h2>3. Subscription Plans & Billing</h2>
+        <h2>3. Subscription Plans & Billing</h2>
 
-    <h3>3.1 Plans</h3>
-    <table>
-      <tr><th>Plan</th><th>Price</th><th>Returns Analyzed</th><th>Features</th></tr>
-      <tr><td>Free</td><td>$0/month</td><td>Up to 50/month</td><td>Dashboard, basic tracking</td></tr>
-      <tr><td>Growth</td><td>$29/month</td><td>Up to 500/month</td><td>AI analysis, clustering, email digest</td></tr>
-      <tr><td>Pro</td><td>$79/month</td><td>Up to 2,500/month</td><td>+ AI descriptions, risk scoring, customer profiling</td></tr>
-      <tr><td>Scale</td><td>$149/month</td><td>Unlimited</td><td>+ Fraud detection, API access, custom integrations</td></tr>
-    </table>
+        <h3>3.1 Plans</h3>
+        <table>
+          <thead>
+            <tr><th>Plan</th><th>Price</th><th>Returns Analyzed</th><th>Features</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Free</td><td>$0/month</td><td>Up to 50/month</td><td>Dashboard, basic tracking</td></tr>
+            <tr><td>Growth</td><td>$29/month</td><td>Up to 500/month</td><td>AI analysis, clustering, email digest</td></tr>
+            <tr><td>Pro</td><td>$79/month</td><td>Up to 2,500/month</td><td>+ AI descriptions, risk scoring, customer profiling</td></tr>
+            <tr><td>Scale</td><td>$149/month</td><td>Unlimited</td><td>+ Fraud detection, API access, custom integrations</td></tr>
+          </tbody>
+        </table>
 
-    <h3>3.2 Billing</h3>
-    <ul>
-      <li>All paid subscriptions are billed through Shopify's Billing API and appear on your Shopify invoice.</li>
-      <li>Paid plans include a 7-day free trial. You will not be charged until the trial period ends.</li>
-      <li>Subscriptions renew automatically every 30 days unless cancelled.</li>
-      <li>You may upgrade, downgrade, or cancel your plan at any time within the ReturnIQ application. Changes take effect at the next billing cycle.</li>
-      <li>We do not process payments directly. All billing inquiries related to payment processing should be directed to Shopify.</li>
-    </ul>
+        <h3>3.2 Billing</h3>
+        <ul>
+          <li>All paid subscriptions are billed through Shopify's Billing API and appear on your Shopify invoice.</li>
+          <li>Paid plans include a 7-day free trial. You will not be charged until the trial period ends.</li>
+          <li>Subscriptions renew automatically every 30 days unless cancelled.</li>
+          <li>You may upgrade, downgrade, or cancel your plan at any time within the ReturnIQ application. Changes take effect at the next billing cycle.</li>
+          <li>We do not process payments directly. All billing inquiries related to payment processing should be directed to Shopify.</li>
+        </ul>
 
-    <h3>3.3 Refunds</h3>
-    <p>Because billing is managed through Shopify, refund policies are governed by Shopify's terms. If you believe you were charged in error, contact us and we will work with Shopify to resolve the issue.</p>
+        <h3>3.3 Refunds</h3>
+        <p>Because billing is managed through Shopify, refund policies are governed by Shopify's terms. If you believe you were charged in error, contact us and we will work with Shopify to resolve the issue.</p>
 
-    <h2>4. Acceptable Use</h2>
-    <p>You agree to use ReturnIQ only for its intended purpose. You shall not:</p>
-    <ul>
-      <li>Attempt to reverse-engineer, decompile, or extract source code from the Service.</li>
-      <li>Use the Service to process data from stores you do not own or have authorization to manage.</li>
-      <li>Circumvent usage limits, rate limits, or feature restrictions of your subscription plan.</li>
-      <li>Use the Service for any illegal purpose or in violation of Shopify's Terms of Service.</li>
-      <li>Resell, sublicense, or redistribute the Service or its outputs to third parties as a standalone product.</li>
-      <li>Intentionally submit false or misleading data to manipulate analytics results.</li>
-    </ul>
+        <h2>4. Acceptable Use</h2>
+        <p>You agree to use ReturnIQ only for its intended purpose. You shall not:</p>
+        <ul>
+          <li>Attempt to reverse-engineer, decompile, or extract source code from the Service.</li>
+          <li>Use the Service to process data from stores you do not own or have authorization to manage.</li>
+          <li>Circumvent usage limits, rate limits, or feature restrictions of your subscription plan.</li>
+          <li>Use the Service for any illegal purpose or in violation of Shopify's Terms of Service.</li>
+          <li>Resell, sublicense, or redistribute the Service or its outputs to third parties as a standalone product.</li>
+          <li>Intentionally submit false or misleading data to manipulate analytics results.</li>
+        </ul>
 
-    <h2>5. AI-Generated Content</h2>
-    <div class="highlight">
-      <p><strong>Important:</strong> ReturnIQ uses artificial intelligence (Anthropic's Claude) to generate analysis, recommendations, and product descriptions. AI-generated content is provided as suggestions only and should be reviewed before implementation.</p>
-    </div>
-    <ul>
-      <li><strong>No Guarantees:</strong> We do not guarantee that AI-generated recommendations will reduce your return rate by any specific amount. Expected impact estimates are approximations based on industry patterns.</li>
-      <li><strong>Your Responsibility:</strong> You are responsible for reviewing and approving any AI-generated product descriptions before publishing them to your store.</li>
-      <li><strong>Accuracy:</strong> While we strive for accurate analysis, AI-generated insights may contain errors or may not account for all factors specific to your business.</li>
-      <li><strong>Ownership:</strong> AI-generated content produced for your store (descriptions, recommendations) is yours to use as you see fit.</li>
-    </ul>
+        <h2>5. AI-Generated Content</h2>
+        <div class="highlight">
+          <p>Important: ReturnIQ uses artificial intelligence (Anthropic's Claude) to generate analysis, recommendations, and product descriptions. AI-generated content is provided as suggestions only and should be reviewed before implementation.</p>
+        </div>
+        <ul>
+          <li><strong>No Guarantees:</strong> We do not guarantee that AI-generated recommendations will reduce your return rate by any specific amount. Expected impact estimates are approximations based on industry patterns.</li>
+          <li><strong>Your Responsibility:</strong> You are responsible for reviewing and approving any AI-generated product descriptions before publishing them to your store.</li>
+          <li><strong>Accuracy:</strong> While we strive for accurate analysis, AI-generated insights may contain errors or may not account for all factors specific to your business.</li>
+          <li><strong>Ownership:</strong> AI-generated content produced for your store (descriptions, recommendations) is yours to use as you see fit.</li>
+        </ul>
 
-    <h2>6. Data Ownership & Intellectual Property</h2>
-    <ul>
-      <li><strong>Your Data:</strong> You retain full ownership of all data from your Shopify store. We do not claim any ownership rights to your product, order, customer, or return data.</li>
-      <li><strong>Our Service:</strong> The ReturnIQ application, including its code, design, algorithms, AI models, and documentation, is the intellectual property of ShapeHaven Innovations LLC.</li>
-      <li><strong>Feedback:</strong> If you provide suggestions or feedback about the Service, we may use that feedback to improve ReturnIQ without obligation to you.</li>
-    </ul>
+        <h2>6. Data Ownership & Intellectual Property</h2>
+        <ul>
+          <li><strong>Your Data:</strong> You retain full ownership of all data from your Shopify store. We do not claim any ownership rights to your product, order, customer, or return data.</li>
+          <li><strong>Our Service:</strong> The ReturnIQ application, including its code, design, algorithms, AI models, and documentation, is the intellectual property of ShapeHaven Innovations LLC.</li>
+          <li><strong>Feedback:</strong> If you provide suggestions or feedback about the Service, we may use that feedback to improve ReturnIQ without obligation to you.</li>
+        </ul>
 
-    <h2>7. Data Processing & Privacy</h2>
-    <p>Our collection and use of your data is governed by our <a href="returniq-privacy.html">Privacy Policy</a>, which is incorporated into these Terms by reference. Key points:</p>
-    <ul>
-      <li>We process your data solely to provide and improve the Service.</li>
-      <li>We do not sell your data to third parties.</li>
-      <li>We delete your data within 30 days of uninstallation.</li>
-      <li>We comply with GDPR and CCPA requirements.</li>
-    </ul>
+        <h2>7. Data Processing & Privacy</h2>
+        <p>Our collection and use of your data is governed by our <a href="returniq-privacy.html">Privacy Policy</a>, which is incorporated into these Terms by reference. Key points:</p>
+        <ul>
+          <li>We process your data solely to provide and improve the Service.</li>
+          <li>We do not sell your data to third parties.</li>
+          <li>We delete your data within 30 days of uninstallation.</li>
+          <li>We comply with GDPR and CCPA requirements.</li>
+        </ul>
 
-    <h2>8. Service Availability</h2>
-    <ul>
-      <li>We aim to maintain 99.9% uptime but do not guarantee uninterrupted service.</li>
-      <li>The Service depends on Shopify's API availability. We are not responsible for outages caused by Shopify platform issues.</li>
-      <li>We may perform scheduled maintenance with reasonable advance notice when possible.</li>
-      <li>We reserve the right to modify, suspend, or discontinue features of the Service with 30 days' notice for material changes.</li>
-    </ul>
+        <h2>8. Service Availability</h2>
+        <ul>
+          <li>We aim to maintain 99.9% uptime but do not guarantee uninterrupted service.</li>
+          <li>The Service depends on Shopify's API availability. We are not responsible for outages caused by Shopify platform issues.</li>
+          <li>We may perform scheduled maintenance with reasonable advance notice when possible.</li>
+          <li>We reserve the right to modify, suspend, or discontinue features of the Service with 30 days' notice for material changes.</li>
+        </ul>
 
-    <h2>9. Limitation of Liability</h2>
-    <div class="highlight">
-      <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, SHAPEHAVEN INNOVATIONS LLC SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, REVENUE, DATA, OR BUSINESS OPPORTUNITIES, ARISING FROM YOUR USE OF THE SERVICE.</p>
-    </div>
-    <ul>
-      <li>Our total liability for any claims arising from the Service shall not exceed the amount you paid us in the 12 months preceding the claim.</li>
-      <li>We are not liable for business decisions you make based on ReturnIQ's AI-generated recommendations.</li>
-      <li>We are not liable for damages resulting from third-party services (Shopify, Supabase, Anthropic) beyond our reasonable control.</li>
-    </ul>
+        <h2>9. Limitation of Liability</h2>
+        <div class="highlight">
+          <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, SHAPEHAVEN INNOVATIONS LLC SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, REVENUE, DATA, OR BUSINESS OPPORTUNITIES, ARISING FROM YOUR USE OF THE SERVICE.</p>
+        </div>
+        <ul>
+          <li>Our total liability for any claims arising from the Service shall not exceed the amount you paid us in the 12 months preceding the claim.</li>
+          <li>We are not liable for business decisions you make based on ReturnIQ's AI-generated recommendations.</li>
+          <li>We are not liable for damages resulting from third-party services (Shopify, Supabase, Anthropic) beyond our reasonable control.</li>
+        </ul>
 
-    <h2>10. Disclaimer of Warranties</h2>
-    <p>THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
-    <p>We do not warrant that:</p>
-    <ul>
-      <li>The Service will meet all of your requirements.</li>
-      <li>AI-generated analysis, recommendations, or descriptions will be error-free or achieve specific results.</li>
-      <li>The Service will be uninterrupted, timely, or secure.</li>
-    </ul>
+        <h2>10. Disclaimer of Warranties</h2>
+        <p>THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+        <p>We do not warrant that:</p>
+        <ul>
+          <li>The Service will meet all of your requirements.</li>
+          <li>AI-generated analysis, recommendations, or descriptions will be error-free or achieve specific results.</li>
+          <li>The Service will be uninterrupted, timely, or secure.</li>
+        </ul>
 
-    <h2>11. Indemnification</h2>
-    <p>You agree to indemnify and hold harmless ShapeHaven Innovations LLC, its officers, employees, and agents from any claims, damages, losses, or expenses (including reasonable attorney's fees) arising from:</p>
-    <ul>
-      <li>Your use of the Service in violation of these Terms.</li>
-      <li>Your violation of any applicable law or regulation.</li>
-      <li>Your publication of AI-generated content that infringes on third-party rights.</li>
-    </ul>
+        <h2>11. Indemnification</h2>
+        <p>You agree to indemnify and hold harmless ShapeHaven Innovations LLC, its officers, employees, and agents from any claims, damages, losses, or expenses (including reasonable attorney's fees) arising from:</p>
+        <ul>
+          <li>Your use of the Service in violation of these Terms.</li>
+          <li>Your violation of any applicable law or regulation.</li>
+          <li>Your publication of AI-generated content that infringes on third-party rights.</li>
+        </ul>
 
-    <h2>12. Termination</h2>
-    <ul>
-      <li><strong>By You:</strong> You may terminate these Terms at any time by uninstalling ReturnIQ from your Shopify store.</li>
-      <li><strong>By Us:</strong> We may suspend or terminate your access if you violate these Terms, fail to pay subscription fees, or if we discontinue the Service. We will provide 30 days' notice for discontinuation except in cases of Terms violations.</li>
-      <li><strong>Effect:</strong> Upon termination, your right to use the Service ceases immediately. Data deletion will proceed per our Privacy Policy.</li>
-    </ul>
+        <h2>12. Termination</h2>
+        <ul>
+          <li><strong>By You:</strong> You may terminate these Terms at any time by uninstalling ReturnIQ from your Shopify store.</li>
+          <li><strong>By Us:</strong> We may suspend or terminate your access if you violate these Terms, fail to pay subscription fees, or if we discontinue the Service. We will provide 30 days' notice for discontinuation except in cases of Terms violations.</li>
+          <li><strong>Effect:</strong> Upon termination, your right to use the Service ceases immediately. Data deletion will proceed per our Privacy Policy.</li>
+        </ul>
 
-    <h2>13. Governing Law & Disputes</h2>
-    <ul>
-      <li>These Terms are governed by the laws of the State of Delaware, United States, without regard to conflict of law principles.</li>
-      <li>Any disputes shall first be attempted to be resolved through good-faith negotiation for 30 days.</li>
-      <li>If negotiation fails, disputes shall be resolved through binding arbitration in accordance with the rules of the American Arbitration Association.</li>
-      <li>Nothing in these Terms prevents either party from seeking injunctive relief in a court of competent jurisdiction.</li>
-    </ul>
+        <h2>13. Governing Law & Disputes</h2>
+        <ul>
+          <li>These Terms are governed by the laws of the State of Delaware, United States, without regard to conflict of law principles.</li>
+          <li>Any disputes shall first be attempted to be resolved through good-faith negotiation for 30 days.</li>
+          <li>If negotiation fails, disputes shall be resolved through binding arbitration in accordance with the rules of the American Arbitration Association.</li>
+          <li>Nothing in these Terms prevents either party from seeking injunctive relief in a court of competent jurisdiction.</li>
+        </ul>
 
-    <h2>14. Changes to These Terms</h2>
-    <p>We may update these Terms from time to time. When we do:</p>
-    <ul>
-      <li>We will update the "Last updated" date at the top.</li>
-      <li>For material changes, we will notify you via the ReturnIQ dashboard and/or email at least 14 days before the changes take effect.</li>
-      <li>Continued use of the Service after changes take effect constitutes acceptance of the updated Terms.</li>
-      <li>If you disagree with changes, you may uninstall the application before the changes take effect.</li>
-    </ul>
+        <h2>14. Changes to These Terms</h2>
+        <p>We may update these Terms from time to time. When we do:</p>
+        <ul>
+          <li>We will update the "Last updated" date at the top.</li>
+          <li>For material changes, we will notify you via the ReturnIQ dashboard and/or email at least 14 days before the changes take effect.</li>
+          <li>Continued use of the Service after changes take effect constitutes acceptance of the updated Terms.</li>
+          <li>If you disagree with changes, you may uninstall the application before the changes take effect.</li>
+        </ul>
 
-    <h2>15. General Provisions</h2>
-    <ul>
-      <li><strong>Entire Agreement:</strong> These Terms, together with our Privacy Policy, constitute the entire agreement between you and ShapeHaven Innovations LLC regarding the Service.</li>
-      <li><strong>Severability:</strong> If any provision is found unenforceable, the remaining provisions remain in full force.</li>
-      <li><strong>Waiver:</strong> Failure to enforce any right or provision does not constitute a waiver of that right.</li>
-      <li><strong>Assignment:</strong> You may not assign these Terms without our written consent. We may assign our rights in connection with a merger, acquisition, or sale of assets.</li>
-    </ul>
+        <h2>15. General Provisions</h2>
+        <ul>
+          <li><strong>Entire Agreement:</strong> These Terms, together with our Privacy Policy, constitute the entire agreement between you and ShapeHaven Innovations LLC regarding the Service.</li>
+          <li><strong>Severability:</strong> If any provision is found unenforceable, the remaining provisions remain in full force.</li>
+          <li><strong>Waiver:</strong> Failure to enforce any right or provision does not constitute a waiver of that right.</li>
+          <li><strong>Assignment:</strong> You may not assign these Terms without our written consent. We may assign our rights in connection with a merger, acquisition, or sale of assets.</li>
+        </ul>
 
-    <h2>16. Contact Us</h2>
-    <p>If you have questions about these Terms, contact us at:</p>
-    <p>
-      <strong>ShapeHaven Innovations LLC</strong><br>
-      Email: <a href="mailto:info@shapehaveninnovations.org">info@shapehaveninnovations.org</a><br>
-      Website: <a href="https://shapehaveninnovations.org">shapehaveninnovations.org</a>
-    </p>
+        <h2>16. Contact Us</h2>
+        <p>If you have questions about these Terms, contact us at:</p>
+        <p>
+          <strong>ShapeHaven Innovations LLC</strong><br>
+          Email: <a href="mailto:info@shapehaveninnovations.org">info@shapehaveninnovations.org</a><br>
+          Website: <a href="https://shapehaveninnovations.org">shapehaveninnovations.org</a>
+        </p>
+      </article>
+    </main>
 
-    <div class="footer">
-      <p>ReturnIQ is a product of ShapeHaven Innovations LLC</p>
-      <p>&copy; 2026 ShapeHaven Innovations LLC. All rights reserved.</p>
-    </div>
-  </div>
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 ShapeHaven Innovations LLC</p>
+      </div>
+    </footer>
 
-  <footer>
-    <p>
-      Have questions? Reach out:
-      <a href="mailto:info@shapehaveninnovations.org">info@shapehaveninnovations.org</a>
-    </p>
-    <p>&copy; 2025 ShapeHaven Innovations LLC</p>
-  </footer>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
