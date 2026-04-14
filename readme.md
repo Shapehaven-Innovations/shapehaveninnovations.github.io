@@ -1,6 +1,6 @@
 # Shapehaven Innovations · Public Website
 
-<https://shapehaveninnovations.org>  
+<https://shapehaveninnovations.com>  
 <https://shapehaveninnovations.github.io>
 
 Welcome to the **Shapehaven Innovations** website repository. We craft next-generation iOS apps, SDKs, and developer tools focused on sleek UI, high performance, and enterprise-grade security—all showcased here on our public, **static** site hosted with GitHub Pages.
@@ -16,7 +16,7 @@ Welcome to the **Shapehaven Innovations** website repository. We craft next-gene
 | ------------------ | -------------------------------------------------------------------------------- |
 | `index.html`       | Landing page highlighting our flagship SDKs and components.                      |
 | `images/`          | Optimised PNG/SVG assets used by the site.                                       |
-| `CNAME`            | Binds the custom domain **shapehaveninnovations.org** to this GitHub Pages site. |
+| `CNAME`            | Binds the custom domain **shapehaveninnovations.com** to this GitHub Pages site. |
 | `docs/` (optional) | Long-form documentation & release notes (added as needed).                       |
 
 Everything is plain **HTML + CSS** (no server-side code), so you can clone and view locally without additional tooling.
@@ -39,7 +39,7 @@ Then navigate to <http://localhost:8000>.
 
 1. **Push** to the **`main`** branch.
 2. GitHub Pages automatically rebuilds and publishes to **shapehaveninnovations.github.io**.
-3. DNS for **shapehaveninnovations.org** points at GitHub’s Pages IPs, so the latest commit is live within minutes.
+3. DNS for **shapehaveninnovations.com** points at GitHub’s Pages IPs, so the latest commit is live within minutes.
 
 > _No CI/CD secrets are stored in this repository; all sensitive operations happen elsewhere._
 
@@ -71,6 +71,6 @@ Third-party icons and fonts retain their respective licenses.
 
 For questions about our SDKs or partnership opportunities:
 
-- **Email:** [info@shapehaveninnovations.org](mailto:info@shapehaveninnovations.org)
+- **Email:** [info@shapehaveninnovations.com](mailto:info@shapehaveninnovations.com)
 
 Thanks for stopping by — and happy shipping!
