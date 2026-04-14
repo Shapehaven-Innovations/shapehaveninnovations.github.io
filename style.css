@@ -279,6 +279,13 @@ footer a {
   font-weight: 600;
 }
 
+/* View Transitions */
+@keyframes fade-in  { from { opacity: 0; } }
+@keyframes fade-out { to   { opacity: 0; } }
+
+::view-transition-old(root) { animation: fade-out 150ms ease; }
+::view-transition-new(root) { animation: fade-in  150ms ease; }
+
 /* Mobile Responsive */
 @media (max-width: 992px) {
   .hero {

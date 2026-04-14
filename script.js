@@ -1,26 +1,25 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initPage() {
   const themeToggle = document.getElementById('theme-toggle');
-  const body = document.body;
+  const root = document.documentElement;
 
-  // Check for saved theme preference
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    body.setAttribute('data-theme', savedTheme);
-    themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
-  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    body.setAttribute('data-theme', 'dark');
-    themeToggle.textContent = '☀️';
+  // Sync toggle icon with current theme (already set by inline FOUC script)
+  const currentTheme = root.getAttribute('data-theme');
+  if (themeToggle) {
+    themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
   }
 
   // Toggle theme
-  themeToggle.addEventListener('click', () => {
-    const currentTheme = body.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-    body.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-  });
+  if (themeToggle) {
+    themeToggle.replaceWith(themeToggle.cloneNode(true)); // remove stale listeners
+    const freshToggle = document.getElementById('theme-toggle');
+    freshToggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      freshToggle.textContent = next === 'dark' ? '☀️' : '🌙';
+    });
+  }
 
   // ─── Domain / email injection from config.js ────────────────────────────────
   if (typeof SITE !== 'undefined') {
@@ -48,4 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (updated !== text) node.textContent = updated;
     }
   }
-});
+}
+
+document.addEventListener('DOMContentLoaded', initPage);
