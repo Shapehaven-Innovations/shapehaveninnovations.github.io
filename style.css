@@ -188,6 +188,43 @@ nav a:hover {
   color: #fff;
 }
 
+/* Card icon */
+.card-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-color);
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+}
+
+.card-icon svg,
+.card-icon img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Global card flex layout — ensures buttons pin to bottom */
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card > p {
+  flex-grow: 1;
+}
+
+.card .btn {
+  width: 100%;
+  text-align: center;
+}
+
 /* Services Grid */
 .section-header {
   text-align: center;

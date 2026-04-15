@@ -39,42 +39,11 @@
     <meta name="twitter:description" content="Explore our open-source projects and contribute to the future of iOS and IT solutions." />
     <meta name="twitter:image" content="https://shapehaveninnovations.com/images/logo.png" />
     <style>
-      .card-icon {
-        height: 64px;
-        width: 64px;
-        margin: 0 auto 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .card-icon img {
-        height: 100%;
-        width: 100%;
-        object-fit: contain;
-      }
       .card {
         text-align: center;
-        display: flex;
-        flex-direction: column;
       }
       .card p {
         margin-bottom: 1.5rem;
-        flex-grow: 1;
-      }
-      pre {
-        background: var(--bg-color);
-        padding: 1rem;
-        border-radius: 8px;
-        font-size: 0.8rem;
-        margin: 1rem 0;
-        border: 1px solid var(--border-color);
-        word-break: break-all;
-        white-space: pre-wrap;
-        text-align: left;
-        color: var(--text-color);
-      }
-      .card .btn {
-        width: 100%;
       }
     </style>
   </head>
@@ -91,7 +60,9 @@
           <a href="github.html">GitHub</a>
           <a href="support.html">Support</a>
           <a href="privacy.html">Privacy</a>
-          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
         </nav>
       </div>
     </header>
@@ -107,18 +78,17 @@
           <!-- 1. Contribute -->
           <div class="card">
             <div class="card-icon">
-              <img src="images/github-contribute.png" alt="Contribute icon" width="64" height="64" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 0 0 9 9"/></svg>
             </div>
             <h3>Contribute</h3>
             <p>Fork & clone our repo, then code your next great feature. We welcome contributions from developers of all skill levels.</p>
-            <pre><code>git clone https://github.com/Shapehaven-Innovations/Shapehaven-Innovations.git</code></pre>
             <a href="https://github.com/Shapehaven-Innovations" class="btn btn-primary" target="_blank" rel="noopener">View Repos</a>
           </div>
 
           <!-- 2. Report Issues -->
           <div class="card">
             <div class="card-icon">
-              <img src="images/github-issues.png" alt="Issues icon" width="64" height="64" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
             </div>
             <h3>Report Issues</h3>
             <p>Found a bug or have a feature request? Open an issue and help us improve our projects.</p>
@@ -128,7 +98,7 @@
           <!-- 3. Pull Requests -->
           <div class="card">
             <div class="card-icon">
-              <img src="images/github-pull.png" alt="Pull Request icon" width="64" height="64" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>
             </div>
             <h3>Pull Requests</h3>
             <p>Submit your improvements and help us evolve faster. We review all PRs thoughtfully and provide feedback.</p>
@@ -138,7 +108,7 @@
           <!-- 4. Support Contact -->
           <div class="card">
             <div class="card-icon">
-              <img src="images/support-technical.png" alt="Support icon" width="64" height="64" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             </div>
             <h3>Need Help?</h3>
             <p>Have questions about our projects or need technical support? Reach out to our team.</p>
@@ -148,7 +118,7 @@
           <!-- 5. GitHub Tutorials -->
           <div class="card">
             <div class="card-icon">
-              <img src="images/github-tutorials.png" alt="Tutorials icon" width="64" height="64" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
             </div>
             <h3>Tutorials</h3>
             <p>New to GitHub or our projects? Check out our curated resources and beginner guides.</p>
@@ -158,7 +128,7 @@
           <!-- 6. Discussions -->
           <div class="card">
             <div class="card-icon">
-              <img src="images/github-trending.png" alt="Discussions icon" width="64" height="64" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
             <h3>Discussions</h3>
             <p>Join our community discussions to share ideas, ask questions, and collaborate on technical topics.</p>

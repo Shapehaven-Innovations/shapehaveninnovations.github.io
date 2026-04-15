@@ -38,6 +38,12 @@
     if (oldCanon && newCanon) oldCanon.replaceWith(newCanon.cloneNode(true));
     else if (newCanon) document.head.appendChild(newCanon.cloneNode(true));
 
+    // Swap inline <style> tags so per-page styles travel with page content
+    document.head.querySelectorAll('style').forEach(s => s.remove());
+    doc.head.querySelectorAll('style').forEach(s =>
+      document.head.appendChild(s.cloneNode(true))
+    );
+
     // Swap main and footer
     const newMain = doc.querySelector('main');
     const newFooter = doc.querySelector('footer');
