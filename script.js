@@ -24,6 +24,25 @@ function initPage() {
     });
   }
 
+  // ─── Hamburger menu ────────────────────────────────────────────────────────
+  const hamburger = document.getElementById('hamburger');
+  const mainNav = document.getElementById('main-nav');
+  if (hamburger && mainNav) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = mainNav.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+    // Close menu when a nav link is clicked
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
   // ─── Domain / email injection from config.js ────────────────────────────────
   if (typeof SITE !== 'undefined') {
     // Update all mailto: href attributes and their visible text
