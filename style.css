@@ -95,6 +95,7 @@ nav a:hover {
 }
 
 .theme-toggle {
+  color: var(--text-color);
   background: none;
   border: none;
   font-size: 1.25rem;
