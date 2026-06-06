@@ -28,17 +28,19 @@ function initPage() {
   const hamburger = document.getElementById('hamburger');
   const mainNav = document.getElementById('main-nav');
   if (hamburger && mainNav) {
-    hamburger.addEventListener('click', () => {
+    hamburger.replaceWith(hamburger.cloneNode(true));
+    const freshHamburger = document.getElementById('hamburger');
+    freshHamburger.addEventListener('click', () => {
       const isOpen = mainNav.classList.toggle('open');
-      hamburger.classList.toggle('open', isOpen);
-      hamburger.setAttribute('aria-expanded', isOpen);
+      freshHamburger.classList.toggle('open', isOpen);
+      freshHamburger.setAttribute('aria-expanded', isOpen);
     });
     // Close menu when a nav link is clicked
     mainNav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         mainNav.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
+        freshHamburger.classList.remove('open');
+        freshHamburger.setAttribute('aria-expanded', 'false');
       });
     });
   }
