@@ -1,7 +1,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/swift,macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=swift,macos
 
-### Superpowers ###
+### Claude Code / Superpowers ###
+# Git worktrees live here. NOT ignoring this causes the worktree to be staged as a
+# gitlink (mode 160000) pointing at a commit that only exists locally.
+.claude/worktrees/
 # Brainstorming session mockups — local only, must never deploy
 .superpowers/
 
