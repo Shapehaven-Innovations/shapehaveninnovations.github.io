@@ -66,6 +66,7 @@ header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 .logo-container a {
@@ -89,32 +90,10 @@ header .container {
 }
 
 nav {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: var(--header-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border-color);
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0;
-  padding: 0.5rem 0;
-}
-
-nav.open {
   display: flex;
-}
-
-nav a {
-  width: 100%;
-  padding: 0.75rem 1.5rem;
-}
-
-nav a:hover {
-  background: var(--border-color);
+  align-items: center;
+  gap: 1.5rem;
+  margin-left: auto;
 }
 
 nav a {
@@ -151,7 +130,7 @@ nav a:hover {
 }
 
 .hamburger {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
@@ -422,6 +401,38 @@ footer a {
 }
 
 @media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--header-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0.5rem 0;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  nav a {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+  }
+
+  nav a:hover {
+    background: var(--border-color);
+  }
   .hero-text h1 {
     font-size: 2.25rem;
   }
@@ -433,17 +444,5 @@ footer a {
   }
   .highlight-section {
     padding: 2rem;
-  }
-}
-
-@media (min-width: 769px) {
-  nav {
-    left: auto;
-    right: 1.5rem;
-    width: auto;
-    min-width: 200px;
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    box-shadow: 0 8px 24px var(--shadow-color);
   }
 }
