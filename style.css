@@ -179,10 +179,23 @@ nav a:hover {
 .hero {
   padding-top: 7rem;
   padding-bottom: 7rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 4rem;
 }
 
 .hero-text {
-  max-width: 820px;
+  flex: 1 1 620px;
+  max-width: 700px;
+}
+
+.hero-description {
+  flex: 1 1 280px;
+  max-width: 340px;
+  color: var(--light-text);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  padding-top: 0.5rem;
 }
 
 .hero-text h1 {
@@ -206,17 +219,11 @@ nav a:hover {
   margin-bottom: 2rem;
 }
 
-.hero-text p {
-  font-size: 1.125rem;
-  color: var(--light-text);
-  margin-bottom: 2.5rem;
-  max-width: 600px;
-}
-
 /* Buttons */
 .cta-group {
   display: flex;
   gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 .btn {
@@ -332,6 +339,62 @@ nav a:hover {
   color: var(--light-text);
 }
 
+/* Ambient banner */
+.ambient-banner {
+  position: relative;
+  height: 320px;
+  border-radius: 20px;
+  margin-bottom: 5rem;
+  overflow: hidden;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+}
+
+.ambient-banner::before,
+.ambient-banner::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+}
+
+.ambient-banner::before {
+  width: 55%;
+  height: 150%;
+  top: -25%;
+  left: -15%;
+  background: radial-gradient(circle, var(--light-text), transparent 70%);
+  opacity: 0.55;
+  animation: ambient-drift-a 18s ease-in-out infinite;
+}
+
+.ambient-banner::after {
+  width: 45%;
+  height: 130%;
+  top: -15%;
+  right: -10%;
+  background: radial-gradient(circle, var(--text-color), transparent 70%);
+  opacity: 0.2;
+  animation: ambient-drift-b 22s ease-in-out infinite;
+}
+
+@keyframes ambient-drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(45%, 25%) scale(1.25); }
+}
+
+@keyframes ambient-drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-35%, -20%) scale(1.2); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-banner::before,
+  .ambient-banner::after {
+    animation: none;
+  }
+}
+
 /* Highlight Section */
 .highlight-section {
   background: var(--card-bg);
@@ -388,12 +451,20 @@ footer a {
   .hero {
     padding-top: 4rem;
     padding-bottom: 4rem;
+    flex-direction: column;
+    gap: 0;
+  }
+  .hero-text {
+    flex: none;
+    max-width: 100%;
   }
   .hero-text h1 {
     font-size: 2.75rem;
   }
-  .hero-text p {
-    margin: 0 auto 2.5rem;
+  .hero-description {
+    flex: none;
+    max-width: 100%;
+    margin-top: 1.5rem;
   }
   .cta-group {
     justify-content: center;
