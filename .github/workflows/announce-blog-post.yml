@@ -1,0 +1,61 @@
+name: Announce new blog post
+
+# When a new file is added under blog/ (a new post), post a short teaser +
+# link to it in the org's GitHub Discussions (hosted in the .github repo,
+# Tech Trends category). Never posts on edits to an existing post, and
+# never posts for changes to blog/index.html itself.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'blog/*.html'
+      - '!blog/index.html'
+
+jobs:
+  announce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Find newly added post
+        id: find
+        run: |
+          FILES=$(git diff --name-status HEAD^ HEAD -- 'blog/*.html' | grep '^A' | grep -v 'blog/index.html' | cut -f2 || true)
+          if [ -z "$FILES" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          FILE=$(echo "$FILES" | head -n1)
+          TITLE_RAW=$(grep -m1 -oP '(?<=<title>).*?(?=</title>)' "$FILE")
+          TITLE=$(echo "$TITLE_RAW" | sed 's/ | .*//')
+          DESC=$(grep -m1 -oP '(?<=<meta name="description" content=").*?(?=")' "$FILE")
+          SLUG=$(basename "$FILE" .html)
+
+          echo "skip=false" >> "$GITHUB_OUTPUT"
+          echo "title=$TITLE" >> "$GITHUB_OUTPUT"
+          echo "desc=$DESC" >> "$GITHUB_OUTPUT"
+          echo "url=https://shapehaveninnovations.com/blog/$SLUG" >> "$GITHUB_OUTPUT"
+
+      - name: Create discussion
+        if: steps.find.outputs.skip == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.DISCUSSIONS_TOKEN }}
+        run: |
+          BODY="${{ steps.find.outputs.desc }}
+
+          Read it here: ${{ steps.find.outputs.url }}"
+
+          gh api graphql -f query='
+            mutation($repoId: ID!, $catId: ID!, $title: String!, $body: String!) {
+              createDiscussion(input: { repositoryId: $repoId, categoryId: $catId, title: $title, body: $body }) {
+                discussion { url }
+              }
+            }' \
+            -f repoId="R_kgDOOf3P4Q" \
+            -f catId="DIC_kwDOOf3P4c4CtaXa" \
+            -f title="New post: ${{ steps.find.outputs.title }}" \
+            -f body="$BODY"
