@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World Monitor: An Open-Source Dashboard Built for AI Agents | ShapeHaven Blog</title>
+    <meta name="description" content="Why we're watching World Monitor, an open-source global intelligence dashboard that ships an MCP server alongside its REST API, treating AI agents as first-class clients." />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="World Monitor: An Open-Source Dashboard Built for AI Agents" />
+    <meta property="og:description" content="Why we're watching World Monitor, an open-source global intelligence dashboard that ships an MCP server alongside its REST API, treating AI agents as first-class clients." />
+    <meta property="og:image" content="https://shapehaveninnovations.com/images/logo.png" />
+    <meta property="og:url" content="https://shapehaveninnovations.com/blog/worldmonitor-app" />
+    <meta property="og:type" content="article" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link rel="apple-touch-icon" href="/images/logo.png" />
+
+    <!-- FOUC fix: apply theme before CSS renders -->
+    <script>
+      (function() {
+        var t = localStorage.getItem('theme');
+        if (t) document.documentElement.setAttribute('data-theme', t);
+        else if (window.matchMedia('(prefers-color-scheme: dark)').matches)
+          document.documentElement.setAttribute('data-theme', 'dark');
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="canonical" href="https://shapehaveninnovations.com/blog/worldmonitor-app" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="World Monitor: An Open-Source Dashboard Built for AI Agents" />
+    <meta name="twitter:description" content="Why we're watching World Monitor, an open-source global intelligence dashboard that ships an MCP server alongside its REST API, treating AI agents as first-class clients." />
+    <meta name="twitter:image" content="https://shapehaveninnovations.com/images/logo.png" />
+
+    <style>
+      .post-hero {
+        text-align: left;
+        max-width: 760px;
+      }
+      .blog-eyebrow {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        display: block;
+      }
+      .post-hero h1 {
+        font-size: 2.75rem;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+        border-bottom: 4px solid var(--primary-color);
+        padding-bottom: 1.5rem;
+      }
+      .post-meta {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 0.85rem;
+        color: var(--light-text);
+        margin-top: 1.25rem;
+        letter-spacing: 0.02em;
+      }
+      .post-body {
+        max-width: 760px;
+        margin: 3rem 0 5rem;
+        font-size: 1.1rem;
+        line-height: 1.75;
+        color: var(--text-color);
+      }
+      .post-body p {
+        margin-bottom: 1.5rem;
+      }
+      .post-body h2 {
+        font-size: 1.6rem;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        margin: 3rem 0 1.25rem;
+        border-left: 4px solid var(--primary-color);
+        padding-left: 1rem;
+      }
+      .post-body a {
+        color: var(--primary-color);
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+      .post-body ul {
+        margin: 0 0 1.5rem 1.25rem;
+      }
+      .post-body li {
+        margin-bottom: 0.6rem;
+        color: var(--light-text);
+      }
+      .post-callout {
+        border: 1px solid var(--border-color);
+        border-left: 4px solid var(--primary-color);
+        background: var(--card-bg);
+        padding: 1.5rem 1.75rem;
+        margin: 2.5rem 0;
+        font-size: 1rem;
+        color: var(--light-text);
+      }
+      .post-callout strong {
+        color: var(--text-color);
+      }
+      .post-cta {
+        border-radius: 0;
+        border: 1px solid var(--border-color);
+        border-left: 4px solid var(--primary-color);
+        padding: 2rem;
+        margin-top: 3rem;
+      }
+      .post-cta h3 {
+        margin-bottom: 0.75rem;
+      }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "World Monitor: An Open-Source Dashboard Built for AI Agents",
+      "description": "Why we're watching World Monitor, an open-source global intelligence dashboard that ships an MCP server alongside its REST API, treating AI agents as first-class clients.",
+      "url": "https://shapehaveninnovations.com/blog/worldmonitor-app",
+      "datePublished": "2026-09-03",
+      "dateModified": "2026-09-03",
+      "author": { "@type": "Organization", "name": "ShapeHaven Innovations" },
+      "publisher": { "@type": "Organization", "name": "ShapeHaven Innovations", "logo": { "@type": "ImageObject", "url": "https://shapehaveninnovations.com/images/logo.png" } },
+      "mainEntityOfPage": "https://shapehaveninnovations.com/blog/worldmonitor-app"
+    }
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo-container">
+          <a href="/" class="logo-text">ShapeHaven Innovations</a>
+        </div>
+        <nav id="main-nav">
+          <a href="/">Home</a>
+          <a href="/blog/">Blog</a>
+          <a href="/github.html">GitHub</a>
+          <a href="/support.html">Support</a>
+          <a href="/privacy.html">Privacy</a>
+        </nav>
+        <div class="header-actions">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="post-hero" style="margin-top: 4rem;">
+          <span class="blog-eyebrow">// Dispatches / Tool Spotlight</span>
+          <h1>World Monitor: An Open-Source Dashboard Built for AI Agents</h1>
+          <p class="post-meta">September 3, 2026 &middot; ShapeHaven Innovations</p>
+        </div>
+
+        <article class="post-body">
+          <p>
+            Most of the tools we recommend in this space are ones we've built or shipped ourselves.
+            <a href="https://www.worldmonitor.app/" target="_blank" rel="noopener">World Monitor</a> is neither,
+            and we're writing about it anyway, because it gets something right that most dashboards don't:
+            it treats correlation as the product, not the data.
+          </p>
+
+          <p>
+            World Monitor is a free, open-source (AGPL-3.0) global intelligence dashboard. It streams live
+            conflict data, AIS vessel tracking through chokepoints like the Strait of Hormuz and the Panama
+            Canal, subsea cable and pipeline status, market prices, satellite passes, and cyber signals like
+            BGP anomalies, onto one interactive map. None of that is unusual on its own. Plenty of tools
+            track shipping. Plenty track markets. What's unusual is that World Monitor puts them in the same
+            place and lets you see where they intersect.
+          </p>
+
+          <p>
+            The <a href="https://github.com/koala73/worldmonitor" target="_blank" rel="noopener">GitHub repo</a>
+            is worth a look on its own: 85k+ stars, 12.9k forks, and active development (thousands of commits
+            on main). It's not a side project someone open-sourced and abandoned. Under the hood it's vanilla
+            TypeScript with Vite, globe.gl/Three.js and deck.gl/MapLibre for the map rendering, and native
+            desktop builds on Tauri 2 (Rust) for Windows, macOS, and Linux.
+          </p>
+
+          <h2>Why convergence matters more than feeds</h2>
+          <p>
+            A conflict tracker that doesn't talk to a shipping monitor will show you an escalation and a
+            chokepoint slowdown as two unrelated alerts. World Monitor's whole design bet is that the
+            intersection is the actual signal: a disrupted strait, a nearby escalation, and a pipeline outage
+            happening in the same week is a compound risk that none of the three data points shows on its
+            own. That's a genuinely different way to build a dashboard, and it's the kind of architectural
+            decision we respect, because it means someone thought about what the user actually needs to
+            know, not just what data was easy to expose.
+          </p>
+
+          <div class="post-callout">
+            <strong>The detail that made us write this post:</strong> World Monitor ships an MCP server
+            alongside its REST API and native SDKs for npm, PyPI, RubyGems, and Go. That's not a minor
+            feature. It means Claude, GPT, or any other agent can query live risk scores and chokepoint
+            status the same way a human clicks through the map, no scraping, no unofficial workaround.
+          </div>
+
+          <h2>Building for agents as first-class clients</h2>
+          <p>
+            A lot of products bolt on an API as an afterthought once enough users ask for one. World
+            Monitor's approach is the opposite: the MCP server sits right next to the REST API in the
+            documentation, not buried in a changelog entry. If you're building an agent that needs to reason
+            about supply-chain risk, energy prices, or geopolitical instability, you can wire it up directly
+            instead of screen-scraping a dashboard or paying for a data vendor with a six-week integration
+            timeline. That's the same problem we solve for clients on the backend and integrations side of
+            our work, so seeing a product ship it well, by default, for free, is worth calling out.
+          </p>
+
+          <h2>Free tier that's actually usable</h2>
+          <p>
+            The free tier isn't a crippled demo. You get the full map (minus the Resilience layer), country
+            briefs, chokepoint intelligence, and breaking alerts, with no signup wall. Every panel cites its
+            source inline, ACLED, UCDP, AISStream, NASA FIRMS, USGS, IMF, FRED, and others, so you can audit
+            where a number came from instead of trusting a black box. Pro adds an AI analyst chat and
+            scenario modeling for $39.99/month if you need it. But the free product respects your time
+            enough to be worth using without ever upgrading.
+          </p>
+
+          <p>
+            We build software with the same premise: you should own your data and your integrations, and a
+            tool shouldn't have to lock you in to be worth using. World Monitor is a good example of that
+            philosophy shipped well. If you're building something that needs live operational intelligence,
+            or an agent that needs to reason about the physical world instead of just text, it's worth a
+            look.
+          </p>
+        </article>
+        <!-- post-body ends -->
+
+        <div class="post-cta">
+          <h3>Building something that needs live data or agent integrations?</h3>
+          <p>
+            We design APIs, wire up MCP servers, and build the backend infrastructure that lets your
+            product (or your agents) talk to the systems that matter.
+            <a href="/support.html">Get in touch</a>.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <nav class="footer-links">
+          <a href="/">Home</a>
+          <a href="/blog/">Blog</a>
+          <a href="/support.html">Support</a>
+          <a href="/github.html">GitHub</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/returniq-privacy.html">ReturnIQ Privacy</a>
+          <a href="/returniq-terms.html">ReturnIQ Terms</a>
+        </nav>
+        <p>&copy; 2025 ShapeHaven Innovations LLC</p>
+      </div>
+    </footer>
+
+    <script src="/config.js"></script>
+    <script src="/script.js"></script>
+    <script src="/transitions.js"></script>
+
+    <!-- Cloudflare Web Analytics -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "6412781782134cada0f6ec322c5bb820"}'></script>
+    <!-- End Cloudflare Web Analytics -->
+  </body>
+</html>

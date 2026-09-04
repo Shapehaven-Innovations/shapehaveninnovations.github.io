@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog | ShapeHaven Innovations</title>
-    <meta name="description" content="Notes on iOS development, software architecture, refactoring, and DevOps from ShapeHaven Innovations." />
+    <meta name="description" content="Software, architecture, DevOps, and the tech we like. Notes and tool spotlights from ShapeHaven Innovations." />
     <meta name="robots" content="index, follow" />
 
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Blog | ShapeHaven Innovations" />
-    <meta property="og:description" content="Notes on iOS development, software architecture, refactoring, and DevOps from ShapeHaven Innovations." />
+    <meta property="og:description" content="Software, architecture, DevOps, and the tech we like. Notes and tool spotlights from ShapeHaven Innovations." />
     <meta property="og:image" content="https://shapehaveninnovations.com/images/logo.png" />
     <meta property="og:url" content="https://shapehaveninnovations.com/blog" />
     <meta property="og:type" content="website" />
@@ -37,7 +37,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Blog | ShapeHaven Innovations" />
-    <meta name="twitter:description" content="Notes on iOS development, software architecture, refactoring, and DevOps from ShapeHaven Innovations." />
+    <meta name="twitter:description" content="Software, architecture, DevOps, and the tech we like. Notes and tool spotlights from ShapeHaven Innovations." />
     <meta name="twitter:image" content="https://shapehaveninnovations.com/images/logo.png" />
 
     <style>
@@ -66,24 +66,30 @@
       .blog-hero .section-intro {
         margin: 1.5rem 0 0;
       }
-      #post-list .card {
-        border-radius: 0;
+      .post-feed {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 5rem;
+      }
+      .post-item {
         border: 1px solid var(--border-color);
         border-left: 4px solid var(--primary-color);
-        position: relative;
+        background: var(--card-bg);
         transition: var(--transition);
       }
-      #post-list .card:hover {
-        background: var(--primary-color);
-        border-left-color: var(--primary-color);
-        transform: translateX(4px);
+      .post-item-header {
+        all: unset;
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        padding: 2rem 2.5rem;
+        cursor: pointer;
       }
-      #post-list .card:hover h3,
-      #post-list .card:hover p,
-      #post-list .card:hover a {
-        color: var(--on-primary);
+      .post-item-header:hover {
+        background: var(--bg-color);
       }
-      #post-list .card-tag {
+      .card-tag {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         font-size: 0.75rem;
         font-weight: 700;
@@ -93,13 +99,86 @@
         margin-bottom: 0.75rem;
         display: block;
       }
-      #post-list .card:hover .card-tag {
-        color: var(--on-primary);
-        opacity: 0.7;
-      }
-      #post-list .card h3 {
+      .post-item-header h3 {
         font-size: 1.5rem;
         letter-spacing: -0.01em;
+        color: var(--text-color);
+        margin: 0 0 0.75rem;
+      }
+      .post-item-summary {
+        color: var(--light-text);
+        margin: 0;
+        line-height: 1.6;
+      }
+      .post-item-toggle {
+        display: inline-block;
+        margin-top: 1.25rem;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--primary-color);
+      }
+      .post-item-panel {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.35s ease;
+      }
+      .post-item-panel > div {
+        overflow: hidden;
+      }
+      .post-item.open .post-item-panel {
+        grid-template-rows: 1fr;
+      }
+      .post-item-panel-inner {
+        padding: 0 2.5rem 2.5rem;
+        border-top: 1px solid var(--border-color);
+        margin-top: 0;
+      }
+      .post-item-prose {
+        padding-top: 2rem;
+        font-size: 1.05rem;
+        line-height: 1.75;
+        color: var(--text-color);
+      }
+      .post-item-prose p {
+        margin-bottom: 1.25rem;
+      }
+      .post-item-prose h2 {
+        font-size: 1.35rem;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        margin: 2.25rem 0 1rem;
+        border-left: 4px solid var(--primary-color);
+        padding-left: 1rem;
+      }
+      .post-item-prose a {
+        color: var(--primary-color);
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+      .post-item-prose .post-callout,
+      .post-item-prose .post-cta {
+        border-radius: 0;
+        border: 1px solid var(--border-color);
+        border-left: 4px solid var(--primary-color);
+        background: var(--bg-color);
+        padding: 1.25rem 1.5rem;
+        margin: 1.75rem 0;
+        font-size: 0.95rem;
+        color: var(--light-text);
+      }
+      .post-item-prose .post-cta {
+        margin-top: 2rem;
+      }
+      .post-item-fulllink {
+        display: inline-block;
+        margin-top: 0.5rem;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 0.85rem;
+        font-weight: 700;
       }
     </style>
 
@@ -144,19 +223,29 @@
           <span class="blog-eyebrow">// Dispatches</span>
           <h1>Blog</h1>
           <p class="section-intro">
-            Notes on iOS development, software architecture, refactoring, and DevOps. From projects we're shipping right now.
+            Software, architecture, DevOps, and the tech we're into. Notes from projects we're shipping, plus tools and ideas worth sharing.
           </p>
         </div>
 
-        <div class="grid" id="post-list">
-          <div class="card">
-            <span class="card-tag">001 / Coming soon</span>
-            <h3>First post coming soon</h3>
-            <p>
-              We're writing up how ReturnIQ cuts return costs for Shopify merchants. Check back shortly, or
-              <a href="/support.html">get in touch</a> if you'd like to be notified.
-            </p>
-          </div>
+        <!-- Newest post first. Add new posts as a new .post-item at the TOP of this list. -->
+        <div class="post-feed" id="post-list">
+          <article class="post-item" data-url="/blog/worldmonitor-app.html">
+            <button class="post-item-header" type="button" aria-expanded="false">
+              <span class="card-tag">001 / September 3, 2026</span>
+              <h3>World Monitor: An Open-Source Dashboard Built for AI Agents</h3>
+              <p class="post-item-summary">
+                Why we're watching World Monitor, an 85k-star open-source global intelligence dashboard that
+                ships an MCP server alongside its REST API, treating AI agents as first-class clients.
+              </p>
+              <span class="post-item-toggle">Expand</span>
+            </button>
+            <div class="post-item-panel">
+              <div class="post-item-panel-inner">
+                <div class="post-item-prose"></div>
+                <a class="post-item-fulllink" href="/blog/worldmonitor-app.html">View full post &rarr;</a>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </main>
@@ -179,6 +268,73 @@
     <script src="/config.js"></script>
     <script src="/script.js"></script>
     <script src="/transitions.js"></script>
+
+    <script>
+      (function () {
+        let currentOpen = null;
+
+        async function loadPost(item) {
+          const prose = item.querySelector('.post-item-prose');
+          if (prose.dataset.loaded) return;
+          prose.textContent = 'Loading...';
+          try {
+            const res = await fetch(item.dataset.url);
+            const html = await res.text();
+            const doc = new DOMParser().parseFromString(html, 'text/html');
+            const article = doc.querySelector('.post-body');
+            prose.innerHTML = article ? article.innerHTML : 'Could not load this post.';
+            prose.dataset.loaded = 'true';
+          } catch (e) {
+            prose.textContent = 'Could not load this post.';
+          }
+        }
+
+        function setToggleLabel(item, open) {
+          const label = item.querySelector('.post-item-toggle');
+          if (label) label.textContent = open ? 'Collapse' : 'Expand';
+        }
+
+        function closeItem(item) {
+          item.classList.remove('open');
+          item.querySelector('.post-item-header').setAttribute('aria-expanded', 'false');
+          setToggleLabel(item, false);
+          if (currentOpen === item) currentOpen = null;
+        }
+
+        async function openItem(item) {
+          if (currentOpen && currentOpen !== item) closeItem(currentOpen);
+          await loadPost(item);
+          item.classList.add('open');
+          item.querySelector('.post-item-header').setAttribute('aria-expanded', 'true');
+          setToggleLabel(item, true);
+          currentOpen = item;
+        }
+
+        function setupBlogAccordion() {
+          currentOpen = null;
+          document.querySelectorAll('.post-item-header').forEach(header => {
+            header.addEventListener('click', () => {
+              const item = header.closest('.post-item');
+              if (item.classList.contains('open')) {
+                closeItem(item);
+              } else {
+                openItem(item);
+                item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            });
+          });
+        }
+
+        setupBlogAccordion();
+
+        // Re-attach after transitions.js swaps <main> during client-side navigation.
+        const previousInitPage = window.initPage;
+        window.initPage = function () {
+          if (typeof previousInitPage === 'function') previousInitPage();
+          if (document.getElementById('post-list')) setupBlogAccordion();
+        };
+      })();
+    </script>
 
     <!-- Cloudflare Web Analytics -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "6412781782134cada0f6ec322c5bb820"}'></script>
