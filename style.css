@@ -439,6 +439,23 @@ footer a {
   font-weight: 600;
 }
 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links a {
+  color: var(--light-text);
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  color: var(--primary-color);
+}
+
 /* View Transitions */
 @keyframes fade-in  { from { opacity: 0; } }
 @keyframes fade-out { to   { opacity: 0; } }

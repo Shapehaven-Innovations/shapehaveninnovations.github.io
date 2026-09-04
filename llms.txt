@@ -1,0 +1,34 @@
+# ShapeHaven Innovations
+
+> Boutique software consultancy specializing in iOS app development, custom software, web applications, backend systems, code refactoring, automation/DevOps, and technical consulting. Also builds and operates production SaaS products: ReturnIQ, CondoGuard, and KavaCrawl.
+
+ShapeHaven Innovations LLC is a small, independent software studio. Work is open-source where possible; clients own their code, data, and infrastructure (no vendor lock-in).
+
+## Services
+
+- iOS Apps & Architecture - native iOS development with clean architecture and performance optimization.
+- Websites & Web Apps - responsive, fast, accessible sites and web applications.
+- Code Refactoring - modernizing legacy codebases, reducing technical debt.
+- Backend & Integrations - API design, backend services, third-party integrations.
+- Automation & DevOps - CI/CD pipelines, deployment automation.
+- Technical Consulting - architecture, technology selection, performance, debugging.
+
+## Products
+
+- [ReturnIQ](https://returniq.shapehaveninnovations.com/) - Shopify app for AI-powered returns management and analytics, helping merchants cut loss and streamline logistics.
+- [CondoGuard](https://condoguard.app/) - property and condo management app for boards, owners, and residents.
+- [KavaCrawl](https://kavacrawl.shapehaveninnovations.com/) - web crawling and data collection platform built for reliability at scale.
+
+## Pages
+
+- [Home](https://shapehaveninnovations.com/): overview of services and products.
+- [Start a Project](https://shapehaveninnovations.com/support): contact form to start a project or get support.
+- [Open Source / GitHub](https://shapehaveninnovations.com/github): open-source projects, how to contribute, report issues, join discussions.
+- [Privacy Policy](https://shapehaveninnovations.com/privacy): how ShapeHaven handles data across its website and apps.
+- [ReturnIQ Privacy Policy](https://shapehaveninnovations.com/returniq-privacy): data handling for the ReturnIQ Shopify app.
+- [ReturnIQ Terms of Service](https://shapehaveninnovations.com/returniq-terms): terms governing ReturnIQ usage and billing.
+
+## Contact
+
+- Email: info@shapehaveninnovations.com
+- GitHub: https://github.com/Shapehaven-Innovations
