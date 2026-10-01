@@ -185,7 +185,7 @@
 
       <article class="legal-content">
         <h2>Privacy Policy</h2>
-        <p><strong>Last updated:</strong> July 2026</p>
+        <p><strong>Last updated:</strong> October 1, 2026</p>
         <p>
           ShapeHaven Innovations LLC ("ShapeHaven," "we," "us," or "our") operates 
           this website (shapehaveninnovations.com) and one or more mobile applications 
@@ -219,14 +219,45 @@
         <h3>1.2 Mobile App Usage</h3>
         <p>Our mobile applications are designed with privacy as a core principle:</p>
         <ul>
-          <li><strong>Local Storage Only:</strong> Any presets, configuration settings, or histories you create within our App(s) are stored locally on your device (e.g., using Apple's UserDefaults or local file storage). We do not transmit that content to any external server.</li>
-          <li><strong>No Personal Data Collection:</strong> We do not collect personal information such as your name, email, location, or device identifiers.</li>
+          <li><strong>Local Storage Only:</strong> Any presets, configuration settings, or histories you create within our App(s) are stored locally on your device (e.g., using Apple's UserDefaults or local file storage). We do not transmit that content to the developer or to any server we operate.</li>
+          <li><strong>No Personal Data Collection:</strong> We do not collect personal information such as your name, email, location, or device identifiers. Some App features make the limited network requests described in Sections 1.3 and 1.4, and none of them send data to us.</li>
           <li><strong>No Third-Party Analytics:</strong> We do not embed Firebase, Google Analytics, Mixpanel, or any other analytics frameworks in our App(s).</li>
           <li><strong>Device Diagnostics:</strong> Apple's iOS system may record basic diagnostic data or crash logs if you have enabled diagnostics & usage sharing. ShapeHaven does not access or view those logs - Apple's infrastructure handles them.</li>
         </ul>
 
-        <h3>1.3 In-App Purchases & Payment Processing</h3>
-        <p>Our App(s) may offer in-app purchases or auto-renewable subscriptions. All billing and payment processing is handled exclusively by Apple through the App Store. We never see, store, or manage your credit card or billing information.</p>
+        <h3>1.3 VPN and Packet Capture (mDNSShark)</h3>
+        <p>mDNSShark includes an optional packet-capture feature built on a local Network Extension packet tunnel. It is not a VPN service. There is no VPN server, account, or backend. The tunnel starts only when you tap Start Capture, after you have seen a disclosure screen, and you can stop it at any time.</p>
+        <h4>What information is collected</h4>
+        <p>While a capture is running, the tunnel can observe the network traffic of your device, including:</p>
+        <ul>
+          <li>DNS queries</li>
+          <li>Destination IP addresses and ports</li>
+          <li>Protocol, packet sizes, and timestamps</li>
+          <li>Server hostnames (SNI)</li>
+        </ul>
+        <p>If you turn on the optional, paid TLS Inspection feature and install your own CA certificate, the App can also see decrypted HTTPS requests and responses.</p>
+        <h4>Why it is collected</h4>
+        <p>Only to show you your own traffic inside the App and to let you export it for your own troubleshooting and security analysis. It is not used for advertising, tracking, profiling, analytics, or any other purpose.</p>
+        <h4>Where it is stored</h4>
+        <p>Captured data is written only to the App's private storage on your device (a packet log, a .pcap file, and a metadata file). Each new capture replaces the previous one, and deleting the App removes it. The data leaves your device only if you choose to export it with the system share sheet.</p>
+        <h4>Sharing with third parties</h4>
+        <p>Captured traffic is never sent to ShapeHaven or to any third party. We have no servers that receive it, and the App contains no analytics, advertising, or crash-reporting SDKs. <strong>VPN data is not sold, used, or disclosed to third parties, and it is not used for advertising, tracking, or analytics.</strong></p>
+        <h4>How your traffic is handled while capturing</h4>
+        <ul>
+          <li>Your traffic is forwarded to its original destination so your connections keep working. TCP and UDP are forwarded. ICMP (ping) is not.</li>
+          <li>When TLS Inspection is on, QUIC (UDP port 443) is blocked so apps fall back to HTTPS.</li>
+          <li><strong>DNS lookups:</strong> During capture, DNS lookups go to the resolver you set in the App's Settings. The default is Google Public DNS (8.8.8.8 and 8.8.4.4), so Google can see those lookups under Google's own privacy policy. This is the one third-party exposure during capture. You can change the resolver at any time in Settings (IPv4 addresses only).</li>
+        </ul>
+
+        <h3>1.4 Network Features Outside Packet Capture (mDNSShark)</h3>
+        <p>These features are separate from captured VPN data.</p>
+        <ul>
+          <li><strong>Refresh CISA Data:</strong> This button in the Security tab runs only when you tap it. It downloads CISA's public Known Exploited Vulnerabilities catalog and queries NIST's National Vulnerability Database (services.nvd.nist.gov) using the names of device manufacturers seen on your local network. Your device lists and scan results are not uploaded. Those services may log the request under their own policies. The button is disabled while the capture tunnel is running.</li>
+          <li><strong>Local network discovery:</strong> mDNS, SSDP, subnet scans, and OUI lookups run entirely on your device, use the iOS Local Network permission, and send no data to ShapeHaven.</li>
+        </ul>
+
+        <h3>1.5 In-App Purchases & Payment Processing</h3>
+        <p>Our App(s) may offer in-app purchases or auto-renewable subscriptions. In mDNSShark, TLS Inspection is an auto-renewable subscription with a 3-day free trial, managed through Apple's StoreKit. All billing and payment processing is handled exclusively by Apple through the App Store. We never see, store, or manage your credit card or billing information.</p>
         <ul>
           <li>When you make a purchase or renew a subscription, Apple's systems collect information necessary to complete the transaction (e.g., your Apple ID, purchase receipt, billing country).</li>
           <li>ShapeHaven only receives confirmation from Apple that a valid purchase or subscription exists; we do not receive any of your payment details.</li>
@@ -236,7 +267,7 @@
         <h2>2. Data Retention & Server Information</h2>
         <h3>2.1 ShapeHaven's Servers</h3>
         <ul>
-          <li><strong>Data Location:</strong> We do not operate backend servers for our App(s), and no user-identifiable data is ever transmitted off your device.</li>
+          <li><strong>Data Location:</strong> We do not operate backend servers for our App(s), and we never receive your data. Network requests the App makes on your behalf (see Sections 1.3 and 1.4) go directly from your device to the services involved, not to us.</li>
           <li><strong>Data Retention:</strong> Since all user-generated data remains on your device, ShapeHaven has no server-side retention obligations.</li>
         </ul>
 
@@ -257,11 +288,18 @@
         <h3>3.3 No Third-Party Advertising or Analytics</h3>
         <p>We do not use Google AdMob, Facebook Audience Network, or any other advertising or analytics SDKs in our App(s). We do not collect device identifiers (IDFA), app usage events, or location data for advertising purposes.</p>
 
+        <h3>3.4 Services Contacted Directly by the App (mDNSShark)</h3>
+        <p>mDNSShark may contact the following services directly from your device. ShapeHaven does not receive this data.</p>
+        <ul>
+          <li><strong>Google Public DNS (default DNS resolver during capture):</strong> Governed by Google's privacy policy. You can change the resolver in Settings.</li>
+          <li><strong>CISA and NIST NVD:</strong> Contacted only when you tap Refresh CISA Data. Governed by their own policies.</li>
+        </ul>
+
         <h2>4. Your Rights & Choices</h2>
         <h3>4.1 Access & Deletion</h3>
         <ul>
           <li><strong>Your Data:</strong> Since we do not collect or store personal data on our servers, there is no personal information for us to access or delete.</li>
-          <li><strong>App Data:</strong> You can delete all data stored by our App(s) by uninstalling the application. This removes all locally stored settings and histories.</li>
+          <li><strong>App Data:</strong> You can delete all data stored by our App(s) by uninstalling the application. This removes all locally stored settings, histories, and captures. You can also stop a capture at any time, and each new capture replaces the previous one.</li>
         </ul>
 
         <h3>4.2 Contact & Requests</h3>
