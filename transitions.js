@@ -76,6 +76,8 @@
     if (e.ctrlKey || e.metaKey || e.shiftKey) return;
     try {
       const url = new URL(href, location.href);
+      // Same-page anchor: let the browser scroll natively
+      if (url.hash && url.pathname === location.pathname && url.origin === location.origin) return;
       if (url.origin !== location.origin) return;
       e.preventDefault();
       navigate(url.href);

@@ -403,7 +403,8 @@ nav a:hover {
   text-decoration: none;
 }
 
-#direct-contact { scroll-margin-top: 6rem; }
+#direct-contact,
+#our-work { scroll-margin-top: 6rem; }
 
 .space-hero-btn:hover { opacity: 0.88; }
 

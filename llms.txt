@@ -23,7 +23,6 @@ ShapeHaven Innovations LLC is a small, independent software studio. Work is open
 
 - [Home](https://shapehaveninnovations.com/): overview of services and products.
 - [Start a Project](https://shapehaveninnovations.com/support): contact form to start a project or get support.
-- [Open Source / GitHub](https://shapehaveninnovations.com/github): open-source projects, how to contribute, report issues, join discussions.
 - [Privacy Policy](https://shapehaveninnovations.com/privacy): how ShapeHaven handles data across its website and apps.
 - [ReturnIQ Privacy Policy](https://shapehaveninnovations.com/returniq-privacy): data handling for the ReturnIQ Shopify app.
 - [ReturnIQ Terms of Service](https://shapehaveninnovations.com/returniq-terms): terms governing ReturnIQ usage and billing.
