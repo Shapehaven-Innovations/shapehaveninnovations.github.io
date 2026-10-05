@@ -4,7 +4,20 @@
       window.location.href = url;
       return;
     }
-    document.startViewTransition(() => swapPage(url));
+    const transition = document.startViewTransition(() => swapPage(url));
+    // Scroll once the new DOM is laid out and the transition is done;
+    // scrolling inside the update callback gets overridden by the snapshot swap.
+    transition.finished.finally(() => scrollToHash(url));
+  }
+
+  // Honor #hash after SPA swap (browser only does this on full loads)
+  function scrollToHash(url) {
+    const hash = new URL(url, location.href).hash;
+    const el = hash && document.querySelector(hash);
+    requestAnimationFrame(() => {
+      if (el) el.scrollIntoView();
+      else window.scrollTo(0, 0);
+    });
   }
 
   async function swapPage(url) {
