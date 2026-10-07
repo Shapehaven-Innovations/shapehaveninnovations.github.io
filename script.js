@@ -3,6 +3,7 @@ const SUN_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" 
 
 function initPage() {
   if (typeof initSpaceHero === 'function') initSpaceHero();
+  if (typeof initProjectHero === 'function') initProjectHero();
   const themeToggle = document.getElementById('theme-toggle');
   const root = document.documentElement;
 
@@ -75,3 +76,49 @@ function initPage() {
 }
 
 document.addEventListener('DOMContentLoaded', initPage);
+
+// Blog accordion. Delegated on document so it works after transitions.js swaps <main>
+// (client-side navigation never re-runs page-level inline scripts).
+(function () {
+  let currentOpen = null;
+
+  async function loadPost(item) {
+    const prose = item.querySelector('.post-item-prose');
+    if (prose.dataset.loaded) return;
+    prose.textContent = 'Loading...';
+    try {
+      const res = await fetch(item.dataset.url);
+      const html = await res.text();
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const article = doc.querySelector('.post-body');
+      prose.innerHTML = article ? article.innerHTML : 'Could not load this post.';
+      prose.dataset.loaded = 'true';
+    } catch (e) {
+      prose.textContent = 'Could not load this post.';
+    }
+  }
+
+  function setOpen(item, open) {
+    item.classList.toggle('open', open);
+    item.querySelector('.post-item-header').setAttribute('aria-expanded', String(open));
+    const label = item.querySelector('.post-item-toggle');
+    if (label) label.textContent = open ? 'Collapse' : 'Expand';
+  }
+
+  document.addEventListener('click', async e => {
+    const header = e.target.closest('.post-item-header');
+    if (!header) return;
+    const item = header.closest('.post-item');
+    if (currentOpen && !currentOpen.isConnected) currentOpen = null;
+    if (item.classList.contains('open')) {
+      setOpen(item, false);
+      currentOpen = null;
+      return;
+    }
+    if (currentOpen) setOpen(currentOpen, false);
+    await loadPost(item);
+    setOpen(item, true);
+    currentOpen = item;
+    item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+})();

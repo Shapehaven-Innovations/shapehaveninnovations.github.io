@@ -10,7 +10,9 @@
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Privacy Policy | ShapeHaven Innovations" />
     <meta property="og:description" content="Our commitment to your privacy and data protection." />
-    <meta property="og:image" content="https://shapehaveninnovations.com/images/logo.png" />
+    <meta property="og:image" content="https://shapehaveninnovations.com/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:url" content="https://shapehaveninnovations.com/privacy" />
     <meta property="og:type" content="website" />
 
@@ -38,22 +40,27 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Privacy Policy | ShapeHaven Innovations" />
     <meta name="twitter:description" content="Our commitment to your privacy and data protection." />
-    <meta name="twitter:image" content="https://shapehaveninnovations.com/images/logo.png" />
+    <meta name="twitter:image" content="https://shapehaveninnovations.com/images/og-image.png" />
     <style>
       .legal-container {
-        max-width: 860px;
+        max-width: 1100px;
         margin: 0 auto;
         padding: 4rem 1.5rem 6rem;
       }
+      .legal-container > :not(.legal-hero) {
+        max-width: 860px;
+      }
       .legal-hero {
-        text-align: center;
-        margin-bottom: 2.5rem;
+        text-align: left;
+        margin: 1rem 0 3rem;
+        max-width: 760px;
       }
       .legal-hero h1 {
-        font-size: 2.5rem;
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        margin-bottom: 0.75rem;
+        font-size: clamp(2.5rem, 7vw, 4rem);
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        line-height: 1;
+        margin-bottom: 1.25rem;
       }
       .legal-hero p {
         color: var(--light-text);
@@ -67,7 +74,7 @@
         margin-bottom: 2.5rem;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
         gap: 0.5rem;
       }
       .legal-nav a {
@@ -146,6 +153,16 @@
           font-size: 2rem;
         }
       }
+      .legal-eyebrow {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--light-text);
+        margin-bottom: 1rem;
+        display: block;
+      }
     </style>
   </head>
   <body>
@@ -174,6 +191,7 @@
 
     <main class="legal-container">
       <div class="legal-hero">
+        <span class="legal-eyebrow">// Privacy</span>
         <h1>Privacy & Legal</h1>
         <p>Our commitment to transparency, data protection, and your privacy.</p>
       </div>
@@ -340,6 +358,8 @@
     </footer>
 
     <script src="config.js"></script>
+    <script src="space-hero.js"></script>
+    <script src="project-hero.js"></script>
     <script src="script.js"></script>
     <script src="transitions.js"></script>
 

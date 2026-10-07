@@ -3,14 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Start a Project | iOS & Software | ShapeHaven Innovations</title>
-    <meta name="description" content="Get in touch with ShapeHaven Innovations to start your iOS app, custom software, or web development project. IT consulting and technical solutions." />
+    <title>Support | ShapeHaven Innovations</title>
+    <meta name="description" content="Get help with ShapeHaven apps and sites. Report bugs and request features on GitHub, or email info@shapehaveninnovations.com." />
     <meta name="robots" content="index, follow" />
 
     <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Start a Project | iOS & Software | ShapeHaven Innovations" />
-    <meta property="og:description" content="Get in touch with ShapeHaven Innovations to start your iOS app, custom software, or web development project. IT consulting and technical solutions." />
-    <meta property="og:image" content="https://shapehaveninnovations.com/images/logo.png" />
+    <meta property="og:title" content="Support | ShapeHaven Innovations" />
+    <meta property="og:description" content="Get help with ShapeHaven apps and sites. Report bugs and request features on GitHub, or email info@shapehaveninnovations.com." />
+    <meta property="og:image" content="https://shapehaveninnovations.com/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:url" content="https://shapehaveninnovations.com/support" />
     <meta property="og:type" content="website" />
 
@@ -36,70 +38,91 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Start a Project | iOS & Software | ShapeHaven Innovations" />
-    <meta name="twitter:description" content="Get in touch with ShapeHaven Innovations to start your iOS app, custom software, or web development project. IT consulting and technical solutions." />
-    <meta name="twitter:image" content="https://shapehaveninnovations.com/images/logo.png" />
+    <meta name="twitter:title" content="Support | ShapeHaven Innovations" />
+    <meta name="twitter:description" content="Get help with ShapeHaven apps and sites. Report bugs and request features on GitHub, or email info@shapehaveninnovations.com." />
+    <meta name="twitter:image" content="https://shapehaveninnovations.com/images/og-image.png" />
     <style>
-      .card {
-        text-align: center;
-      }
-      .card p {
-        margin-bottom: 2rem;
-      }
-      .expectation-item {
-        text-align: center;
-      }
-      .expectation-icon {
-        width: 56px;
-        height: 56px;
-        margin: 0 auto 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: var(--bg-color);
-        border-radius: 10px;
-        border: 1px solid var(--border-color);
-      }
-      .expectation-icon svg {
-        width: 28px;
-        height: 28px;
-      }
-      .faq-item {
+      .help-hero {
         text-align: left;
-        display: flex;
-        gap: 1.25rem;
-        align-items: flex-start;
-        padding: 1.5rem 0;
-        border-bottom: 1px solid var(--border-color);
+        margin: 5rem 0 3rem;
+        max-width: 760px;
       }
-      .faq-item:first-of-type {
-        padding-top: 0;
-      }
-      .faq-item:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-      }
-      .faq-num {
-        flex-shrink: 0;
-        width: 32px;
-        height: 32px;
-        border-radius: 8px;
-        background: var(--primary-color);
-        color: var(--on-primary);
+      .help-eyebrow {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         font-size: 0.85rem;
         font-weight: 700;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 0.1rem;
-      }
-      .faq-body h3 {
-        margin-bottom: 0.5rem;
-        font-size: 1.1rem;
-      }
-      .faq-body p {
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
         color: var(--light-text);
-        margin-bottom: 0;
+        margin-bottom: 1rem;
+        display: block;
+      }
+      .help-hero h1 {
+        font-size: clamp(2.5rem, 7vw, 4rem);
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+      .help-hero .section-intro {
+        margin: 1.25rem 0 0;
+        text-align: left;
+      }
+      .help-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.25rem;
+        margin-bottom: 2.5rem;
+      }
+      .help-card {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding: 1.75rem;
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        background: var(--card-bg);
+        transition: var(--transition);
+      }
+      .help-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 32px var(--shadow-color);
+      }
+      .help-card h3 {
+        margin-bottom: 0.4rem;
+      }
+      .help-card p {
+        color: var(--light-text);
+        margin-bottom: 1.5rem;
+        flex: 1;
+      }
+      .help-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+      .help-links a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.65rem 0.9rem;
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: var(--text-color);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+      .help-links a::after {
+        content: '\2192';
+        transition: transform 0.2s ease;
+      }
+      .help-links a:hover {
+        border-color: var(--primary-color);
+      }
+      .help-links a:hover::after {
+        transform: translateX(4px);
       }
     </style>
   </head>
@@ -129,121 +152,68 @@
 
     <main>
       <div class="container">
-        <div class="section-header" style="margin-top: 4rem;">
-          <h1>Support & Collaboration</h1>
-          <p class="section-intro">We're here to help. Choose how you'd like to work with us.</p>
+        <div class="help-hero">
+          <span class="help-eyebrow">// Support</span>
+          <h1>Get help.</h1>
+          <p class="section-intro">Pick a product. Bugs and feature requests go on GitHub; everything else goes to email.</p>
         </div>
 
-        <section class="grid">
-          <!-- 1) Technical Support -->
-          <div class="card">
-            <div class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        <section class="help-grid">
+          <div class="help-card">
+            <img class="app-icon" src="/images/apps/mdnsshark.png" alt="" width="48" height="48" />
+            <h3>mDNSShark</h3>
+            <p>mDNS and Bonjour service discovery tool.</p>
+            <div class="help-links">
+              <a href="https://github.com/Shapehaven-Innovations/mDNSShark/issues/new/choose" target="_blank" rel="noopener">Report a bug or request a feature</a>
+              <a href="mailto:info@shapehaveninnovations.com?subject=mDNSShark%20Support">Email support</a>
             </div>
-            <h3>Technical Support</h3>
-            <p>
-              Need help with a technical issue? Report bugs, request debugging assistance, 
-              or get help with implementation and integration.
-            </p>
-            <a href="mailto:info@shapehaveninnovations.com?subject=Support%20Request%3A%20Technical%20Support&body=Hello%20ShapeHaven%20Innovations%20Support%2C%0D%0A%0D%0AName%3A%20%5BYour%20Name%5D%0D%0AEmail%3A%20%5Byour%40email.com%5D%0D%0A%0D%0ADescription%3A%20%5BDescribe%20your%20technical%20issue%20here%5D%0D%0A%0D%0AThank%20you!" class="btn btn-primary">Get Support</a>
           </div>
-
-          <!-- 2) Project Inquiries -->
-          <div class="card">
-            <div class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <div class="help-card">
+            <img class="app-icon" src="/images/apps/returniq.png" alt="" width="48" height="48" />
+            <h3>ReturnIQ</h3>
+            <p>Shopify returns management and analytics.</p>
+            <div class="help-links">
+              <a href="https://github.com/Shapehaven-Innovations/ReturnIQ-Site/issues/new/choose" target="_blank" rel="noopener">Report a bug or request a feature</a>
+              <a href="mailto:info@shapehaveninnovations.com?subject=ReturnIQ%20Support">Email support</a>
             </div>
-            <h3>Project Inquiries</h3>
-            <p>
-              Want to work together? Discuss custom development, consulting opportunities, 
-              or strategic partnerships.
-            </p>
-            <a href="mailto:info@shapehaveninnovations.com?subject=Project%20Inquiry&body=Hello%20ShapeHaven%20Innovations%2C%0D%0A%0D%0AName%3A%20%5BYour%20Name%5D%0D%0AEmail%3A%20%5Byour%40email.com%5D%0D%0A%0D%0AProject%20Description%3A%20%5BTell%20us%20about%20your%20project%5D%0D%0A%0D%0ABest%20regards%2C%0D%0A%5BYour%20Name%5D" class="btn btn-primary">Start a Project</a>
           </div>
-
-          <!-- 3) General Questions -->
-          <div class="card">
-            <div class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><circle cx="12" cy="17" r="0.5" fill="var(--primary-color)"/></svg>
+          <div class="help-card">
+            <img class="app-icon" src="/images/apps/kavacrawl.png" alt="" width="48" height="48" />
+            <h3>KavaCrawl</h3>
+            <p>Web crawling and data collection platform.</p>
+            <div class="help-links">
+              <a href="https://github.com/Shapehaven-Innovations/KavaCrawl-Site/issues/new/choose" target="_blank" rel="noopener">Report a bug or request a feature</a>
+              <a href="mailto:info@shapehaveninnovations.com?subject=KavaCrawl%20Support">Email support</a>
             </div>
-            <h3>General Questions</h3>
-            <p>
-              Have a question about our services, capabilities, or company? 
-              We'd love to hear from you.
-            </p>
-            <a href="mailto:info@shapehaveninnovations.com?subject=General%20Question&body=Hello%20ShapeHaven%20Innovations%2C%0D%0A%0D%0AName%3A%20%5BYour%20Name%5D%0D%0AEmail%3A%20%5Byour%40email.com%5D%0D%0A%0D%0AQuestion%3A%20%5BYour%20question%20here%5D%0D%0A%0D%0AThank%20you!" class="btn btn-primary">Ask a Question</a>
           </div>
-
-          <!-- 4) Bug Reports -->
-          <div class="card">
-            <div class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2h8"/><path d="M9 2v2.789a4 4 0 0 0-1.6 3.207A4 4 0 0 0 12 12a4 4 0 0 0 4.6-4.004A4 4 0 0 0 15 4.789V2"/><path d="M2 13h4"/><path d="M18 13h4"/><path d="M2 8l2.5 2"/><path d="M19.5 10 22 8"/><path d="M2 18l2.5-2"/><path d="M19.5 16l2.5 2"/><path d="M8 20a4 4 0 0 0 8 0V12"/></svg>
+          <div class="help-card">
+            <img class="app-icon" src="/images/apps/condoguard.png" alt="" width="48" height="48" />
+            <h3>CondoGuard</h3>
+            <p>Property and condo management app.</p>
+            <div class="help-links">
+              
+              <a href="mailto:info@shapehaveninnovations.com?subject=CondoGuard%20Support">Email support</a>
             </div>
-            <h3>Bug Reports</h3>
-            <p>
-              Found a bug? Help us improve by reporting issues with our apps, websites, or open-source projects.
-            </p>
-            <a href="mailto:info@shapehaveninnovations.com?subject=Bug%20Report&body=Hello%20ShapeHaven%20Innovations%2C%0D%0A%0D%0ABug%20Description%3A%20%5BDescribe%20the%20bug%20here%5D%0D%0A%0D%0ASteps%20to%20Reproduce%3A%20%5BList%20steps%20here%5D" class="btn btn-primary">Report a Bug</a>
+          </div>
+          <div class="help-card">
+            <img class="app-icon" src="/images/logo.png" alt="" width="48" height="48" />
+            <h3>This website</h3>
+            <p>Problems with shapehaveninnovations.com.</p>
+            <div class="help-links">
+              <a href="https://github.com/Shapehaven-Innovations/shapehaveninnovations.github.io/issues/new/choose" target="_blank" rel="noopener">Report a bug or request a feature</a>
+              <a href="mailto:info@shapehaveninnovations.com?subject=This%20website%20Support">Email support</a>
+            </div>
           </div>
         </section>
 
-        <div class="highlight-section" id="direct-contact">
-          <h2>Direct Contact</h2>
-          <p>Email us directly at <strong>info@shapehaveninnovations.com</strong></p>
-          <a href="mailto:info@shapehaveninnovations.com" class="btn btn-secondary" style="margin-top: 2rem;">Send an Email</a>
+        <div class="project-hero" id="your-project">
+          <canvas aria-hidden="true"></canvas>
+          <div class="project-hero-caption">
+            <h2>Your project.</h2>
+            <p>Have something to build, fix, or modernize? Tell us about it.</p>
+            <a href="mailto:info@shapehaveninnovations.com?subject=Project%20Inquiry" class="space-hero-btn">Start a conversation &rarr;</a>
+          </div>
         </div>
-
-        <section class="section-header">
-          <h2>What to Expect</h2>
-          <div class="grid" style="margin-top: 3rem;">
-            <div class="expectation-item">
-              <div class="expectation-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </div>
-              <h3>Fast Response</h3>
-              <p>We aim to respond to all inquiries within 1–2 business days.</p>
-            </div>
-            <div class="expectation-item">
-              <div class="expectation-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              </div>
-              <h3>Clear Communication</h3>
-              <p>We keep you informed with regular updates and clear next steps.</p>
-            </div>
-            <div class="expectation-item">
-              <div class="expectation-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              </div>
-              <h3>Privacy First</h3>
-              <p>Your information is handled securely and never shared with third parties.</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="card" style="margin-bottom: 6rem;">
-          <h2 style="margin-bottom: 2rem;">Frequently Asked Questions</h2>
-          <div class="faq-item">
-            <div class="faq-num">1</div>
-            <div class="faq-body">
-              <h3>Do you offer free consultations?</h3>
-              <p>I offer a brief 15-minute discovery call and the option to share initial thoughts by email. This helps me understand your needs and determine the best next step. For in-depth troubleshooting, recommendations, proof of concept work, or solution design, I provide paid services so I can give your issue the time and attention it deserves.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-num">2</div>
-            <div class="faq-body">
-              <h3>Can you work on existing projects?</h3>
-              <p>Absolutely. We specialize in code refactoring and taking over existing codebases.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-num">3</div>
-            <div class="faq-body">
-              <h3>Do you offer ongoing support?</h3>
-              <p>Yes, we provide ongoing maintenance and support to keep your systems running smoothly.</p>
-            </div>
-          </div>
-        </section>
       </div>
     </main>
 
@@ -263,6 +233,8 @@
     </footer>
 
     <script src="config.js"></script>
+    <script src="space-hero.js"></script>
+    <script src="project-hero.js"></script>
     <script src="script.js"></script>
     <script src="transitions.js"></script>
 

@@ -1,6 +1,6 @@
 # ShapeHaven Innovations
 
-> Boutique software consultancy specializing in iOS app development, custom software, web applications, backend systems, code refactoring, automation/DevOps, and technical consulting. Also builds and operates production SaaS products: ReturnIQ, CondoGuard, and KavaCrawl.
+> Boutique software consultancy specializing in iOS app development, custom software, web applications, backend systems, code refactoring, automation/DevOps, and technical consulting. Also builds and operates production SaaS products: ReturnIQ, CondoGuard, KavaCrawl, and mDNSShark.
 
 ShapeHaven Innovations LLC is a small, independent software studio. Work is open-source where possible; clients own their code, data, and infrastructure (no vendor lock-in).
 
@@ -18,14 +18,22 @@ ShapeHaven Innovations LLC is a small, independent software studio. Work is open
 - [ReturnIQ](https://returniq.shapehaveninnovations.com/) - Shopify app for AI-powered returns management and analytics, helping merchants cut loss and streamline logistics.
 - [CondoGuard](https://condoguard.app/) - property and condo management app for boards, owners, and residents.
 - [KavaCrawl](https://kavacrawl.shapehaveninnovations.com/) - web crawling and data collection platform built for reliability at scale.
+- [mDNSShark](https://mdnsshark.shapehaveninnovations.com/) - mDNS and Bonjour service discovery tool for finding and inspecting devices on a local network.
 
 ## Pages
 
+- [Blog](https://shapehaveninnovations.com/blog): notes and tool spotlights. RSS: https://shapehaveninnovations.com/feed.xml
+- [World Monitor: An Open-Source Dashboard Built for AI Agents](https://shapehaveninnovations.com/blog/worldmonitor-app): blog post, September 3, 2026.
+
 - [Home](https://shapehaveninnovations.com/): overview of services and products.
-- [Start a Project](https://shapehaveninnovations.com/support): contact form to start a project or get support.
+- [Support](https://shapehaveninnovations.com/support): per-product support; bugs and feature requests via GitHub issues, everything else via email.
 - [Privacy Policy](https://shapehaveninnovations.com/privacy): how ShapeHaven handles data across its website and apps.
 - [ReturnIQ Privacy Policy](https://shapehaveninnovations.com/returniq-privacy): data handling for the ReturnIQ Shopify app.
 - [ReturnIQ Terms of Service](https://shapehaveninnovations.com/returniq-terms): terms governing ReturnIQ usage and billing.
+
+## Optional
+
+- [Full context](https://shapehaveninnovations.com/llms-full.txt): expanded description of services, products, and approach.
 
 ## Contact
 

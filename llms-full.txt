@@ -1,0 +1,76 @@
+# ShapeHaven Innovations
+
+> Boutique software consultancy and product studio. ShapeHaven Innovations LLC is a small, independent team that builds iOS apps, websites and web apps, backend systems, and automation, modernizes legacy code, and operates its own production software products. Clients own their code, data, and infrastructure; work is open-source where possible and there is no vendor lock-in.
+
+Website: https://shapehaveninnovations.com/
+Contact: info@shapehaveninnovations.com
+GitHub: https://github.com/Shapehaven-Innovations
+Support: https://shapehaveninnovations.com/support (bugs and feature requests via GitHub issues; everything else via email)
+
+## Positioning
+
+Tagline: "Software research and solutions that put simplicity first." The studio describes itself as "the human in the loop": practical software for real-world problems, from first line of code to legacy overhaul.
+
+## Services
+
+### iOS Apps & Architecture
+Native iOS applications with clean architecture, modern patterns, and performance optimization, designed to grow with the business.
+
+### Websites & Web Apps
+Responsive, fast, and accessible websites and web applications.
+
+### Code Refactoring
+Modernizing legacy codebases, improving performance, and reducing technical debt.
+
+### Backend & Integrations
+API design, backend services, system integration, and third-party integrations, including MCP servers for AI agent access.
+
+### Automation & DevOps
+Workflow automation, deployment automation, and reliable CI/CD pipelines.
+
+### Technical Consulting
+Guidance on architecture decisions, technology selection, performance optimization, and debugging complex systems.
+
+## Products (live, in production)
+
+### ReturnIQ
+Shopify app for AI-powered returns management and analytics, helping merchants cut loss and streamline logistics.
+- Site: https://returniq.shapehaveninnovations.com/
+- Privacy policy: https://shapehaveninnovations.com/returniq-privacy
+- Terms of service: https://shapehaveninnovations.com/returniq-terms
+
+### CondoGuard
+Property and condo management app for boards, owners, and residents.
+- Site: https://condoguard.app/
+
+### KavaCrawl
+Web crawling and data collection platform built for reliability at scale.
+- Site: https://kavacrawl.shapehaveninnovations.com/
+
+### mDNSShark
+mDNS and Bonjour service discovery tool for finding and inspecting devices on a local network.
+- Site: https://mdnsshark.shapehaveninnovations.com/
+
+## Approach
+
+- Open source where possible; no proprietary lock-in.
+- Clients own their code, data, and future.
+- Simplicity first: the smallest solution that solves the real problem.
+
+## Blog
+
+Notes on software, architecture, DevOps, and tools worth sharing. Author of all posts: ShapeHaven Innovations. RSS feed: https://shapehaveninnovations.com/feed.xml
+
+- [World Monitor: An Open-Source Dashboard Built for AI Agents](https://shapehaveninnovations.com/blog/worldmonitor-app) (2026-09-03): why an open-source global intelligence dashboard that ships an MCP server alongside its REST API treats AI agents as first-class clients, and why correlation across data feeds is the real product.
+
+## Legal and policies
+
+- [Privacy Policy](https://shapehaveninnovations.com/privacy)
+- [ReturnIQ Privacy Policy](https://shapehaveninnovations.com/returniq-privacy)
+- [ReturnIQ Terms of Service](https://shapehaveninnovations.com/returniq-terms)
+
+## Machine-readable resources
+
+- Summary: https://shapehaveninnovations.com/llms.txt
+- Sitemap: https://shapehaveninnovations.com/sitemap.xml
+- RSS: https://shapehaveninnovations.com/feed.xml

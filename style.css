@@ -191,9 +191,9 @@ nav a:hover {
 
 .hero-description {
   flex: 1 1 280px;
-  max-width: 340px;
+  max-width: 380px;
   color: var(--light-text);
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   line-height: 1.7;
   padding-top: 0.5rem;
 }
@@ -210,6 +210,14 @@ nav a:hover {
   text-decoration: none;
   border-bottom: 0.09em solid currentColor;
   padding-bottom: 0.05em;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+@media (hover: hover) {
+  .hero-text h1 .hl:hover {
+    color: var(--light-text);
+    border-color: var(--light-text);
+  }
 }
 
 .tagline {
@@ -348,7 +356,7 @@ nav a:hover {
   margin: 0 calc(var(--p) * -3rem) 5rem;
   border-radius: calc(24px - var(--p) * 8px);
   overflow: hidden;
-  background: #02030a;
+  background: #060b1a;
   border: 1px solid var(--border-color);
   will-change: margin;
 }
@@ -605,4 +613,64 @@ footer a {
   .highlight-section {
     padding: 2rem;
   }
+}
+
+.app-icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+  border-radius: 22%;
+  object-fit: cover;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--border-color);
+}
+
+.project-hero {
+  position: relative;
+  height: clamp(280px, 40vw, 420px);
+  margin: 0 0 5rem;
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #060b1a, #0b1633 60%, #060b1a);
+  border: 1px solid var(--border-color);
+}
+
+.project-hero canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.project-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(6, 11, 26, 0.75), rgba(6, 11, 26, 0) 70%);
+  pointer-events: none;
+}
+
+.project-hero-caption {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1.5rem;
+  color: #fff;
+}
+
+.project-hero-caption h2 {
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  line-height: 1.1;
+  margin-bottom: 0.6rem;
+}
+
+.project-hero-caption p {
+  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 1.4rem;
 }
