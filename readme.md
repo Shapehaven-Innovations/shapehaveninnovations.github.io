@@ -1,76 +1,37 @@
-# Shapehaven Innovations · Public Website
+# Shapehaven Innovations
 
-<https://shapehaveninnovations.com>  
-<https://shapehaveninnovations.github.io>
+Source for [shapehaveninnovations.com](https://shapehaveninnovations.com), the site of a small software studio building iOS apps, SaaS products, and developer tools.
 
-Welcome to the **Shapehaven Innovations** website repository. We craft next-generation iOS apps, SDKs, and developer tools focused on sleek UI, high performance, and enterprise-grade security—all showcased here on our public, **static** site hosted with GitHub Pages.
+Static site: plain HTML, CSS, and vanilla JS. No build step. Hosted on GitHub Pages.
 
-> **Heads-up 🔒**  
-> This README purposefully stays high-level. No production credentials, build pipelines, or sensitive directory paths are exposed in the repo.
-
----
-
-## ✨ What you’ll find
-
-| Section            | Purpose                                                                          |
-| ------------------ | -------------------------------------------------------------------------------- |
-| `index.html`       | Landing page highlighting our flagship SDKs and components.                      |
-| `images/`          | Optimised PNG/SVG assets used by the site.                                       |
-| `CNAME`            | Binds the custom domain **shapehaveninnovations.com** to this GitHub Pages site. |
-| `docs/` (optional) | Long-form documentation & release notes (added as needed).                       |
-
-Everything is plain **HTML + CSS** (no server-side code), so you can clone and view locally without additional tooling.
-
----
-
-## 🛠️ Local preview
+## Run locally
 
 ```bash
 git clone https://github.com/shapehaveninnovations/shapehaveninnovations.github.io.git
 cd shapehaveninnovations.github.io
-# Option A: open index.html directly in your browser
-# Option B (recommended): use any “Live Server” extension or Python http.server
-python -m http.server 8000
+python3 -m http.server 8000
 ```
 
-Then navigate to <http://localhost:8000>.
+Open <http://localhost:8000>.
 
-## 🚀 Deployment flow
+## Layout
 
-1. **Push** to the **`main`** branch.
-2. GitHub Pages automatically rebuilds and publishes to **shapehaveninnovations.github.io**.
-3. DNS for **shapehaveninnovations.com** points at GitHub’s Pages IPs, so the latest commit is live within minutes.
+- `index.html`, `support.html`, `privacy.html`, `returniq-*.html`: pages
+- `blog/`: posts and index
+- `style.css`, `script.js`, `transitions.js`, `*-hero.js`: styling and behavior
+- `config.js`: site domain and contact email
+- `feed.xml`, `sitemap.xml`, `llms.txt`, `llms-full.txt`: feeds and crawler metadata
+- `images/`: assets
 
-> _No CI/CD secrets are stored in this repository; all sensitive operations happen elsewhere._
+## Keeping content in sync
 
----
+Some content is duplicated across files and must be updated together:
 
-## 🤝 Contributing
+- **Blog post:** link it from `blog/index.html`, add it to `feed.xml` and `sitemap.xml`, and mention it in `llms.txt` / `llms-full.txt`.
+- **Product or service change:** update `index.html`, `llms.txt`, and `llms-full.txt`.
+- **Domain or email:** change `config.js`, then check `CNAME`, `sitemap.xml`, `robots.txt`, `feed.xml`, and `llms*.txt` for hardcoded copies.
+- **Page added or removed:** update `sitemap.xml` and the nav and footer links on every page.
 
-We welcome issues and pull requests that:
+## License
 
-- Fix typos or broken links
-- Improve accessibility or performance (e.g., image compression, semantic HTML)
-- Add new static content approved by the Shapehaven team
-
-To keep the surface area secure, **please avoid**:
-
-- Adding third-party scripts or external CDNs without discussion
-- Committing build artifacts or credentials
-
----
-
-## 📄 License
-
-Site content is released under the **MIT License** unless noted otherwise.
-Third-party icons and fonts retain their respective licenses.
-
----
-
-## Connect
-
-For questions about our SDKs or partnership opportunities:
-
-- **Email:** [info@shapehaveninnovations.com](mailto:info@shapehaveninnovations.com)
-
-Thanks for stopping by — and happy shipping!
+MIT, unless noted. Third-party icons and fonts keep their own licenses.
