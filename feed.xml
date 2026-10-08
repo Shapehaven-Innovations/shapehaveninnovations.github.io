@@ -5,8 +5,16 @@
     <link>https://shapehaveninnovations.com/blog/</link>
     <description>Software, architecture, DevOps, and the tech we like. Notes and tool spotlights from ShapeHaven Innovations.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Sep 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://shapehaveninnovations.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mDNSShark: See Everything on Your Wi-Fi, Without Sending a Byte Out</title>
+      <link>https://shapehaveninnovations.com/blog/mdnsshark-app</link>
+      <guid isPermaLink="true">https://shapehaveninnovations.com/blog/mdnsshark-app</guid>
+      <pubDate>Thu, 08 Oct 2026 00:00:00 GMT</pubDate>
+      <dc:creator>ShapeHaven Innovations</dc:creator>
+      <description>Why we built mDNSShark, a free, open-source iPhone network scanner and packet monitor that finds, assesses, and inspects devices on your Wi-Fi entirely on-device, with no telemetry.</description>
+    </item>
     <item>
       <title>World Monitor: An Open-Source Dashboard Built for AI Agents</title>
       <link>https://shapehaveninnovations.com/blog/worldmonitor-app</link>

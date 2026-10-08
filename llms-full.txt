@@ -61,6 +61,7 @@ mDNS and Bonjour service discovery tool for finding and inspecting devices on a 
 
 Notes on software, architecture, DevOps, and tools worth sharing. Author of all posts: ShapeHaven Innovations. RSS feed: https://shapehaveninnovations.com/feed.xml
 
+- [mDNSShark: See Everything on Your Wi-Fi, Without Sending a Byte Out](https://shapehaveninnovations.com/blog/mdnsshark-app) (2026-10-08): Why we built mDNSShark, a free, open-source iPhone network scanner and packet monitor that finds, assesses, and inspects devices on your Wi-Fi entirely on-device, with no telemetry.
 - [World Monitor: An Open-Source Dashboard Built for AI Agents](https://shapehaveninnovations.com/blog/worldmonitor-app) (2026-09-03): why an open-source global intelligence dashboard that ships an MCP server alongside its REST API treats AI agents as first-class clients, and why correlation across data feeds is the real product.
 
 ## Legal and policies

@@ -23,6 +23,7 @@ ShapeHaven Innovations LLC is a small, independent software studio. Work is open
 ## Pages
 
 - [Blog](https://shapehaveninnovations.com/blog/): notes and tool spotlights. RSS: https://shapehaveninnovations.com/feed.xml
+- [mDNSShark: See Everything on Your Wi-Fi, Without Sending a Byte Out](https://shapehaveninnovations.com/blog/mdnsshark-app): blog post, October 8, 2026.
 - [World Monitor: An Open-Source Dashboard Built for AI Agents](https://shapehaveninnovations.com/blog/worldmonitor-app): blog post, September 3, 2026.
 
 - [Home](https://shapehaveninnovations.com/): overview of services and products.
