@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>ShapeHaven Innovations Blog</title>
-    <link>https://shapehaveninnovations.com/blog</link>
+    <link>https://shapehaveninnovations.com/blog/</link>
     <description>Software, architecture, DevOps, and the tech we like. Notes and tool spotlights from ShapeHaven Innovations.</description>
     <language>en-us</language>
     <lastBuildDate>Thu, 03 Sep 2026 00:00:00 GMT</lastBuildDate>
