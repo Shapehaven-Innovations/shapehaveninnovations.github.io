@@ -44,10 +44,13 @@ jobs:
         if: steps.find.outputs.skip == 'false'
         env:
           GH_TOKEN: ${{ secrets.DISCUSSIONS_TOKEN }}
+          POST_TITLE: ${{ steps.find.outputs.title }}
+          POST_DESC: ${{ steps.find.outputs.desc }}
+          POST_URL: ${{ steps.find.outputs.url }}
         run: |
-          BODY="${{ steps.find.outputs.desc }}
+          BODY="$POST_DESC
 
-          Read it here: ${{ steps.find.outputs.url }}"
+          Read it here: $POST_URL"
 
           gh api graphql -f query='
             mutation($repoId: ID!, $catId: ID!, $title: String!, $body: String!) {
@@ -57,5 +60,5 @@ jobs:
             }' \
             -f repoId="R_kgDOOf3P4Q" \
             -f catId="DIC_kwDOOf3P4c4CtaXa" \
-            -f title="New post: ${{ steps.find.outputs.title }}" \
+            -f title="New post: $POST_TITLE" \
             -f body="$BODY"
