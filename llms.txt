@@ -17,7 +17,7 @@ ShapeHaven Innovations LLC is a small, independent software studio. Work is open
 
 - [ReturnIQ](https://returniq.shapehaveninnovations.com/) - Shopify app for AI-powered returns management and analytics, helping merchants cut loss and streamline logistics.
 - [CondoGuard](https://condoguard.app/) - property and condo management app for boards, owners, and residents.
-- [KavaCrawl](https://kavacrawl.shapehaveninnovations.com/) - web crawling and data collection platform built for reliability at scale.
+- [KavaCrawl](https://kavacrawl.shapehaveninnovations.com/) - social app for discovering new places and people.
 - [mDNSShark](https://mdnsshark.shapehaveninnovations.com/) - mDNS and Bonjour service discovery tool for finding and inspecting devices on a local network.
 
 ## Pages

@@ -44,7 +44,7 @@ Property and condo management app for boards, owners, and residents.
 - Site: https://condoguard.app/
 
 ### KavaCrawl
-Web crawling and data collection platform built for reliability at scale.
+Social app for discovering new places and people.
 - Site: https://kavacrawl.shapehaveninnovations.com/
 
 ### mDNSShark
