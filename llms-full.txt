@@ -51,6 +51,10 @@ Social app for discovering new places and people.
 mDNS and Bonjour service discovery tool for finding and inspecting devices on a local network.
 - Site: https://mdnsshark.shapehaveninnovations.com/
 
+### RhythmX
+Private menstrual cycle tracker for iPhone. No account, no ads, no tracking; data stays on device.
+- Site: https://rhythmx.shapehaveninnovations.com/
+
 ## Approach
 
 - Open source where possible; no proprietary lock-in.
