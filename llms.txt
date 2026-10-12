@@ -20,6 +20,8 @@ ShapeHaven Innovations LLC is a small, independent software studio. Work is open
 - [KavaCrawl](https://kavacrawl.shapehaveninnovations.com/) - social app for discovering new places and people.
 - [mDNSShark](https://mdnsshark.shapehaveninnovations.com/) - mDNS and Bonjour service discovery tool for finding and inspecting devices on a local network.
 - [RhythmX](https://rhythmx.shapehaveninnovations.com/) - Private menstrual cycle tracker for iPhone. No account, no ads, no tracking.
+- [RhythmX guide: How to track your cycle privately](https://rhythmx.shapehaveninnovations.com/guides/track-your-cycle-privately/) - four checks for any period tracker.
+- [RhythmX reference: Menstrual cycle phases](https://rhythmx.shapehaveninnovations.com/guides/menstrual-cycle-phases-reference/) - timing, hormones, symptoms and tips per phase.
 
 ## Pages
 
