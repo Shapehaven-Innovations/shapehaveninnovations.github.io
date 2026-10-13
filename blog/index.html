@@ -123,6 +123,20 @@
         text-transform: uppercase;
         color: var(--primary-color);
       }
+      .post-item-fulllink {
+        display: block;
+        padding: 0 2.5rem 1.75rem;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--light-text);
+        text-decoration: none;
+      }
+      .post-item-fulllink:hover {
+        color: var(--primary-color);
+      }
       .post-item-panel {
         display: grid;
         grid-template-rows: 0fr;
@@ -175,13 +189,6 @@
       }
       .post-item-prose .post-cta {
         margin-top: 2rem;
-      }
-      .post-item-fulllink {
-        display: inline-block;
-        margin-top: 0.5rem;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        font-size: 0.85rem;
-        font-weight: 700;
       }
     </style>
 
@@ -259,7 +266,7 @@
               </p>
               <span class="post-item-toggle">Expand</span>
             </button>
-            <a class="post-item-fulllink" href="/blog/mdnsshark-app">mDNSShark: See Everything on Your Wi-Fi, Without Sending a Byte Out</a>
+            <a class="post-item-fulllink" href="/blog/mdnsshark-app" aria-label="Read full post: mDNSShark: See Everything on Your Wi-Fi, Without Sending a Byte Out">Read full post &rarr;</a>
             <div class="post-item-panel">
               <div class="post-item-panel-inner">
                 <div class="post-item-prose"></div>
@@ -276,7 +283,7 @@
               </p>
               <span class="post-item-toggle">Expand</span>
             </button>
-            <a class="post-item-fulllink" href="/blog/worldmonitor-app">World Monitor: An Open-Source Dashboard Built for AI Agents</a>
+            <a class="post-item-fulllink" href="/blog/worldmonitor-app" aria-label="Read full post: World Monitor: An Open-Source Dashboard Built for AI Agents">Read full post &rarr;</a>
             <div class="post-item-panel">
               <div class="post-item-panel-inner">
                 <div class="post-item-prose"></div>
