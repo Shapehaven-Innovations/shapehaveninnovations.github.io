@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Two Critical PHP Flaws: What to Check and Patch Today | ShapeHaven Blog</title>
+    <meta name="description" content="Two critical PHP remote code execution flaws, CVE-2026-109618 and CVE-2026-109619, were announced October 21. Here is who is affected, which versions fix them, and what to do if you cannot patch yet." />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="ShapeHaven Innovations" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Two Critical PHP Flaws: What to Check and Patch Today" />
+    <meta property="og:description" content="Two critical PHP remote code execution flaws, CVE-2026-109618 and CVE-2026-109619, were announced October 21. Here is who is affected, which versions fix them, and what to do if you cannot patch yet." />
+    <meta property="og:image" content="https://shapehaveninnovations.com/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://shapehaveninnovations.com/blog/php-critical-rce-patch" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-10-26" />
+    <meta property="article:author" content="ShapeHaven Innovations" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/logo.png" />
+
+    <!-- FOUC fix: apply theme before CSS renders -->
+    <script>
+      (function() {
+        var t = localStorage.getItem('theme');
+        if (t) document.documentElement.setAttribute('data-theme', t);
+        else if (window.matchMedia('(prefers-color-scheme: dark)').matches)
+          document.documentElement.setAttribute('data-theme', 'dark');
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="canonical" href="https://shapehaveninnovations.com/blog/php-critical-rce-patch" />
+    <link rel="alternate" type="application/rss+xml" title="ShapeHaven Innovations Blog" href="https://shapehaveninnovations.com/feed.xml" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Two Critical PHP Flaws: What to Check and Patch Today" />
+    <meta name="twitter:description" content="Two critical PHP remote code execution flaws, CVE-2026-109618 and CVE-2026-109619, were announced October 21. Here is who is affected, which versions fix them, and what to do if you cannot patch yet." />
+    <meta name="twitter:image" content="https://shapehaveninnovations.com/images/og-image.png" />
+
+    <style>
+      .post-hero {
+        text-align: left;
+        max-width: 760px;
+      }
+      .blog-eyebrow {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        display: block;
+      }
+      .post-hero h1 {
+        font-size: 2.75rem;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+        border-bottom: 4px solid var(--primary-color);
+        padding-bottom: 1.5rem;
+      }
+      .post-meta {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 0.85rem;
+        color: var(--light-text);
+        margin-top: 1.25rem;
+        letter-spacing: 0.02em;
+      }
+      .post-body {
+        max-width: 760px;
+        margin: 3rem 0 5rem;
+        font-size: 1.1rem;
+        line-height: 1.75;
+        color: var(--text-color);
+      }
+      .post-body p {
+        margin-bottom: 1.5rem;
+      }
+      .post-body h2 {
+        font-size: 1.6rem;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        margin: 3rem 0 1.25rem;
+        border-left: 4px solid var(--primary-color);
+        padding-left: 1rem;
+      }
+      .post-body a {
+        color: var(--primary-color);
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+      .post-body ul {
+        margin: 0 0 1.5rem 1.25rem;
+      }
+      .post-body li {
+        margin-bottom: 0.6rem;
+        color: var(--light-text);
+      }
+      .post-callout {
+        border: 1px solid var(--border-color);
+        border-left: 4px solid var(--primary-color);
+        background: var(--card-bg);
+        padding: 1.5rem 1.75rem;
+        margin: 2.5rem 0;
+        font-size: 1rem;
+        color: var(--light-text);
+      }
+      .post-callout strong {
+        color: var(--text-color);
+      }
+      .post-cta {
+        border-radius: 0;
+        border: 1px solid var(--border-color);
+        border-left: 4px solid var(--primary-color);
+        padding: 2rem;
+        margin-top: 3rem;
+      }
+      .post-cta h3 {
+        margin-bottom: 0.75rem;
+      }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Two Critical PHP Flaws: What to Check and Patch Today",
+      "description": "Two critical PHP remote code execution flaws, CVE-2026-109618 and CVE-2026-109619, were announced October 21. Here is who is affected, which versions fix them, and what to do if you cannot patch yet.",
+      "url": "https://shapehaveninnovations.com/blog/php-critical-rce-patch",
+      "datePublished": "2026-10-26",
+      "dateModified": "2026-10-26",
+      "author": { "@type": "Organization", "name": "ShapeHaven Innovations" },
+      "publisher": { "@type": "Organization", "name": "ShapeHaven Innovations", "logo": { "@type": "ImageObject", "url": "https://shapehaveninnovations.com/images/logo.png" } },
+      "image": "https://shapehaveninnovations.com/images/og-image.png",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://shapehaveninnovations.com/blog/php-critical-rce-patch" }
+    }
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo-container">
+          <a href="/" class="logo-text">ShapeHaven Innovations</a>
+        </div>
+        <nav id="main-nav">
+          <a href="/">Home</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/Shapehaven-Innovations" target="_blank" rel="noopener">GitHub</a>
+          <a href="/support.html">Support</a>
+          <a href="/privacy.html">Privacy</a>
+        </nav>
+        <div class="header-actions">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="post-hero" style="margin-top: 4rem;">
+          <span class="blog-eyebrow">// Dispatches / Security Notes</span>
+          <h1>Two Critical PHP Flaws: What to Check and Patch Today</h1>
+          <p class="post-meta">October 26, 2026 &middot; ShapeHaven Innovations</p>
+        </div>
+
+        <article class="post-body">
+          <div class="post-callout">
+            <strong>TL;DR:</strong> Two critical PHP flaws (CVE-2026-109618 and CVE-2026-109619) let an
+            unauthenticated attacker run code on servers that handle web requests. Update to PHP 8.5.12,
+            8.4.27, 8.3.36, or 8.2.35, restart your workers, and start with anything facing the internet.
+            Public exploit code exists, though not broadly reliable yet. Cannot patch yet? Set <code>session.upload_progress.enabled=0</code> as a stopgap, not a fix.
+          </div>
+
+          <p>
+            On October 21 the PHP security team announced an emergency release for two critical flaws. Both
+            let an unauthenticated attacker run code on a server, and both score 9.2 on the CVSS v4 scale.
+            If PHP runs anywhere you care about, even on a box you forgot about, this one is worth ten
+            minutes today.
+          </p>
+
+          <p>
+            This is a heads-up for readers, not an incident report. Nothing here is about our own systems.
+            We read the advisory so you do not have to, and we pulled out what matters.
+          </p>
+
+          <h2>What happened, and who is affected</h2>
+          <p>
+            The first bug, CVE-2026-109618, comes from out-of-memory handling: PHP can be interrupted while
+            request data is only partly set up, and cleanup may then treat invalid data as valid. The second,
+            CVE-2026-109619, is stale global state: memory that belonged to one request is freed, but a
+            pointer to it survives and a later request on the same worker can use it. Neither needs a login.
+          </p>
+          <p>
+            If PHP serves web requests, assume you are in scope. PHP's advisory names PHP-FPM, Apache with
+            mod_php, php-cgi, FrankenPHP, and LiteSpeed, and it rates mod_php the highest because a
+            demonstrated exploit runs before any application code does. That covers WordPress, Drupal, and
+            Laravel sites, but also the leftover admin panel and the vendor appliance with PHP inside. Earlier
+            builds of PHP 8.6.0 are affected too.
+          </p>
+
+          <h2>Fix it today</h2>
+          <p>
+            Check what you run with <code>php -v</code>, then move to a fixed release: 8.5.12, 8.4.27,
+            8.3.36, or 8.2.35. PHP 8.1 and older no longer get updates from the project, so ask your
+            distribution or long-term support vendor about backports. The security team also published
+            minimal source backports for 7.4, 8.0, and 8.1, but moving to a supported branch is the better
+            answer. After upgrading, restart your workers (FPM, Apache, or whatever serves PHP) so the old
+            code is not still running.
+          </p>
+          <p>
+            Do not forget the PHP you did not install yourself. Shared hosting, containers built a year ago,
+            and CMS plugins that bundle a runtime all count, so check every system, including servers where
+            third-party software uses PHP even if your own sites do not. Rebuild old container images instead
+            of patching them in place.
+          </p>
+
+          <h2>If you cannot patch yet</h2>
+          <p>
+            PHP lists stopgaps that block specific paths. They do not make an installation safe, so treat
+            them as a bridge to the update. The most widely applicable ones: set
+            <code>session.upload_progress.enabled=0</code> in <code>php.ini</code>, your FPM pool, or server
+            config and restart every worker (not through <code>ini_set()</code> or <code>.user.ini</code>),
+            set a low <code>post_max_size</code> with <code>upload_max_filesize</code> below it, enforce
+            request size and field limits at your web server or proxy, and on PHP 8.5 set
+            <code>fatal_error_backtraces=0</code>. Read the full advisory before changing production, because
+            a couple of the mitigations interact.
+          </p>
+          <p>
+            Public proof-of-concept exploits now exist. Rapid7, a US security firm, says they are tied to
+            specific OS, PHP version, and web server combinations and that none appears broadly reliable,
+            and that it has not observed exploitation in the wild but has seen multiple reports of
+            attempts. Sophos reports scanning and a small number of failed attempts, with no confirmed
+            compromise. Both expect that to change, so treat patching as urgent and recheck the advisory
+            for updates. A separate issue, CVE-2026-115560, led PHP to recommend keeping the upload-progress
+            setting off until the next bugfix release.
+          </p>
+
+          <h2>Want the exploit explained?</h2>
+          <p>
+            If you would rather watch than read, one of our favorite YouTubers,
+            <a href="https://www.youtube.com/@SomeOrdinaryGamers" target="_blank" rel="noopener">SomeOrdinaryGamers</a>,
+            does a good breakdown of the exploit in
+            <a href="https://youtu.be/36uh0Cs-Yvc" target="_blank" rel="noopener">The PHP Hack Situation Is Insane...</a>
+            It is a friendly way to see why this one has people moving fast. He has also posted a newer
+            follow-up, <a href="https://youtu.be/Y7kIoBkls5w" target="_blank" rel="noopener">It Just Keep Getting More Insane...</a>,
+            and the channel is worth a follow for security news explained in plain language.
+          </p>
+          <p>
+            Sources and the official word:
+            <a href="https://www.php.net/archive/2026.php#2026-10-21-5" target="_blank" rel="noopener">PHP's security advisory</a>
+            and the
+            <a href="https://www.rapid7.com/blog/post/etr-cve-2026-109618-and-cve-2026-109619-critical-unauthenticated-remote-code-execution-in-php/" target="_blank" rel="noopener">Rapid7's analysis</a>.
+          </p>
+        </article>
+        <!-- post-body ends -->
+
+        <div class="post-cta">
+          <h3>Want a second pair of eyes on your stack?</h3>
+          <p>
+            We build native apps and the backend systems behind them, and we are happy to talk through patching and hardening.
+            <a href="/support.html">Get in touch</a>.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <nav class="footer-links">
+          <a href="/">Home</a>
+          <a href="/blog/">Blog</a>
+          <a href="/support.html">Support</a>
+          <a href="https://github.com/Shapehaven-Innovations" target="_blank" rel="noopener">GitHub</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/returniq-privacy.html">ReturnIQ Privacy</a>
+          <a href="/returniq-terms.html">ReturnIQ Terms</a>
+        </nav>
+        <p>&copy; 2025 ShapeHaven Innovations LLC</p>
+      </div>
+    </footer>
+
+    <script src="/config.js"></script>
+    <script src="/space-hero.js"></script>
+    <script src="/project-hero.js"></script>
+    <script src="/script.js"></script>
+    <script src="/transitions.js"></script>
+
+    <!-- Cloudflare Web Analytics -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "6412781782134cada0f6ec322c5bb820"}'></script>
+    <!-- End Cloudflare Web Analytics -->
+  </body>
+</html>
