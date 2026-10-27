@@ -1,35 +1,15 @@
 # ShapeHaven Innovations
 
-> Boutique software consultancy and product studio. ShapeHaven Innovations LLC is a small, independent team that builds iOS apps, websites and web apps, backend systems, and automation, modernizes legacy code, and operates its own production software products. Clients own their code, data, and infrastructure; work is open-source where possible and there is no vendor lock-in.
+> ShapeHaven Innovations is a research and software lab. ShapeHaven Innovations LLC is a small, independent team that researches good problems, especially in AI and privacy, and builds iOS and web apps to solve them. Some apps are open source, some are closed source, and some show ads that can be removed with a purchase.
 
 Website: https://shapehaveninnovations.com/
 Contact: info@shapehaveninnovations.com
 GitHub: https://github.com/Shapehaven-Innovations
-Support: https://shapehaveninnovations.com/support (bugs and feature requests via GitHub issues; everything else via email)
+Support: https://shapehaveninnovations.com/support (bugs and feature requests via public GitHub issues where a repo exists; everything else via email)
 
 ## Positioning
 
-Tagline: "Software research and solutions that put simplicity first." The studio describes itself as "the human in the loop": practical software for real-world problems, from first line of code to legacy overhaul.
-
-## Services
-
-### iOS Apps & Architecture
-Native iOS applications with clean architecture, modern patterns, and performance optimization, designed to grow with the business.
-
-### Websites & Web Apps
-Responsive, fast, and accessible websites and web applications.
-
-### Code Refactoring
-Modernizing legacy codebases, improving performance, and reducing technical debt.
-
-### Backend & Integrations
-API design, backend services, system integration, and third-party integrations, including MCP servers for AI agent access.
-
-### Automation & DevOps
-Workflow automation, deployment automation, and reliable CI/CD pipelines.
-
-### Technical Consulting
-Guidance on architecture decisions, technology selection, performance optimization, and debugging complex systems.
+Hero: "Chase good problems." The lab observes things in the wild and fine-tunes solutions through real-world use.
 
 ## Products (live, in production)
 
@@ -45,7 +25,7 @@ Property and condo management app for boards, owners, and residents.
 
 ### KavaCrawl
 Social app for discovering new places and people.
-- Site: https://kavacrawl.shapehaveninnovations.com/
+- Site: https://kavacrawl.app/
 
 ### mDNSShark
 mDNS and Bonjour service discovery tool for finding and inspecting devices on a local network.
@@ -57,11 +37,11 @@ Private menstrual cycle tracker for iPhone. No account, no ads, no tracking; dat
 
 ## Approach
 
-- Open source where possible; no proprietary lock-in.
-- Clients own their code, data, and future.
-- Simplicity first: the smallest solution that solves the real problem.
+- Research first, then build. Experience in the field is how solutions get fine-tuned.
+- Each app is labeled honestly: open or closed source, ads or no ads.
+- We collect only what an app needs to work.
 
-## Blog
+## Field Notes
 
 Notes on software, architecture, DevOps, and tools worth sharing. Author of all posts: ShapeHaven Innovations. RSS feed: https://shapehaveninnovations.com/feed.xml
 

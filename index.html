@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home | ShapeHaven Innovations</title>
-    <meta name="description" content="ShapeHaven Innovations builds iOS apps, custom software, and websites. Code refactoring, IT consulting, problem solving, and DevOps." />
+    <meta name="description" content="ShapeHaven Innovations is a research and software lab. We chase good problems, then build iOS and web apps to solve them." />
     <meta name="robots" content="index, follow" />
 
     <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="ShapeHaven Innovations | Innovation & Modernization" />
-    <meta property="og:description" content="ShapeHaven Innovations builds iOS apps, custom software, and websites. Code refactoring, IT consulting, problem solving, and DevOps." />
+    <meta property="og:title" content="ShapeHaven Innovations | Research and Software Lab" />
+    <meta property="og:description" content="ShapeHaven Innovations is a research and software lab. We chase good problems, then build iOS and web apps to solve them." />
     <meta property="og:image" content="https://shapehaveninnovations.com/images/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -25,22 +25,17 @@
       (function() {
         var t = localStorage.getItem('theme');
         if (t) document.documentElement.setAttribute('data-theme', t);
-        else if (window.matchMedia('(prefers-color-scheme: dark)').matches)
-          document.documentElement.setAttribute('data-theme', 'dark');
+        // No saved choice: stay on the light theme. Dark is opt-in via the toggle.
       })();
     </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <link rel="canonical" href="https://shapehaveninnovations.com/" />
-    <link rel="alternate" type="application/rss+xml" title="ShapeHaven Innovations Blog" href="https://shapehaveninnovations.com/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="ShapeHaven Innovations Field Notes" href="https://shapehaveninnovations.com/feed.xml" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="ShapeHaven Innovations | Innovation & Modernization" />
-    <meta name="twitter:description" content="ShapeHaven Innovations builds iOS apps, custom software, and websites. Code refactoring, IT consulting, problem solving, and DevOps." />
+    <meta name="twitter:title" content="ShapeHaven Innovations | Research and Software Lab" />
+    <meta name="twitter:description" content="ShapeHaven Innovations is a research and software lab. We chase good problems, then build iOS and web apps to solve them." />
     <meta name="twitter:image" content="https://shapehaveninnovations.com/images/og-image.png" />
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -51,7 +46,7 @@
         "name": "ShapeHaven Innovations",
         "url": "https://shapehaveninnovations.com",
         "logo": "https://shapehaveninnovations.com/images/logo.png",
-        "description": "Boutique software consultancy specializing in iOS app development, custom software, web applications, backend systems, and IT consulting.",
+        "description": "ShapeHaven Innovations is a research and software lab. We chase good problems, then build iOS and web apps to solve them.",
         "email": "info@shapehaveninnovations.com",
         "sameAs": ["https://github.com/Shapehaven-Innovations"]
       },
@@ -64,74 +59,7 @@
       {
         "@context": "https://schema.org",
         "@type": "ItemList",
-        "name": "Services",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "item": {
-              "@type": "Service",
-              "name": "iOS Apps & Architecture",
-              "description": "Build robust, scalable iOS applications with clean architecture, modern patterns, and performance optimization.",
-              "provider": { "@type": "Organization", "name": "ShapeHaven Innovations" }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "item": {
-              "@type": "Service",
-              "name": "Websites & Web Apps",
-              "description": "Create responsive, fast, and accessible websites and web applications.",
-              "provider": { "@type": "Organization", "name": "ShapeHaven Innovations" }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "item": {
-              "@type": "Service",
-              "name": "Code Refactoring",
-              "description": "Modernize legacy code, improve performance, and reduce technical debt.",
-              "provider": { "@type": "Organization", "name": "ShapeHaven Innovations" }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "item": {
-              "@type": "Service",
-              "name": "Backend & Integrations",
-              "description": "Design APIs, build backend services, and integrate third-party systems.",
-              "provider": { "@type": "Organization", "name": "ShapeHaven Innovations" }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 5,
-            "item": {
-              "@type": "Service",
-              "name": "Automation & DevOps",
-              "description": "Automate workflows, streamline deployments, and build reliable CI/CD pipelines.",
-              "provider": { "@type": "Organization", "name": "ShapeHaven Innovations" }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 6,
-            "item": {
-              "@type": "Service",
-              "name": "Technical Consulting",
-              "description": "Guidance on architecture decisions, technology selection, performance optimization, and debugging complex systems.",
-              "provider": { "@type": "Organization", "name": "ShapeHaven Innovations" }
-            }
-          }
-        ]
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Our Work",
+        "name": "Software",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -163,7 +91,7 @@
             "item": {
               "@type": "SoftwareApplication",
               "name": "KavaCrawl",
-              "url": "https://kavacrawl.shapehaveninnovations.com/",
+              "url": "https://kavacrawl.app/",
               "description": "Social app for discovering new places and people.",
               "applicationCategory": "SocialNetworkingApplication",
               "creator": { "@type": "Organization", "name": "ShapeHaven Innovations" }
@@ -206,7 +134,7 @@
         </div>
         <nav id="main-nav">
           <a href="/">Home</a>
-          <a href="/blog/">Blog</a>
+          <a href="/blog/">Field Notes</a>
           <a href="https://github.com/Shapehaven-Innovations" target="_blank" rel="noopener">GitHub</a>
           <a href="/support.html">Support</a>
           <a href="/privacy.html">Privacy</a>
@@ -225,160 +153,194 @@
     <main>
       <section class="container hero">
         <div class="hero-text">
-          <h1>Software <span class="hl">research</span> and<br><span class="hl">solutions</span> that put<br>simplicity first</h1>
+          <span class="hero-eyebrow">Research and software lab</span>
+          <h1>Chase <span class="hl">good problems.</span></h1>
           <div class="cta-group">
-            <a href="mailto:info@shapehaveninnovations.com" class="btn btn-primary">Contact Us</a>
-            <a href="#our-work" class="btn btn-secondary">View Our Work</a>
+            <a href="#our-work" class="btn btn-primary">See Our Software</a>
+            <a href="/blog/" class="btn btn-secondary">Read Field Notes</a>
           </div>
         </div>
         <p class="hero-description">
-          Practical software for real-world problems. ShapeHaven Innovations builds
-          solutions ranging from mobile applications and websites to legacy
-          modernization, system integration, and workflow automation.
+          <span>Data naturalists,</span>
+          <span>on a journey through innovation.</span>
+          <span>We research, build, and recycle solutions.</span>
         </p>
       </section>
 
       <section class="container">
         <div class="space-hero">
           <canvas aria-hidden="true"></canvas>
+          <div class="journal" aria-hidden="true">
+            <svg viewBox="0 0 560 440" preserveAspectRatio="xMidYMid meet">
+              <text class="j-tag j-head j-fade" x="330" y="40" style="animation-delay:.2s">FIELD NOTES / NO. 004</text>
+              <text class="j-tag j-head j-fade" x="330" y="58" style="animation-delay:.3s">26 OCT, 06:40, LIGHT FOG</text>
+              <g transform="translate(250 355) scale(.8)"><g class="j-sway" id="journal-plant"></g></g>
+              <g id="journal-marks"></g>
+            </svg>
+          </div>
           <div class="space-hero-caption">
-            <h2>Simple software. Built to scale.</h2>
-            <p>From first line of code to production orbit.</p>
-            <a href="mailto:info@shapehaveninnovations.com" class="space-hero-btn">Contact Us &rarr;</a>
+            <span class="hero-kicker">// Field Notes</span>
+            <h2>Observe in the wild. Fine-tune in the field.</h2>
+            <p>Solutions get sharper when you watch them live.</p>
           </div>
         </div>
       </section>
 
       <section class="container">
-        <div class="section-header">
-          <h2>What we build and fix</h2>
-          <p class="section-intro">
-            From first line of code to legacy overhaul - we are the human in the loop.
-          </p>
+        <div class="section-header" id="field-notes">
+          <h2>Field Notes</h2>
         </div>
-        
-        <div class="grid">
-          <div class="card">
-            <h3>iOS Apps & Architecture</h3>
-            <p>
-              Build robust, scalable iOS applications with clean architecture, modern patterns, 
-              and performance optimization. We design systems that grow with your business.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Websites & Web Apps</h3>
-            <p>
-              Create responsive, fast, and accessible websites and web applications. 
-              From static sites to dynamic platforms, we deliver solutions that work across all devices.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Code Refactoring</h3>
-            <p>
-              Modernize legacy code, improve performance, and reduce technical debt. 
-              We transform messy codebases into maintainable, efficient systems.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Backend & Integrations</h3>
-            <p>
-              Design APIs, build backend services, and integrate third-party systems. 
-              We create the infrastructure that powers your applications.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Automation & DevOps</h3>
-            <p>
-              Automate workflows, streamline deployments, and build reliable CI/CD pipelines. 
-              We eliminate manual work and accelerate your development lifecycle.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Technical Consulting</h3>
-            <p>
-              Guidance on architecture decisions, technology selection, performance optimization,
-              and debugging complex systems. We help you make the right technical choices.
-            </p>
-          </div>
+
+        <div class="notes-list">
+          <a class="note-row" href="/blog/php-critical-rce-patch">
+            <span class="note-date">Oct 26, 2026</span>
+            <div>
+              <h3>Two Critical PHP Flaws: What to Check and Patch Today</h3>
+              <p>Two critical PHP remote code execution flaws were announced October 21. Who is affected, which versions fix them, and what to do if you cannot patch yet.</p>
+            </div>
+          </a>
+          <a class="note-row" href="/blog/mdnsshark-app">
+            <span class="note-date">Oct 8, 2026</span>
+            <div>
+              <h3>mDNSShark: See Everything on Your Wi-Fi, Without Sending a Byte Out</h3>
+              <p>Why we built mDNSShark, a free, open-source iPhone network scanner and packet monitor that works entirely on-device, with no telemetry.</p>
+            </div>
+          </a>
+          <a class="note-row" href="/blog/worldmonitor-app">
+            <span class="note-date">Sep 3, 2026</span>
+            <div>
+              <h3>World Monitor: An Open-Source Dashboard Built for AI Agents</h3>
+              <p>Why we're watching an open-source global intelligence dashboard that ships an MCP server alongside its REST API.</p>
+            </div>
+          </a>
         </div>
 
         <div class="section-header" id="our-work">
-          <h2>Our Work</h2>
-          <p class="section-intro">
-            Live products we've built and ship, in production today.
-          </p>
+          <h2>Learn more</h2>
         </div>
 
-        <div class="grid">
-          <div class="card">
-            <img class="app-icon" src="images/apps/kavacrawl.png" alt="" width="48" height="48" loading="lazy" />
+        <div class="tiles">
+          <a class="tile" href="https://kavacrawl.app/" target="_blank" rel="noopener">
+            <div class="note-meta"><span class="note-pill" aria-hidden="true">&middot;&middot;&middot;</span><span>Closed source &middot; Has ads</span></div>
+            <div class="tile-art"><img src="images/apps/kavacrawl.png" alt="" width="96" height="96" loading="lazy" /></div>
             <h3>KavaCrawl</h3>
-            <p>
-              Social app for discovering new places and people.
-            </p>
-            <a href="https://kavacrawl.shapehaveninnovations.com/" class="btn btn-secondary" target="_blank" rel="noopener">Visit Site</a>
-          </div>
-          <div class="card">
-            <img class="app-icon" src="images/apps/returniq.png" alt="" width="48" height="48" loading="lazy" />
+            <p>Social app for discovering new places and people.</p>
+          </a>
+          <a class="tile" href="https://returniq.shapehaveninnovations.com/" target="_blank" rel="noopener">
+            <div class="note-meta"><span class="note-pill" aria-hidden="true">&middot;&middot;&middot;</span><span>Closed source &middot; No ads</span></div>
+            <div class="tile-art"><img src="images/apps/returniq.png" alt="" width="96" height="96" loading="lazy" /></div>
             <h3>ReturnIQ</h3>
-            <p>
-              Smarter returns management, helping businesses cut loss and streamline logistics.
-            </p>
-            <a href="https://returniq.shapehaveninnovations.com/" class="btn btn-secondary" target="_blank" rel="noopener">Visit Site</a>
-          </div>
-          <div class="card">
-            <img class="app-icon" src="images/apps/condoguard.png" alt="" width="48" height="48" loading="lazy" />
+            <p>Smarter returns management, helping businesses cut loss and streamline logistics.</p>
+          </a>
+          <a class="tile" href="https://condoguard.app/" target="_blank" rel="noopener">
+            <div class="note-meta"><span class="note-pill" aria-hidden="true">&middot;&middot;&middot;</span><span>Closed source &middot; No ads</span></div>
+            <div class="tile-art"><img src="images/apps/condoguard.png" alt="" width="96" height="96" loading="lazy" /></div>
             <h3>CondoGuard</h3>
-            <p>
-              Property and condo management app for boards, owners, and residents.
-            </p>
-            <a href="https://condoguard.app/" class="btn btn-secondary" target="_blank" rel="noopener">Visit Site</a>
-          </div>
-          <div class="card">
-            <img class="app-icon" src="images/apps/mdnsshark.png" alt="" width="48" height="48" loading="lazy" />
+            <p>Property and condo management app for boards, owners, and residents.</p>
+          </a>
+          <a class="tile" href="https://mdnsshark.shapehaveninnovations.com/" target="_blank" rel="noopener">
+            <div class="note-meta"><span class="note-pill" aria-hidden="true">&middot;&middot;&middot;</span><span>Open source &middot; No ads</span></div>
+            <div class="tile-art"><img src="images/apps/mdnsshark.png" alt="" width="96" height="96" loading="lazy" /></div>
             <h3>mDNSShark</h3>
-            <p>
-              mDNS and Bonjour service discovery tool for finding and inspecting devices on your local network.
-            </p>
-            <a href="https://mdnsshark.shapehaveninnovations.com/" class="btn btn-secondary" target="_blank" rel="noopener">Visit Site</a>
-          </div>
-          <div class="card">
-            <img class="app-icon" src="images/apps/rhythmx.png" alt="" width="48" height="48" loading="lazy" />
+            <p>mDNS and Bonjour service discovery tool for finding and inspecting devices on your local network.</p>
+          </a>
+          <a class="tile" href="https://rhythmx.shapehaveninnovations.com/" target="_blank" rel="noopener">
+            <div class="note-meta"><span class="note-pill" aria-hidden="true">&middot;&middot;&middot;</span><span>Open source &middot; No ads</span></div>
+            <div class="tile-art"><img src="images/apps/rhythmx.png" alt="" width="96" height="96" loading="lazy" /></div>
             <h3>RhythmX</h3>
-            <p>
-              Private cycle tracker for iPhone. No account, no ads, no tracking.
-            </p>
-            <a href="https://rhythmx.shapehaveninnovations.com/" class="btn btn-secondary" target="_blank" rel="noopener">Visit Site</a>
-          </div>
-        </div>
-
-        <div class="highlight-section">
-          <h3>Open Source & No Lock-In</h3>
-          <p>
-            We believe in transparency and independence. Our work is open-source where possible, 
-            and we never lock you into proprietary solutions. You own your code, your data, and your future.
-          </p>
+            <p>Private cycle tracker for iPhone. No account, no ads, no tracking.</p>
+          </a>
         </div>
       </section>
     </main>
 
-    <footer>
-      <div class="container">
-        <nav class="footer-links">
-          <a href="/">Home</a>
-          <a href="/blog/">Blog</a>
-          <a href="/support.html">Support</a>
-          <a href="https://github.com/Shapehaven-Innovations" target="_blank" rel="noopener">GitHub</a>
-          <a href="/privacy.html">Privacy</a>
-          <a href="/returniq-privacy.html">ReturnIQ Privacy</a>
-          <a href="/returniq-terms.html">ReturnIQ Terms</a>
-        </nav>
-<p>&copy; 2025 ShapeHaven Innovations LLC</p>
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__brand">
+          <p class="site-footer__wordmark">ShapeHaven Innovations</p>
+        </div>
+
+        <div class="site-footer__menu">
+          <details class="site-footer__group">
+            <summary>
+              <span>Field Notes</span>
+              <svg class="site-footer__chevron" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <ul class="site-footer__list">
+              <li><a href="/blog/">All Field Notes</a></li>
+              <li><a href="/blog/php-critical-rce-patch">Two Critical PHP Flaws: What to Check and Patch Today</a></li>
+              <li><a href="/blog/mdnsshark-app">mDNSShark: See Everything on Your Wi-Fi, Without Sending a Byte Out</a></li>
+              <li><a href="/blog/worldmonitor-app">World Monitor: An Open-Source Dashboard Built for AI Agents</a></li>
+              <li><a href="/feed.xml" target="_blank" rel="noopener">RSS feed</a></li>
+            </ul>
+          </details>
+
+          <details class="site-footer__group">
+            <summary>
+              <span>Software</span>
+              <svg class="site-footer__chevron" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <ul class="site-footer__list">
+              <li><a href="https://kavacrawl.app/" target="_blank" rel="noopener">KavaCrawl</a></li>
+              <li><a href="https://returniq.shapehaveninnovations.com/" target="_blank" rel="noopener">ReturnIQ</a></li>
+              <li><a href="https://condoguard.app/" target="_blank" rel="noopener">CondoGuard</a></li>
+              <li><a href="https://mdnsshark.shapehaveninnovations.com/" target="_blank" rel="noopener">mDNSShark</a></li>
+              <li><a href="https://rhythmx.shapehaveninnovations.com/" target="_blank" rel="noopener">RhythmX</a></li>
+            </ul>
+          </details>
+
+          <details class="site-footer__group">
+            <summary>
+              <span>Support and bug reports</span>
+              <svg class="site-footer__chevron" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <ul class="site-footer__list">
+              <li><a href="/support.html">Support page</a></li>
+              <li><a href="mailto:info@shapehaveninnovations.com">Email us</a></li>
+            </ul>
+            <p class="site-footer__sublabel">Public bug trackers</p>
+            <ul class="site-footer__list">
+              <li><a href="https://github.com/Shapehaven-Innovations/RhythmX/issues/new/choose" target="_blank" rel="noopener">RhythmX</a></li>
+              <li><a href="https://github.com/Shapehaven-Innovations/mDNSShark/issues/new/choose" target="_blank" rel="noopener">mDNSShark</a></li>
+              <li><a href="https://github.com/Shapehaven-Innovations/ReturnIQ-Site/issues/new/choose" target="_blank" rel="noopener">ReturnIQ</a></li>
+              <li><a href="https://github.com/Shapehaven-Innovations/KavaCrawl-Site/issues/new/choose" target="_blank" rel="noopener">KavaCrawl</a></li>
+              <li><span class="site-footer__note">CondoGuard: <a href="mailto:info@shapehaveninnovations.com">email us</a></span></li>
+            </ul>
+          </details>
+
+          <details class="site-footer__group">
+            <summary>
+              <span>Privacy and terms</span>
+              <svg class="site-footer__chevron" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <ul class="site-footer__list">
+              <li><a href="/privacy.html">Privacy Policy</a></li>
+              <li><a href="/returniq-privacy.html">ReturnIQ Privacy Policy</a></li>
+              <li><a href="/returniq-terms.html">ReturnIQ Terms of Service</a></li>
+            </ul>
+          </details>
+        </div>
+
+        <div class="site-footer__about">
+          <h2 class="site-footer__heading">About</h2>
+          <p class="site-footer__text">ShapeHaven Innovations is a research and software lab. We chase good problems, then build iOS and web apps to solve them.</p>
+          <h2 class="site-footer__heading">Contact</h2>
+          <ul class="site-footer__contact">
+            <li><a href="mailto:info@shapehaveninnovations.com">Email<svg class="site-footer__arrow" viewBox="0 0 10 10" width="9" height="9" aria-hidden="true" focusable="false"><path d="M2.5 7.5l5-5M3.5 2.5h4v4" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="https://github.com/Shapehaven-Innovations" target="_blank" rel="noopener">GitHub<svg class="site-footer__arrow" viewBox="0 0 10 10" width="9" height="9" aria-hidden="true" focusable="false"><path d="M2.5 7.5l5-5M3.5 2.5h4v4" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__legal">
+          <p class="site-footer__copyright">&copy; 2026 ShapeHaven Innovations LLC</p>
+          <a class="site-footer__icon" href="https://github.com/Shapehaven-Innovations" target="_blank" rel="noopener" aria-label="ShapeHaven Innovations on GitHub (opens in a new tab)"><svg viewBox="0 0 16 16" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+        </div>
       </div>
     </footer>
 
     <script src="config.js"></script>
     <script src="space-hero.js"></script>
+    <script src="journal-hero.js"></script>
     <script src="project-hero.js"></script>
     <script src="script.js"></script>
     <script src="transitions.js"></script>

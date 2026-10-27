@@ -3,6 +3,7 @@ const SUN_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" 
 
 function initPage() {
   if (typeof initSpaceHero === 'function') initSpaceHero();
+  if (typeof initJournalHero === 'function') initJournalHero();
   if (typeof initProjectHero === 'function') initProjectHero();
   const themeToggle = document.getElementById('theme-toggle');
   const root = document.documentElement;

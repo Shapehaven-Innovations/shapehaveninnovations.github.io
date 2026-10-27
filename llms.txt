@@ -1,23 +1,14 @@
 # ShapeHaven Innovations
 
-> Boutique software consultancy specializing in iOS app development, custom software, web applications, backend systems, code refactoring, automation/DevOps, and technical consulting. Also builds and operates production SaaS products: ReturnIQ, CondoGuard, KavaCrawl, mDNSShark, and RhythmX.
+> ShapeHaven Innovations is a research and software lab. We chase good problems, then build iOS and web apps to solve them. Products: ReturnIQ, CondoGuard, KavaCrawl, mDNSShark, and RhythmX.
 
-ShapeHaven Innovations LLC is a small, independent software studio. Work is open-source where possible; clients own their code, data, and infrastructure (no vendor lock-in).
-
-## Services
-
-- iOS Apps & Architecture - native iOS development with clean architecture and performance optimization.
-- Websites & Web Apps - responsive, fast, accessible sites and web applications.
-- Code Refactoring - modernizing legacy codebases, reducing technical debt.
-- Backend & Integrations - API design, backend services, third-party integrations.
-- Automation & DevOps - CI/CD pipelines, deployment automation.
-- Technical Consulting - architecture, technology selection, performance, debugging.
+ShapeHaven Innovations LLC is a small, independent team. Some apps are open source, some are closed source, and some show ads that can be removed with a purchase. We collect only what an app needs to work.
 
 ## Products
 
 - [ReturnIQ](https://returniq.shapehaveninnovations.com/) - Shopify app for AI-powered returns management and analytics, helping merchants cut loss and streamline logistics.
 - [CondoGuard](https://condoguard.app/) - property and condo management app for boards, owners, and residents.
-- [KavaCrawl](https://kavacrawl.shapehaveninnovations.com/) - social app for discovering new places and people.
+- [KavaCrawl](https://kavacrawl.app/) - social app for discovering new places and people.
 - [mDNSShark](https://mdnsshark.shapehaveninnovations.com/) - mDNS and Bonjour service discovery tool for finding and inspecting devices on a local network.
 - [RhythmX](https://rhythmx.shapehaveninnovations.com/) - Private menstrual cycle tracker for iPhone. No account, no ads, no tracking.
 - [RhythmX guide: How to track your cycle privately](https://rhythmx.shapehaveninnovations.com/guides/track-your-cycle-privately/) - four checks for any period tracker.
@@ -30,7 +21,7 @@ ShapeHaven Innovations LLC is a small, independent software studio. Work is open
 - [mDNSShark: See Everything on Your Wi-Fi, Without Sending a Byte Out](https://shapehaveninnovations.com/blog/mdnsshark-app): blog post, October 8, 2026.
 - [World Monitor: An Open-Source Dashboard Built for AI Agents](https://shapehaveninnovations.com/blog/worldmonitor-app): blog post, September 3, 2026.
 
-- [Home](https://shapehaveninnovations.com/): overview of services and products.
+- [Home](https://shapehaveninnovations.com/): research and software lab overview, latest field notes, and products.
 - [Support](https://shapehaveninnovations.com/support): per-product support; bugs and feature requests via GitHub issues, everything else via email.
 - [Privacy Policy](https://shapehaveninnovations.com/privacy): how ShapeHaven handles data across its website and apps.
 - [ReturnIQ Privacy Policy](https://shapehaveninnovations.com/returniq-privacy): data handling for the ReturnIQ Shopify app.
@@ -38,7 +29,7 @@ ShapeHaven Innovations LLC is a small, independent software studio. Work is open
 
 ## Optional
 
-- [Full context](https://shapehaveninnovations.com/llms-full.txt): expanded description of services, products, and approach.
+- [Full context](https://shapehaveninnovations.com/llms-full.txt): expanded description of the lab, products, and approach.
 
 ## Contact
 

@@ -84,16 +84,16 @@ function initSpaceHero() {
 
     // navy backdrop with a glow on the horizon
     const bg = ctx.createLinearGradient(0, 0, 0, h);
-    bg.addColorStop(0, '#050914');
-    bg.addColorStop(0.55, '#0b1633');
-    bg.addColorStop(1, '#060b1a');
+    bg.addColorStop(0, '#07130d');
+    bg.addColorStop(0.55, '#10301f');
+    bg.addColorStop(1, '#0a1a13');
     ctx.fillStyle = bg;
     ctx.fillRect(0, 0, w, h);
 
     const glow = ctx.createRadialGradient(w / 2, horizon, 0, w / 2, horizon, w * 0.55);
-    glow.addColorStop(0, 'rgba(110,150,255,0.35)');
-    glow.addColorStop(0.5, 'rgba(70,100,220,0.1)');
-    glow.addColorStop(1, 'rgba(70,100,220,0)');
+    glow.addColorStop(0, 'rgba(110,210,150,0.35)');
+    glow.addColorStop(0.5, 'rgba(60,170,110,0.1)');
+    glow.addColorStop(1, 'rgba(60,170,110,0)');
     ctx.fillStyle = glow;
     ctx.fillRect(0, 0, w, h);
 
@@ -109,14 +109,14 @@ function initSpaceHero() {
       ctx.fillRect(st.x, st.y, st.r, st.r);
     }
 
-    ctx.strokeStyle = 'rgba(140,180,255,0.06)';
+    ctx.strokeStyle = 'rgba(140,220,175,0.06)';
     ctx.lineWidth = 1;
     ctx.beginPath();
     for (let x = 0; x <= w; x += GRID) { ctx.moveTo(x + 0.5, 0); ctx.lineTo(x + 0.5, horizon); }
     for (let y = 0; y <= horizon; y += GRID) { ctx.moveTo(0, y + 0.5); ctx.lineTo(w, y + 0.5); }
     ctx.stroke();
 
-    ctx.strokeStyle = 'rgba(140,180,255,0.3)';
+    ctx.strokeStyle = 'rgba(140,220,175,0.3)';
     ctx.beginPath();
     edges.forEach(([a, b]) => {
       const A = nodes[a], B = nodes[b];
@@ -128,7 +128,7 @@ function initSpaceHero() {
 
     nodes.forEach(n => {
       const g = 0.5 + 0.5 * Math.sin(t * 0.02 + n.phase);
-      ctx.fillStyle = `rgba(160,200,255,${0.35 + g * 0.5})`;
+      ctx.fillStyle = `rgba(165,225,190,${0.35 + g * 0.5})`;
       ctx.fillRect(n.x - 3, n.y - 3, 6, 6);
     });
 
@@ -141,7 +141,7 @@ function initSpaceHero() {
       if (d <= legX) { x = A.x + Math.sign(B.x - A.x) * d; y = A.y; }
       else { x = B.x; y = A.y + Math.sign(B.y - A.y) * (d - legX); }
       ctx.fillStyle = '#fff';
-      ctx.shadowColor = 'rgba(120,170,255,0.9)';
+      ctx.shadowColor = 'rgba(120,215,160,0.9)';
       ctx.shadowBlur = 10;
       ctx.fillRect(x - 2, y - 2, 4, 4);
       ctx.shadowBlur = 0;
@@ -152,8 +152,8 @@ function initSpaceHero() {
     });
 
     const fade = ctx.createLinearGradient(0, horizon * 0.55, 0, horizon);
-    fade.addColorStop(0, 'rgba(11,22,51,0)');
-    fade.addColorStop(1, 'rgba(11,22,51,0.95)');
+    fade.addColorStop(0, 'rgba(16,48,31,0)');
+    fade.addColorStop(1, 'rgba(16,48,31,0.95)');
     ctx.fillStyle = fade;
     ctx.fillRect(0, horizon * 0.55, w, horizon * 0.45 + 1);
     ctx.restore();
@@ -166,8 +166,8 @@ function initSpaceHero() {
     ctx.arc(pcx, pcy, Rp, 0, Math.PI * 2);
     ctx.clip();
     const surf = ctx.createLinearGradient(0, horizon, 0, h);
-    surf.addColorStop(0, '#0e1a3d');
-    surf.addColorStop(1, '#050914');
+    surf.addColorStop(0, '#123826');
+    surf.addColorStop(1, '#07130d');
     ctx.fillStyle = surf;
     ctx.fillRect(0, horizon, w, h - horizon);
 
@@ -175,7 +175,7 @@ function initSpaceHero() {
     const vx = w / 2;
     ctx.lineWidth = 1;
     for (let i = -24; i <= 24; i++) {
-      ctx.strokeStyle = `rgba(140,180,255,${0.26 * (1 - Math.abs(i) / 26)})`;
+      ctx.strokeStyle = `rgba(140,220,175,${0.26 * (1 - Math.abs(i) / 26)})`;
       ctx.beginPath();
       ctx.moveTo(vx + i * 2, horizon);
       ctx.lineTo(vx + i * (w / 14), h);
@@ -185,7 +185,7 @@ function initSpaceHero() {
     for (let i = 0; i < 12; i++) {
       const z = (i + offset) / 12;                 // 0 at the limb, 1 at the viewer
       const y = horizon + floorH * z * z;
-      ctx.strokeStyle = `rgba(140,180,255,${0.08 + z * 0.3})`;
+      ctx.strokeStyle = `rgba(140,220,175,${0.08 + z * 0.3})`;
       ctx.beginPath();
       ctx.moveTo(0, y + 0.5);
       ctx.lineTo(w, y + 0.5);
@@ -196,12 +196,12 @@ function initSpaceHero() {
     // atmosphere on the limb
     ctx.save();
     ctx.lineCap = 'round';
-    ctx.strokeStyle = 'rgba(120,170,255,0.18)';
+    ctx.strokeStyle = 'rgba(120,215,160,0.18)';
     ctx.lineWidth = 8;
     ctx.beginPath();
     ctx.arc(pcx, pcy, Rp + 2, Math.PI * 1.2, Math.PI * 1.8);
     ctx.stroke();
-    ctx.strokeStyle = 'rgba(190,220,255,0.85)';
+    ctx.strokeStyle = 'rgba(195,235,208,0.85)';
     ctx.lineWidth = 1.5;
     ctx.beginPath();
     ctx.arc(pcx, pcy, Rp, Math.PI * 1.2, Math.PI * 1.8);
@@ -217,7 +217,7 @@ function initSpaceHero() {
     };
     ctx.lineWidth = 1;
     for (const front of [false, true]) {
-      ctx.strokeStyle = front ? 'rgba(170,205,255,0.55)' : 'rgba(170,205,255,0.18)';
+      ctx.strokeStyle = front ? 'rgba(175,225,195,0.55)' : 'rgba(175,225,195,0.18)';
       ctx.beginPath();
       let started = false;
       for (let a = 0; a <= Math.PI * 2 + 0.05; a += 0.05) {
@@ -230,12 +230,12 @@ function initSpaceHero() {
     [['{ }', 0], ['</>', Math.PI]].forEach(([label, phase]) => {
       const [x, y] = orbit(t * 0.006 + phase);
       ctx.fillStyle = '#fff';
-      ctx.shadowColor = 'rgba(120,170,255,0.95)';
+      ctx.shadowColor = 'rgba(120,215,160,0.95)';
       ctx.shadowBlur = 14;
       ctx.fillRect(x - 3, y - 3, 6, 6);
       ctx.shadowBlur = 0;
       ctx.font = '12px ui-monospace, SFMono-Regular, Menlo, monospace';
-      ctx.fillStyle = 'rgba(200,225,255,0.9)';
+      ctx.fillStyle = 'rgba(205,235,215,0.9)';
       ctx.fillText(label, x + 9, y - 7);
     });
 
@@ -243,7 +243,7 @@ function initSpaceHero() {
     for (let i = 0; i < glyphs.length; i++) {
       const g = glyphs[i];
       ctx.font = `${g.size}px ui-monospace, SFMono-Regular, Menlo, monospace`;
-      ctx.fillStyle = `rgba(150,200,255,${g.o})`;
+      ctx.fillStyle = `rgba(150,220,175,${g.o})`;
       ctx.fillText(g.txt, g.x, g.y);
       if (!reduceMotion) { g.y -= g.v; if (g.y < -20) glyphs[i] = newGlyph(false, g.slot, g.slots); }
     }
