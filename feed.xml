@@ -5,8 +5,16 @@
     <link>https://shapehaveninnovations.com/blog/</link>
     <description>Field Notes from the ShapeHaven lab: what we research, what we build, and what we learn from watching it in use.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 26 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 15 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://shapehaveninnovations.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The VPN That Doesn't Want to Know You (And That's the Point)</title>
+      <link>https://shapehaveninnovations.com/blog/mullvad-vpn-spotlight</link>
+      <guid isPermaLink="true">https://shapehaveninnovations.com/blog/mullvad-vpn-spotlight</guid>
+      <pubDate>Sun, 15 Nov 2026 00:00:00 GMT</pubDate>
+      <dc:creator>ShapeHaven Innovations</dc:creator>
+      <description>A not-sponsored look at Mullvad VPN: the account number instead of an email, the flat price, the audits, the limits, and a quick speed check on our own router.</description>
+    </item>
     <item>
       <title>Two Critical PHP Flaws: What to Check and Patch Today</title>
       <link>https://shapehaveninnovations.com/blog/php-critical-rce-patch</link>

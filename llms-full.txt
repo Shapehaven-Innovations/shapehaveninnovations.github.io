@@ -45,6 +45,7 @@ Private menstrual cycle tracker for iPhone. No account, no ads, no tracking; dat
 
 Field Notes from the lab: what we research, what we build, and what we learn from watching it in use. Author of all posts: ShapeHaven Innovations. RSS feed: https://shapehaveninnovations.com/feed.xml
 
+- [The VPN That Doesn't Want to Know You (And That's the Point)](https://shapehaveninnovations.com/blog/mullvad-vpn-spotlight) (2026-11-15): A not-sponsored look at Mullvad VPN: the account number instead of an email, the flat price, the audits, the limits, and a quick speed check on our own router.
 - [mDNSShark: See Everything on Your Wi-Fi, Without Sending a Byte Out](https://shapehaveninnovations.com/blog/mdnsshark-app) (2026-10-08): Why we built mDNSShark, a free, open-source iPhone network scanner and packet monitor that finds, assesses, and inspects devices on your Wi-Fi entirely on-device, with no telemetry.
 - [World Monitor: An Open-Source Dashboard Built for AI Agents](https://shapehaveninnovations.com/blog/worldmonitor-app) (2026-09-03): why an open-source global intelligence dashboard that ships an MCP server alongside its REST API treats AI agents as first-class clients, and why correlation across data feeds is the real product.
 

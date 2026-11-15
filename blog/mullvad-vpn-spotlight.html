@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The VPN That Doesn't Want to Know You (And That's the Point) | ShapeHaven Field Notes</title>
+    <meta name="description" content="A not-sponsored look at Mullvad VPN: the account number instead of an email, the flat price, the audits, the limits, and a quick speed check on our own router." />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="ShapeHaven Innovations" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="The VPN That Doesn't Want to Know You (And That's the Point)" />
+    <meta property="og:description" content="A not-sponsored look at Mullvad VPN: the account number instead of an email, the flat price, the audits, the limits, and a quick speed check on our own router." />
+    <meta property="og:image" content="https://shapehaveninnovations.com/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://shapehaveninnovations.com/blog/mullvad-vpn-spotlight" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-11-15" />
+    <meta property="article:author" content="ShapeHaven Innovations" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/logo.png" />
+
+    <!-- FOUC fix: apply theme before CSS renders -->
+    <script>
+      (function() {
+        var t = localStorage.getItem('theme');
+        if (t) document.documentElement.setAttribute('data-theme', t);
+        // No saved choice: stay on the light theme. Dark is opt-in via the toggle.
+      })();
+    </script>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="canonical" href="https://shapehaveninnovations.com/blog/mullvad-vpn-spotlight" />
+    <link rel="alternate" type="application/rss+xml" title="ShapeHaven Innovations Field Notes" href="https://shapehaveninnovations.com/feed.xml" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The VPN That Doesn't Want to Know You (And That's the Point)" />
+    <meta name="twitter:description" content="A not-sponsored look at Mullvad VPN: the account number instead of an email, the flat price, the audits, the limits, and a quick speed check on our own router." />
+    <meta name="twitter:image" content="https://shapehaveninnovations.com/images/og-image.png" />
+
+    <style>
+      .post-hero {
+        text-align: left;
+        max-width: 760px;
+      }
+      .blog-eyebrow {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        display: block;
+      }
+      .post-hero h1 {
+        font-size: 2.75rem;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+        border-bottom: 4px solid var(--primary-color);
+        padding-bottom: 1.5rem;
+      }
+      .post-meta {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+        font-size: 0.85rem;
+        color: var(--light-text);
+        margin-top: 1.25rem;
+        letter-spacing: 0.02em;
+      }
+      .post-body {
+        max-width: 760px;
+        margin: 3rem 0 5rem;
+        font-size: 1.1rem;
+        line-height: 1.75;
+        color: var(--text-color);
+      }
+      .post-body p {
+        margin-bottom: 1.5rem;
+      }
+      .post-body h2 {
+        font-size: 1.6rem;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        margin: 3rem 0 1.25rem;
+        border-left: 4px solid var(--primary-color);
+        padding-left: 1rem;
+      }
+      .post-body a {
+        color: var(--primary-color);
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+      .post-body ul {
+        margin: 0 0 1.5rem 1.25rem;
+      }
+      .post-body li {
+        margin-bottom: 0.6rem;
+        color: var(--light-text);
+      }
+      .post-callout {
+        border: 1px solid var(--border-color);
+        border-left: 4px solid var(--primary-color);
+        background: var(--card-bg);
+        padding: 1.5rem 1.75rem;
+        margin: 2.5rem 0;
+        font-size: 1rem;
+        color: var(--light-text);
+      }
+      .post-callout strong {
+        color: var(--text-color);
+      }
+      .post-body .post-table-wrap { overflow-x: auto; margin: 0 0 1.5rem; }
+      .post-body table.post-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+      .post-body table.post-table th, .post-body table.post-table td { text-align: left; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border-color); }
+      .post-body table.post-table th { font-weight: 700; color: var(--text-color); }
+      .post-body table.post-table td { color: var(--light-text); }
+      .post-callout ul { margin: 0.75rem 0 0 1.25rem; }
+      .post-cta {
+        border-radius: 0;
+        border: 1px solid var(--border-color);
+        border-left: 4px solid var(--primary-color);
+        padding: 2rem;
+        margin-top: 3rem;
+      }
+      .post-cta h3 {
+        margin-bottom: 0.75rem;
+      }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "The VPN That Doesn't Want to Know You (And That's the Point)",
+      "description": "A not-sponsored look at Mullvad VPN: the account number instead of an email, the flat price, the audits, the limits, and a quick speed check on our own router.",
+      "url": "https://shapehaveninnovations.com/blog/mullvad-vpn-spotlight",
+      "datePublished": "2026-11-15",
+      "dateModified": "2026-11-15",
+      "author": { "@type": "Organization", "name": "ShapeHaven Innovations" },
+      "publisher": { "@type": "Organization", "name": "ShapeHaven Innovations", "logo": { "@type": "ImageObject", "url": "https://shapehaveninnovations.com/images/logo.png" } },
+      "image": "https://shapehaveninnovations.com/images/og-image.png",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://shapehaveninnovations.com/blog/mullvad-vpn-spotlight" }
+    }
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo-container">
+          <a href="/" class="logo-text">ShapeHaven Innovations</a>
+        </div>
+        <nav id="main-nav">
+          <a href="/">Home</a>
+          <a href="/blog/">Field Notes</a>
+          <a href="https://github.com/Shapehaven-Innovations" target="_blank" rel="noopener">GitHub</a>
+          <a href="/support.html">Support</a>
+          <a href="/privacy.html">Privacy</a>
+        </nav>
+        <div class="header-actions">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="post-hero" style="margin-top: 4rem;">
+          <span class="blog-eyebrow">// Dispatches / Tool Spotlight</span>
+          <h1>The VPN That Doesn't Want to Know You (And That's the Point)</h1>
+          <p class="post-meta">November 15, 2026 &middot; ShapeHaven Innovations</p>
+        </div>
+
+        <article class="post-body">
+          <div class="post-callout">
+            <strong>Disclosure:</strong> We are not sponsored by Mullvad. We pay for it ourselves, there are no
+            affiliate links in this post, and nobody at Mullvad has seen it. We just like the product.
+          </div>
+
+          <div class="post-callout">
+            <strong>TL;DR</strong>
+            <ul>
+              <li><strong>What it is:</strong> a Swedish VPN with a flat price and an account number instead of an email login.</li>
+              <li><strong>Why it stands out:</strong> it asks for as little about you as it can, and it publishes its audits.</li>
+              <li><strong>Who it is for:</strong> people who want a simple, no-fuss VPN and are fine with a few trade-offs. It is not magic anonymity, and we say why below.</li>
+            </ul>
+          </div>
+
+          <p>
+            Most VPN signups want your email, then a password, then a pile of marketing. Mullvad hands you a
+            number and says: that is your account. Think of it as a coat-check ticket, not a name tag. Whoever
+            holds the ticket gets the coat, and nobody has to ask who you are.
+          </p>
+
+          <h2>What is it?</h2>
+          <p>
+            Mullvad is a VPN service from Sweden. Since January 2026 it supports WireGuard only, after
+            removing OpenVPN, and its apps turn on quantum-resistant tunnels by default. It also offers
+            features like multihop, where traffic passes through two servers, and DAITA, which is meant to
+            make traffic analysis harder and is only available on select servers. We use it for the simple part: a private tunnel out of our home
+            network.
+          </p>
+
+          <h2>Why no email?</h2>
+          <p>
+            You get a random account number and use that to log in. In our experience, that is the whole
+            signup. There is no email address for a breach to leak and no name to attach to the account. It
+            is a small design choice that removes a whole category of "what do you know about me" questions.
+          </p>
+
+          <h2>What does it cost?</h2>
+          <p>
+            Mullvad charges a flat 5 euros a month, which is roughly $5.70 to $5.80 in US dollars at recent
+            exchange rates, though the exact amount shifts with the rate. The price does not change if you
+            pay for a longer term. You can pay by card or PayPal, or with more private options like cash by post, Monero, and
+            Bitcoin. Check <a href="https://mullvad.net/en/pricing" target="_blank" rel="noopener">their pricing page</a>
+            for today's options.
+          </p>
+
+          <h2>What we like</h2>
+          <ul>
+            <li><strong>One price, no games.</strong> No discount ladder and no "sale ends tonight".</li>
+            <li><strong>Less data about us.</strong> An account number beats an email login.</li>
+            <li><strong>Audited, and open about it.</strong> Mullvad has published security audits through 2026, including one of its account and payment systems and one of its WireGuard implementation. The most recent server audit we could find is from 2024. Audits support a no-logs policy, they do not prove one, so we call it an audited policy.</li>
+            <li><strong>RAM-only servers.</strong> Mullvad says its VPN servers run from memory only, so a reboot wipes them. It also says each server is either owned or a dedicated rental.</li>
+            <li><strong>It has been tested by a real raid.</strong> In April 2023 Swedish police arrived with a warrant. Mullvad says it holds no customer data to hand over, and the police left with nothing.</li>
+          </ul>
+
+          <h2>How we run it</h2>
+          <p>
+            We run Mullvad on our router, not on each device. That means everything on our home network goes
+            through the tunnel, from laptops to the smart plug nobody remembers buying, with no app to install
+            on each one. The trade-offs are real. It only covers us at home, so a phone on cellular needs the
+            Mullvad app. And the tunnel speed depends on how powerful the router's processor is, which is
+            exactly what we benchmark below.
+          </p>
+
+          <h2>Catch? What it cannot do</h2>
+          <ul>
+            <li><strong>It is not anonymity.</strong> A VPN moves trust from your internet provider to the VPN company. You still have to trust someone. Logins, cookies, and browser fingerprinting can identify you no matter which VPN you use, and how you pay can link you to an account.</li>
+            <li><strong>Shared IP addresses.</strong> Lots of people use the same exit addresses, so some sites show more CAPTCHAs or block you. Streaming services are the usual victims.</li>
+            <li><strong>No port forwarding.</strong> Mullvad removed it in 2023. If you host something at home and want to reach it through the VPN, that door is closed.</li>
+            <li><strong>2026 bumps worth knowing about.</strong> In May, Mullvad published a write-up on exit-IP fingerprinting, where sites could link your sessions across servers, and described a planned server-side fix. Two Android leak issues in May and September were Android bugs, not Mullvad bugs, but traffic could leave the tunnel even with the block setting on. In July, a co-owner's personal donation to a Swedish political party caused a controversy, and Mullvad said it took no part in it.</li>
+            <li><strong>One change for AdGuard users.</strong> Mullvad is shutting down its public encrypted DNS and told users to switch before November 2, 2026. It now sponsors Quad9 instead. If your DNS filter points at Mullvad's public DNS, check it.</li>
+          </ul>
+
+          <h2>A quick speed check</h2>
+          <p>
+            Here is a field note, not a lab report. We ran a few speed tests from one Mac over Wi-Fi on
+            November 15, 2026, with Mullvad running on our router, and we ran the VPN-on and VPN-off tests
+            within about ten minutes of each other. Speed is not why we like Mullvad, so treat this as
+            supporting evidence. We did not test other providers, so we make no "fastest" claims. We are also
+            not listing our router model, location, or exit server, so you cannot reproduce this exactly, and
+            your numbers will differ. Speed figures are the median of 5 runs, with the range in brackets, and
+            page loads cover 25 requests across 5 sites.
+          </p>
+          <div class="post-callout">
+            <strong>Read these with care.</strong>
+            <ul>
+              <li>We tested over Wi-Fi, not a wired connection, so some of the variation comes from the wireless link.</li>
+              <li>It was one Mac on one afternoon, with five runs per setting. Treat the numbers as a snapshot, not a verdict.</li>
+              <li>We ran VPN-on first and VPN-off about ten minutes later, so a change on our line in between could skew either result.</li>
+              <li>The speed tool measures against servers run by Apple, and the VPN changes which of them we reach. Some of the gap may be routing and not the tunnel itself.</li>
+              <li>Ping includes the extra distance to the VPN's exit server, so it says more about geography than about Mullvad's overhead.</li>
+              <li>We did not watch the router's processor during the tests. On many routers a WireGuard tunnel is limited by the CPU, so a lower download speed can mean the router ran out of power, not that the VPN is slow.</li>
+            </ul>
+          </div>
+          <div class="post-table-wrap">
+            <table class="post-table">
+              <thead>
+                <tr><th>Test</th><th>VPN on</th><th>VPN off</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Download</td><td>522 Mbps (477 to 566)</td><td>691 Mbps (645 to 729)</td></tr>
+                <tr><td>Upload</td><td>46 Mbps (44 to 47)</td><td>45 Mbps (45 to 48)</td></tr>
+                <tr><td>Ping to a public DNS resolver, 50 pings</td><td>36 ms average, 0% loss</td><td>25 ms average, 0% loss</td></tr>
+                <tr><td>Responsiveness under download load</td><td>463 RPM (415 to 503)</td><td>802 RPM (646 to 961)</td></tr>
+                <tr><td>Responsiveness under upload load</td><td>73 RPM (51 to 82)</td><td>78 RPM (61 to 115)</td></tr>
+                <tr><td>Page load, 5 sites</td><td>0.30 s median (0.14 to 0.54)</td><td>0.29 s median (0.10 to 0.43)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            In this test, download speed was about a quarter lower with the VPN on (522 against 691 Mbps), and
+            ping was about 11 milliseconds higher. Upload speed did not change, and page loads were about the
+            same, 0.30 seconds against 0.29. Responsiveness under download load was lower with the VPN on. No
+            test had packet loss or a failed request. We read this as what happened on our setup with one exit
+            server, not as a general cost of using Mullvad.
+          </p>
+          <p>
+            One result is not the VPN's doing. Responsiveness under upload load was rated "Low" both with the
+            VPN on and with it off, so something on our line or router queues up when we upload. That is a
+            note for us to chase, not a mark against Mullvad. Our download speed also varied by roughly 12 to 17%
+            between runs, and the first request to each site includes a one-time DNS lookup, which nudges
+            page-load numbers up a little in both columns.
+          </p>
+
+          <h2>How we would test it properly</h2>
+          <p>
+            If you want to check a VPN on your own network, or hold our numbers to a higher standard, here is
+            what we recommend, and what we plan to do in our next round.
+          </p>
+          <ul>
+            <li><strong>Plug in.</strong> Use a wired connection for the test computer, so Wi-Fi noise does not drown out the VPN's effect.</li>
+            <li><strong>Alternate the rounds.</strong> Run VPN on, then off, then on again, three times across the day, so one busy moment cannot decide the result.</li>
+            <li><strong>Use <code>iperf3</code> against one fixed server.</strong> It measures raw throughput to a server you choose, so the target stays the same with the VPN on and off. Run it in both directions for 30 seconds or more.</li>
+            <li><strong>Run a bufferbloat test.</strong> It measures how much your latency climbs when the line is busy. Run it with the VPN on and off, so you can tell a line problem from a VPN problem.</li>
+            <li><strong>Watch the router's CPU.</strong> Check its processor load during the transfer. If it sits near the limit, the router is the bottleneck, and a faster router would change the result.</li>
+            <li><strong>Try a second Mullvad server.</strong> One near and one far, because exit servers differ in distance and load.</li>
+            <li><strong>Ping a fixed target.</strong> Pick one that does not change with your location, and compare the round trip with the VPN on and off.</li>
+            <li><strong>Write down the details.</strong> Router model and firmware, test times, and which server you used. That is what lets other people compare.</li>
+          </ul>
+          <p>
+            For leaks, the only DNS resolver our Mac sees is the router, and IPv6 requests came back showing the
+            same Mullvad exit, so we saw no IPv6 leak. We did not test native IPv6, WebRTC, streaming services,
+            or search CAPTCHAs, and we have not confirmed where the router forwards DNS, so we make no claims
+            about those. Try the tests on your own setup and tell us what you get.
+          </p>
+
+          <h2>Who should skip it</h2>
+          <ul>
+            <li>You need port forwarding.</li>
+            <li>You want a VPN that unblocks every streaming service every time.</li>
+            <li>You expect it to make you anonymous on its own. It will not.</li>
+            <li>Your router is too slow to run a WireGuard tunnel at your internet speed. Test it, and watch the router's CPU while you do.</li>
+          </ul>
+
+          <h2>The takeaway</h2>
+          <p>
+            Mullvad is the VPN that does not want to know you, and for us that is the whole point. It is not
+            a cloak of invisibility. It is a well-audited, simple tunnel that asks for very little, and we
+            think that is a good trade.
+          </p>
+          <p>
+            Sources and the official word:
+            <a href="https://mullvad.net/en/pricing" target="_blank" rel="noopener">pricing</a>,
+            <a href="https://mullvad.net/en/blog/removing-openvpn-15th-january-2026" target="_blank" rel="noopener">OpenVPN removal</a>,
+            <a href="https://mullvad.net/en/blog/2026/1/21/new-security-audit-of-account-and-payment-services" target="_blank" rel="noopener">account and payment audit</a>,
+            <a href="https://mullvad.net/en/blog/2023/4/20/mullvad-vpn-was-subject-to-a-search-warrant-customer-data-not-compromised" target="_blank" rel="noopener">the 2023 search warrant</a>,
+            <a href="https://mullvad.net/en/blog/2026/5/20/exit-ip-fingerprinting-between-vpn-servers" target="_blank" rel="noopener">exit-IP fingerprinting</a>, and
+            <a href="https://mullvad.net/en/blog/2023/5/29/removing-the-support-for-forwarded-ports" target="_blank" rel="noopener">port forwarding removal</a>.
+          </p>
+        </article>
+        <!-- post-body ends -->
+      </div>
+    </main>
+
+    <!-- footer:start -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__top">
+          <div class="site-footer__brandcol">
+            <p class="site-footer__wordmark">ShapeHaven Innovations</p>
+            <p class="site-footer__about">A research and software lab. We chase good problems, then build iOS and web apps to solve them.</p>
+          </div>
+
+          <div class="site-footer__col">
+            <h2 class="site-footer__heading">Field Notes</h2>
+            <ul class="site-footer__list">
+              <li><a href="/blog/">All Field Notes</a></li>
+              <li><a href="/blog/mullvad-vpn-spotlight" title="The VPN That Doesn't Want to Know You (And That's the Point)">Mullvad VPN</a></li>
+              <li><span aria-current="page" title="The VPN That Doesn't Want to Know You (And That's the Point)">Mullvad VPN</span></li>
+              <li><a href="/blog/php-critical-rce-patch" title="Two Critical PHP Flaws: What to Check and Patch Today">Two Critical PHP Flaws</a></li>
+              <li><a href="/blog/mdnsshark-app" title="mDNSShark: See Everything on Your Wi-Fi, Without Sending a Byte Out">mDNSShark: Your Wi-Fi, Unseen</a></li>
+              <li><a href="/blog/worldmonitor-app" title="World Monitor: An Open-Source Dashboard Built for AI Agents">World Monitor for AI Agents</a></li>
+              <li><a href="/feed.xml" target="_blank" rel="noopener">RSS feed</a></li>
+            </ul>
+          </div>
+
+          <div class="site-footer__col">
+            <h2 class="site-footer__heading">Software</h2>
+            <ul class="site-footer__list">
+              <li><a href="https://kavacrawl.app/" target="_blank" rel="noopener">KavaCrawl</a></li>
+              <li><a href="https://returniq.shapehaveninnovations.com/" target="_blank" rel="noopener">ReturnIQ</a></li>
+              <li><a href="https://condoguard.app/" target="_blank" rel="noopener">CondoGuard</a></li>
+              <li><a href="https://mdnsshark.shapehaveninnovations.com/" target="_blank" rel="noopener">mDNSShark</a></li>
+              <li><a href="https://rhythmx.shapehaveninnovations.com/" target="_blank" rel="noopener">RhythmX</a></li>
+            </ul>
+          </div>
+
+          <div class="site-footer__col">
+            <h2 class="site-footer__heading">Support</h2>
+            <ul class="site-footer__list">
+              <li><a href="/support.html">Support page</a></li>
+              <li><a href="mailto:info@shapehaveninnovations.com">Email us</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="site-footer__bottom">
+          <p class="site-footer__copyright">&copy; 2026 ShapeHaven Innovations LLC</p>
+          <ul class="site-footer__legal">
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+              <li><a href="/returniq-privacy.html">ReturnIQ Privacy Policy</a></li>
+              <li><a href="/returniq-terms.html">ReturnIQ Terms of Service</a></li>
+            <li><a class="site-footer__icon" href="https://github.com/Shapehaven-Innovations" target="_blank" rel="noopener" aria-label="ShapeHaven Innovations on GitHub (opens in a new tab)"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- footer:end -->
+
+    <script src="/config.js"></script>
+    <script src="/space-hero.js"></script>
+    <script src="/journal-hero.js"></script>
+    <script src="/project-hero.js"></script>
+    <script src="/script.js"></script>
+    <script src="/transitions.js"></script>
+
+    <!-- Cloudflare Web Analytics -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "6412781782134cada0f6ec322c5bb820"}'></script>
+    <!-- End Cloudflare Web Analytics -->
+  </body>
+</html>
